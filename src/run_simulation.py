@@ -30,6 +30,21 @@ class ScenarioLoaderMIMICIV:
         return self.scenario_dict[id]
 
 
+def resolve_doctor_prompt_file(cfg):
+    base_prompt_file = cfg.data.doctor_prompt_file
+    personality_type = (
+        str(cfg.doctor_agent.personality_type or "default").strip().lower()
+    )
+
+    prompt_by_personality = {
+        "default": base_prompt_file,
+        "incompetent": f"{base_prompt_file}_incompetent",
+    }
+
+    resolved_prompt_file = prompt_by_personality.get(personality_type, base_prompt_file)
+    return personality_type, resolved_prompt_file
+
+
 @hydra.main(config_path="./config", config_name="base", version_base="1.3")
 def main(cfg):
     # Set random seed & create save directory
@@ -41,16 +56,31 @@ def main(cfg):
 
     # Load scenarios
     scenario_loader = ScenarioLoaderMIMICIV(cfg.data_dir, cfg.data.data_file_name)
-    logging.info(f"Load Datasets from {cfg.data_dir}, size: {scenario_loader.num_scenarios}")
-    logging.info(f"""Patient prompt template:\n\t{file_to_string(os.path.join(cfg.prompt_dir, cfg.data.patient_prompt_file + ".txt"))}""")
-    logging.info(f"""Doctor prompt template:\n\t{file_to_string(os.path.join(cfg.prompt_dir, cfg.data.doctor_prompt_file + ".txt"))}""")
+    doctor_personality, doctor_prompt_file = resolve_doctor_prompt_file(cfg)
+    logging.info(
+        f"Load Datasets from {cfg.data_dir}, size: {scenario_loader.num_scenarios}"
+    )
+    logging.info(
+        f"""Patient prompt template:\n\t{file_to_string(os.path.join(cfg.prompt_dir, cfg.data.patient_prompt_file + ".txt"))}"""
+    )
+    logging.info(f"Doctor personality: {doctor_personality}")
+    logging.info(f"Doctor prompt file: {doctor_prompt_file}")
+    logging.info(
+        f"""Doctor prompt template:\n\t{file_to_string(os.path.join(cfg.prompt_dir, doctor_prompt_file + ".txt"))}"""
+    )
 
     # Pipeline for huggingface models
-    num_scenarios = min(cfg.data.num_scenarios, scenario_loader.num_scenarios) if cfg.data.num_scenarios is not None else scenario_loader.num_scenarios
+    num_scenarios = (
+        min(cfg.data.num_scenarios, scenario_loader.num_scenarios)
+        if cfg.data.num_scenarios is not None
+        else scenario_loader.num_scenarios
+    )
     for _scenario_id in range(0, num_scenarios):
         # Initialize scenarios
         scenario = scenario_loader.get_scenario(id=_scenario_id)
-        logging.info(f"\n=== Scenario {_scenario_id} / {num_scenarios} | hadm_id: {scenario['hadm_id']} ===")
+        logging.info(
+            f"\n=== Scenario {_scenario_id} / {num_scenarios} | hadm_id: {scenario['hadm_id']} ==="
+        )
 
         # Initialize agents
         patient_agent = PatientAgent(
@@ -73,7 +103,7 @@ def main(cfg):
             backend_str=cfg.doctor_agent.backend,
             backend_api_type=cfg.doctor_agent.api_type,
             prompt_dir=cfg.prompt_dir,
-            prompt_file=cfg.data.doctor_prompt_file,
+            prompt_file=doctor_prompt_file,
             patient_info=scenario,
             client_params=cfg.doctor_agent.params,
             verbose=cfg.experiment.verbose,
@@ -82,7 +112,9 @@ def main(cfg):
         # Start dialogue
         start_time = time.time()
         dialog_history = [{"role": "Doctor", "content": doctor_agent.doctor_greet}]
-        doctor_agent.messages.append({"role": "assistant", "content": f"{doctor_agent.doctor_greet}"})
+        doctor_agent.messages.append(
+            {"role": "assistant", "content": f"{doctor_agent.doctor_greet}"}
+        )
         logging.info(f"Doctor: {doctor_agent.doctor_greet}")
 
         for inf_idx in range(cfg.experiment.total_inferences):
@@ -90,15 +122,28 @@ def main(cfg):
             patient_response = patient_agent.inference(dialog_history[-1]["content"])
 
             dialog_history.append({"role": "Patient", "content": patient_response})
-            logging.info("Patient [{}%]: {}".format(int(((inf_idx + 1) / cfg.experiment.total_inferences) * 100), patient_response))
+            logging.info(
+                "Patient [{}%]: {}".format(
+                    int(((inf_idx + 1) / cfg.experiment.total_inferences) * 100),
+                    patient_response,
+                )
+            )
 
             # Obtain doctor dialogue
             if inf_idx == cfg.experiment.total_inferences - 1:
-                doctor_response = doctor_agent.inference(dialog_history[-1]["content"] + "\nThis is the final turn. Now, you must provide your top5 differential diagnosis.")
+                doctor_response = doctor_agent.inference(
+                    dialog_history[-1]["content"]
+                    + "\nThis is the final turn. Now, you must provide your top5 differential diagnosis."
+                )
             else:
                 doctor_response = doctor_agent.inference(dialog_history[-1]["content"])
             dialog_history.append({"role": "Doctor", "content": doctor_response})
-            logging.info("Doctor [{}%]: {}".format(int(((inf_idx + 1) / cfg.experiment.total_inferences) * 100), doctor_response))
+            logging.info(
+                "Doctor [{}%]: {}".format(
+                    int(((inf_idx + 1) / cfg.experiment.total_inferences) * 100),
+                    doctor_response,
+                )
+            )
 
             end_flag = detect_termination(doctor_response)
             if end_flag:
@@ -110,14 +155,18 @@ def main(cfg):
         end_time = time.time()
         dialog_info = {
             "hadm_id": scenario["hadm_id"],
+            "experiment_name": cfg.experiment.exp_name,
             "doctor_engine_name": doctor_agent.backend,
             "patient_engine_name": patient_agent.backend,
             "doctor_api_type": doctor_agent.backend_api_type,
             "patient_api_type": patient_agent.backend_api_type,
+            "doctor_personality": doctor_personality,
+            "doctor_prompt_file": doctor_prompt_file,
+            "patient_prompt_file": cfg.data.patient_prompt_file,
             "cefr_type": patient_agent.patient_profile["cefr_option"],
             "personality_type": patient_agent.patient_profile["personality_option"],
             "recall_level_type": patient_agent.patient_profile["recall_level_option"],
-            "dazed_level_type":patient_agent.patient_profile["dazed_level_option"],
+            "dazed_level_type": patient_agent.patient_profile["dazed_level_option"],
             "diagnosis": patient_agent.diagnosis,
             "dialog_history": dialog_history,
             "patient_token_log": patient_agent.token_log,

@@ -32,6 +32,7 @@ patient_agent:
 doctor_agent:
   api_type: gpt_azure
   backend: gpt-4o
+  personality_type: default
   max_infs: 30
   top_k_diagnosis: 5
   params:
