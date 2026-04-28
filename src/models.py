@@ -23,7 +23,15 @@ if AZURE_OPENAI_KEY != "":
     )
 
 if GENAI_API_KEY != "":
-    gen_client = genai.Client(vertexai=True, api_key=GENAI_API_KEY, http_options=HttpOptions(api_version="v1"))
+    use_vertex = os.environ.get("GOOGLE_GENAI_USE_VERTEXAI", "True").lower() == "true"
+    # AI Studio (non-Vertex) requires v1beta to accept system_instruction / thinking_config.
+    # Vertex AI accepts these on v1.
+    api_version = "v1" if use_vertex else "v1beta"
+    gen_client = genai.Client(
+        vertexai=use_vertex,
+        api_key=GENAI_API_KEY,
+        http_options=HttpOptions(api_version=api_version),
+    )
 
 time_gap = {"gpt-4": 3}
 
@@ -80,8 +88,14 @@ def gemini_response(message: list, model="gemini-2.0-flash", temperature=0, seed
     else:
         contents = message
 
+    # AI Studio (v1beta) only accepts roles "user" and "model".
+    # Vertex AI v1 also accepts "model" — both backends support this mapping.
+    role_map = {"assistant": "model", "user": "user", "model": "model"}
     try:
-        contents = [{"role": item["role"], "parts": [{"text": item["content"]}]} for item in contents]
+        contents = [
+            {"role": role_map.get(item["role"], item["role"]), "parts": [{"text": item["content"]}]}
+            for item in contents
+        ]
     except:
         raise NotImplementedError
 
