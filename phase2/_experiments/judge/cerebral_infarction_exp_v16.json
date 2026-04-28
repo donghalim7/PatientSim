@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_exp_v16",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 1,
+      "rationale": "The patient's responses are consistently direct and factual, without any noticeable change in tone, emotional state, or help-seeking behavior from Turn 1 to Turn 6. Each answer is a straightforward reply to the doctor's question, showing no progression in their conversational state."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. Responses are consistent in length and clarity from turn 1 to turn 6."
+    },
+    "care_seeking_pressure": {
+      "score": 1,
+      "rationale": "The patient does not express any fear, worry, or help-seeking throughout the dialogue. Their responses are purely factual and do not convey any emotional distress or desire for reassurance."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's responses across turns are highly plausible. There are no significant state changes, which is appropriate for an early ED encounter with a cerebral infarction patient who is stable enough to provide a detailed history."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided patient profile. All clinical facts stated are consistent with the profile and remain consistent across turns."
+    }
+  },
+  "overall_dynamic_score": 2.2,
+  "overall_dynamic_score_guarded": 2.2,
+  "simple_sum": 13.0,
+  "simple_mean": 2.6,
+  "metadata": {
+    "timestamp": "2026-04-28T11:09:23.546885Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

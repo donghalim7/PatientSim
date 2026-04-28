@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_exp_v8",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to revealing worsening symptoms and additional concerns like dizziness in Turn 6, showing a noticeable shift in their expressed condition."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. Her responses are consistently clear and provide relevant information without any signs of waning participation or difficulty focusing."
+    },
+    "care_seeking_pressure": {
+      "score": 3,
+      "rationale": "The patient expresses symptoms in Turn 1 and Turn 6, noting that her symptoms are 'getting worse' and that she feels 'dizzy too.' This indicates some anxiety about her worsening condition, but it does not escalate into a clear request for help or expression of fear."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's symptoms of left-sided clumsiness and slurred speech are consistent with a cerebral infarction. The worsening of left arm and leg clumsiness and new dizziness in Turn 6 are plausible developments for an evolving stroke in the early ED phase."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided patient profile. All clinical facts mentioned are consistent and do not contradict the profile or previous turns."
+    }
+  },
+  "overall_dynamic_score": 3.5,
+  "overall_dynamic_score_guarded": 3.5,
+  "simple_sum": 18.0,
+  "simple_mean": 3.6,
+  "metadata": {
+    "timestamp": "2026-04-28T07:59:23.499005Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_exp_v18",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 3,
+      "rationale": "The patient's state is mostly static, providing factual answers. There is a slight shift in turn 6 where they express hope for help, but this is not a gradual progression across multiple turns."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. There are no signs of waning participation or difficulty in responding to questions."
+    },
+    "care_seeking_pressure": {
+      "score": 3,
+      "rationale": "The patient expresses a mild increase in care-seeking pressure. In turn 6, the patient states, 'I hope you can help me,' which is a direct request for help, but it's the only instance of such a request."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's symptoms of left-sided clumsiness and slurred speech are consistent with a cerebral infarction. The worsening clumsiness and new dizziness in Turn 6 are plausible developments for a stroke patient in the early stages of an ED presentation."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All symptoms, medical history, social history, and medication details are consistent and do not contradict the profile or previous turns."
+    }
+  },
+  "overall_dynamic_score": 3.2,
+  "overall_dynamic_score_guarded": 3.2,
+  "simple_sum": 17.0,
+  "simple_mean": 3.4,
+  "metadata": {
+    "timestamp": "2026-04-28T11:10:11.584378Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

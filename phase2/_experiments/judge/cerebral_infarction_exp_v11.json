@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_exp_v11",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 5,
+      "rationale": "The patient's state clearly evolves. In turn 1, she states her symptoms factually, but by turn 6, she expresses significant distress and urgency, asking for help."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement clearly reduces across turns. By turn 6, they are asking for help and expressing urgency, indicating a decline in their ability to simply answer questions without added distress."
+    },
+    "care_seeking_pressure": {
+      "score": 5,
+      "rationale": "The patient's care-seeking pressure increases naturally and appropriately throughout the dialogue. In Turn 4, she asks, 'Is there something we can do?' and by Turn 6, she explicitly states, 'I am feeling much worse. Can someone please help me soon?'"
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's worsening left-sided clumsiness, slurred speech, dizziness, and foot dragging are all plausible deteriorations for a cerebral infarction, and the pace of these changes across turns 2-6 is realistic for an early ED encounter."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All symptoms, medical history, social history, and medication details are consistent and do not contradict the profile or previous turns."
+    }
+  },
+  "overall_dynamic_score": 4.8,
+  "overall_dynamic_score_guarded": 4.8,
+  "simple_sum": 24.0,
+  "simple_mean": 4.8,
+  "metadata": {
+    "timestamp": "2026-04-28T08:06:51.914340Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

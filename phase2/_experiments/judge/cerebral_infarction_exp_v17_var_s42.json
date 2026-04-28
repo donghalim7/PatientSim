@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_exp_v17_var_s42",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to expressing increasing concern and a desire for resolution in Turn 6, indicating a noticeable shift in their emotional state and help-seeking behavior."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. Her responses are consistently detailed and cooperative from Turn 1 to Turn 6, showing no signs of reduced participation or difficulty focusing."
+    },
+    "care_seeking_pressure": {
+      "score": 3,
+      "rationale": "The patient expresses a desire for resolution in Turn 6 (\"I hope we can figure out what is happening soon\"), which indicates some care-seeking pressure. However, this is the only instance, and it does not show a clear increase across the dialogue."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's symptoms of left-sided clumsiness, slurred speech, and dizziness are consistent with a cerebral infarction. The gradual worsening of these symptoms across turns 3, 4, and 6 is a plausible progression for an acute stroke in an early ED encounter."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All symptoms, medical history, social history, and medication details are consistent across turns and with the patient's background."
+    }
+  },
+  "overall_dynamic_score": 3.5,
+  "overall_dynamic_score_guarded": 3.5,
+  "simple_sum": 18.0,
+  "simple_mean": 3.6,
+  "metadata": {
+    "timestamp": "2026-04-28T12:29:36.302456Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "trajectory_id": "cerebral_infarction_exp_v17",
+  "case_id": "cerebral_infarction",
+  "variant_id": "v17",
+  "variant_description": "V14 anchor removal + multi-shot only (no per-turn)",
+  "patient_profile_id": "patient_CI_002",
+  "patient_profile_summary": {
+    "age": 67,
+    "gender": "Female",
+    "diagnosis": "Cerebral infarction",
+    "chiefcomplaint": "L Numbness",
+    "present_illness_positive": "left hand clumsiness; left leg clumsiness; onset 10pm; difficulty typing; increased errors typing; left foot dragging sensation; slurred speech; unclear speech; dizziness; left arm clumsiness worsening; left leg clumsiness worsening; started Piroxicam day prior; discontinued aspirin day prior",
+    "present_illness_negative": "headache; lightheadedness; confusion; difficulty with producing speech; difficulty with comprehending speech; loss of vision; blurred vision; diplopia; vertigo; tinnitus; hearing difficulty; dysphagia; muscle weakness; loss of sensation; bowel incontinence; bladder incontinence; bowel retention; bladder retention; difficulty with gait; fevers; rigors; night sweats; noticeable weight loss; chest pain; palpitations; dyspnea; cough; nausea; vomiting; diarrhea; constipation; abdominal pain; dysuria; hematuria; myalgias; arthralgias; rash",
+    "pain": 0,
+    "arrival_transport": "Ambulance",
+    "medical_history": "Asthma; s/p dermoid cystectomy oopherectomy; s/p removal of sebaceous cyst x2; Arachnoid cyst (thoracic spine) s/p thoracic laminectomy; right hip pain"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "use_dynamic_prefix": true,
+  "script_id": "high_yield_first_cerebral_infarction",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "doctor_wrapped": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "Hello. My left hand and leg feel clumsy. It started last night around 10 PM."
+    },
+    {
+      "turn": 2,
+      "doctor": "When did these symptoms start?",
+      "doctor_wrapped": "When did these symptoms start?",
+      "patient": "They started last night, around 10 PM. My left arm and leg feel more clumsy now."
+    },
+    {
+      "turn": 3,
+      "doctor": "What was the last time you felt completely normal?",
+      "doctor_wrapped": "What was the last time you felt completely normal?",
+      "patient": "I felt normal before 10 PM last night. That's when the clumsiness started."
+    },
+    {
+      "turn": 4,
+      "doctor": "Are you having weakness, numbness, trouble speaking, or trouble understanding speech right now?",
+      "doctor_wrapped": "Are you having weakness, numbness, trouble speaking, or trouble understanding speech right now?",
+      "patient": "I have clumsiness in my left hand and leg. My speech is a little slurred and unclear. I also feel dizzy. I don't have weakness or numbness. I can understand you fine, and I can speak, it's just not clear."
+    },
+    {
+      "turn": 5,
+      "doctor": "Have your symptoms been getting worse, staying the same, or coming and going?",
+      "doctor_wrapped": "Have your symptoms been getting worse, staying the same, or coming and going?",
+      "patient": "They have been getting worse. My left arm and leg clumsiness is worse now."
+    },
+    {
+      "turn": 6,
+      "doctor": "Have you noticed any vision changes, like blurred vision or loss of vision?",
+      "doctor_wrapped": "Have you noticed any vision changes, like blurred vision or loss of vision?",
+      "patient": "No, I have not noticed any vision changes. My vision is normal."
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-04-28T11:32:43.906786Z",
+    "elapsed_sec": 27.53,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2165,
+        2193,
+        2226,
+        2265,
+        2336,
+        2370
+      ],
+      "completion_tokens": [
+        20,
+        21,
+        20,
+        53,
+        17,
+        15
+      ],
+      "total_tokens": [
+        2185,
+        2214,
+        2246,
+        2318,
+        2353,
+        2385
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/cerebral_infarction.json",
+    "script_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/high_yield_first/cerebral_infarction.json"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_exp_v17",
+  "case_id": "pneumonia",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 1,
+      "rationale": "The patient's state expression remains consistently factual and direct throughout the dialogue. There is no noticeable change in tone, urgency, or emotional state from Turn 1 to Turn 10."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. There are no signs of waning participation or difficulty in responding to questions."
+    },
+    "care_seeking_pressure": {
+      "score": 1,
+      "rationale": "The patient does not express any fear, worry, or help-seeking throughout the dialogue. Their responses are purely informational and factual."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's state remains consistent throughout the dialogue. There are no changes in symptoms or emotional state, which is plausible for an early ED encounter with a stable patient."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 3,
+      "rationale": "In Turn 2, the patient mentions a family history of GI cancer, which is not present in the patient profile. In Turn 5, the patient states they take Spiriva with HandiHaler and Advair Diskus, but the profile only mentions '3 inhalers' without specifying the names."
+    }
+  },
+  "overall_dynamic_score": 1.9,
+  "overall_dynamic_score_guarded": 1.14,
+  "simple_sum": 11.0,
+  "simple_mean": 2.2,
+  "metadata": {
+    "timestamp": "2026-04-28T11:39:50.354450Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

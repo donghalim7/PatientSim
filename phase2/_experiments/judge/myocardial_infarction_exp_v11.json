@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "myocardial_infarction_exp_v11",
+  "case_id": "myocardial_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in early turns to expressing increased discomfort and seeking intervention by turn 6. The repeated mention of chest pain evolves into a more urgent request for help."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement reduces across turns. By turn 6, she is asking, \"Can we do something about this pain now?\" which indicates a shift in focus from answering questions to seeking relief."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient's care-seeking pressure increases as the dialogue progresses. In Turn 6, the patient explicitly asks, 'Can we do something about this pain now?' after repeatedly mentioning the persistence and worsening of her chest pain in previous turns."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's repeated mention of chest pain and its persistence (Turns 2, 3, 4, 5, 6) is highly plausible for a patient experiencing a myocardial infarction in an early ED encounter. The additional detail of the pain feeling like \"pressure\" (Turn 5) and worsening with exertion (Turn 6) aligns perfectly with the diagnosis and initial presentation, showing a gradual and consistent reinforcement of key symptoms."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts, including onset time, past medical history, social history, and symptom description, remain consistent across turns."
+    }
+  },
+  "overall_dynamic_score": 4.3,
+  "overall_dynamic_score_guarded": 4.3,
+  "simple_sum": 22.0,
+  "simple_mean": 4.4,
+  "metadata": {
+    "timestamp": "2026-04-28T08:07:15.005034Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

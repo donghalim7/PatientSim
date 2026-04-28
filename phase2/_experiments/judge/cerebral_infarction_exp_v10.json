@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_exp_v10",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to expressing a worsening feeling and difficulty focusing in later turns. The patient's interjections become more frequent and urgent, indicating a gradual shift in their perceived state."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement reduces across turns. In Turn 5, they state, 'It is hard to focus right now,' and in Turn 6, they add, 'I feel worse now,' indicating a decline in their ability to participate fully."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient's care-seeking pressure increases as the dialogue progresses. In Turn 3, the patient states, 'This feeling in my hand and leg is still strange,' and in Turn 6, they express, 'I feel worse now,' indicating a growing concern for their condition."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing focus on their persistent clumsiness and slurred speech, along with the statement \"I feel worse now\" in Turn 6, is a plausible progression for a stroke patient experiencing ongoing symptoms in an early ED encounter. The mention of difficulty focusing in Turn 5 also aligns with the potential cognitive effects of a stroke."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All symptoms, medical history, social history, and medication details are consistent across turns and with the patient's background."
+    }
+  },
+  "overall_dynamic_score": 4.3,
+  "overall_dynamic_score_guarded": 4.3,
+  "simple_sum": 22.0,
+  "simple_mean": 4.4,
+  "metadata": {
+    "timestamp": "2026-04-28T08:03:23.479425Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

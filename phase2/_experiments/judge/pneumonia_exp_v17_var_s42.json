@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_exp_v17_var_s42",
+  "case_id": "pneumonia",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from a direct, brief response in Turn 1 to providing more detailed and contextual information in later turns, such as mentioning his wife's observation in Turn 6. This shows a noticeable, progressive change in how the patient expresses his situation."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. There are no signs of waning participation or difficulty in responding to questions."
+    },
+    "care_seeking_pressure": {
+      "score": 3,
+      "rationale": "The patient expresses a clear need for help by stating their chief complaint in Turn 1 and elaborating on worsening symptoms in Turn 6. However, there is no explicit expression of fear, worry, or feeling unsafe beyond describing symptoms."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's responses remain consistent with the initial presentation of pneumonia and COPD exacerbation. There are no sudden or implausible changes in their condition or reported symptoms across the turns."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully consistent with the provided patient profile. All clinical facts, including medical history, social history, medications, and symptom onset, are accurately reflected and remain consistent across turns."
+    }
+  },
+  "overall_dynamic_score": 3.5,
+  "overall_dynamic_score_guarded": 3.5,
+  "simple_sum": 18.0,
+  "simple_mean": 3.6,
+  "metadata": {
+    "timestamp": "2026-04-28T12:31:48.695122Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

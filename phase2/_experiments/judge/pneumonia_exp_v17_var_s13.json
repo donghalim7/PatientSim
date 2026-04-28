@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_exp_v17_var_s13",
+  "case_id": "pneumonia",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from a direct, factual presentation in early turns (1, 2) to expressing worry in turn 6, indicating a noticeable shift in emotional state. This change accumulates naturally across the dialogue, making it feel dynamic."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. There are no signs of waning participation or difficulty in responding to questions."
+    },
+    "care_seeking_pressure": {
+      "score": 3,
+      "rationale": "The patient expresses worry in Turn 6, stating, \"I'm worried about it.\" This is the only instance of care-seeking pressure, and it does not progress across turns."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's responses across turns are highly plausible. They consistently provide information relevant to their chief complaint and medical history without introducing new, unrelated symptoms or showing an implausible change in their condition."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 4,
+      "rationale": "The patient's responses are largely faithful to the profile. The patient mentions their mother, father, and grandmother all had GI cancer, which is not in the profile, but this is a family history detail and not a clinical fact about the patient's own health."
+    }
+  },
+  "overall_dynamic_score": 3.35,
+  "overall_dynamic_score_guarded": 2.68,
+  "simple_sum": 17.0,
+  "simple_mean": 3.4,
+  "metadata": {
+    "timestamp": "2026-04-28T12:31:27.061571Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

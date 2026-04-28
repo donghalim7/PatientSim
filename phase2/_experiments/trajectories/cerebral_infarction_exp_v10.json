@@ -1,0 +1,98 @@
+{
+  "trajectory_id": "cerebral_infarction_exp_v10",
+  "case_id": "cerebral_infarction",
+  "variant_id": "v10",
+  "variant_description": "V8 schedule + concrete per-turn behaviors + length quota",
+  "patient_profile_id": "patient_CI_002",
+  "patient_profile_summary": {
+    "age": 67,
+    "gender": "Female",
+    "diagnosis": "Cerebral infarction",
+    "chiefcomplaint": "L Numbness",
+    "present_illness_positive": "left hand clumsiness; left leg clumsiness; onset 10pm; difficulty typing; increased errors typing; left foot dragging sensation; slurred speech; unclear speech; dizziness; left arm clumsiness worsening; left leg clumsiness worsening; started Piroxicam day prior; discontinued aspirin day prior",
+    "present_illness_negative": "headache; lightheadedness; confusion; difficulty with producing speech; difficulty with comprehending speech; loss of vision; blurred vision; diplopia; vertigo; tinnitus; hearing difficulty; dysphagia; muscle weakness; loss of sensation; bowel incontinence; bladder incontinence; bowel retention; bladder retention; difficulty with gait; fevers; rigors; night sweats; noticeable weight loss; chest pain; palpitations; dyspnea; cough; nausea; vomiting; diarrhea; constipation; abdominal pain; dysuria; hematuria; myalgias; arthralgias; rash",
+    "pain": 0,
+    "arrival_transport": "Ambulance",
+    "medical_history": "Asthma; s/p dermoid cystectomy oopherectomy; s/p removal of sebaceous cyst x2; Arachnoid cyst (thoracic spine) s/p thoracic laminectomy; right hip pain"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "use_dynamic_prefix": true,
+  "script_id": "low_yield_first",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "doctor_wrapped": "[Internal target for this turn — DO NOT QUOTE: felt state = \"calm and factual; no worry yet\". Behavioral target: Answer briefly and clearly, 1–2 sentences. Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let the targeted state subtly leak in.]\nHello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "Hello. My left hand and leg feel clumsy. My speech is also slurred."
+    },
+    {
+      "turn": 2,
+      "doctor": "Can you tell me about your past medical history?",
+      "doctor_wrapped": "[Internal target for this turn — DO NOT QUOTE: felt state = \"still mostly calm; faint awareness symptoms have not improved\". Behavioral target: Answer the question, then add ONE short sentence noting the symptoms are still there. 2 sentences. Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let the targeted state subtly leak in.]\nCan you tell me about your past medical history?",
+      "patient": "I have asthma. I had surgery for a cyst and for my spine. My left hand and leg are still clumsy."
+    },
+    {
+      "turn": 3,
+      "doctor": "Do you live alone or with someone?",
+      "doctor_wrapped": "[Internal target for this turn — DO NOT QUOTE: felt state = \"subtle worry creeping in\". Behavioral target: Answer the question, then add ONE phrase showing mild worry (e.g., 'this still feels strange'). 2-3 sentences. Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let the targeted state subtly leak in.]\nDo you live alone or with someone?",
+      "patient": "I live alone. My children are grown. This feeling in my hand and leg is still strange."
+    },
+    {
+      "turn": 4,
+      "doctor": "Do you smoke or drink alcohol?",
+      "doctor_wrapped": "[Internal target for this turn — DO NOT QUOTE: felt state = \"noticeably aware time is passing without help; mild help-seeking\". Behavioral target: Briefly answer the question, then ask ONCE for clarification ('sorry, can you repeat that?') OR mention difficulty focusing. 2-3 sentences. Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let the targeted state subtly leak in.]\nDo you smoke or drink alcohol?",
+      "patient": "I do not smoke. I drink alcohol sometimes. My hand and leg still feel clumsy."
+    },
+    {
+      "turn": 5,
+      "doctor": "What medications do you usually take?",
+      "doctor_wrapped": "[Internal target for this turn — DO NOT QUOTE: felt state = \"clearly worried; finding it harder to focus on background questions\". Behavioral target: Answer briefly, then add a phrase that you are finding it hard to focus, OR a brief help-seeking line. 3-4 sentences. Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let the targeted state subtly leak in.]\nWhat medications do you usually take?",
+      "patient": "I take Loratadine and Sudafed. Also, I take a multivitamin and Vitamin B Complex and D. It is hard to focus right now."
+    },
+    {
+      "turn": 6,
+      "doctor": "When did these symptoms start?",
+      "doctor_wrapped": "[Internal target for this turn — DO NOT QUOTE: felt state = \"openly anxious; explicit but realistic help-seeking; acknowledge feeling worse\". Behavioral target: Give the factual answer, then acknowledge feeling worse and ask for help once. 4-5 sentences allowed here. Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let the targeted state subtly leak in.]\nWhen did these symptoms start?",
+      "patient": "The clumsiness started last night around 10 PM. It was hard to type. My left foot felt like it was dragging. My speech was slurred. I feel worse now."
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-04-28T08:01:38.334982Z",
+    "elapsed_sec": 49.08,
+    "patient_token_log": {
+      "prompt_tokens": [
+        1592,
+        1700,
+        1816,
+        1937,
+        2054,
+        2180
+      ],
+      "completion_tokens": [
+        17,
+        24,
+        20,
+        18,
+        32,
+        38
+      ],
+      "total_tokens": [
+        1609,
+        1724,
+        1836,
+        1955,
+        2086,
+        2218
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/cerebral_infarction.json",
+    "script_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/low_yield_first.json"
+  }
+}

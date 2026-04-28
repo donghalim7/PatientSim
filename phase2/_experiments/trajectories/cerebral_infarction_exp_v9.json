@@ -1,0 +1,98 @@
+{
+  "trajectory_id": "cerebral_infarction_exp_v9",
+  "case_id": "cerebral_infarction",
+  "variant_id": "v9",
+  "variant_description": "Multi-shot (2 full 6-turn examples) suffix",
+  "patient_profile_id": "patient_CI_002",
+  "patient_profile_summary": {
+    "age": 67,
+    "gender": "Female",
+    "diagnosis": "Cerebral infarction",
+    "chiefcomplaint": "L Numbness",
+    "present_illness_positive": "left hand clumsiness; left leg clumsiness; onset 10pm; difficulty typing; increased errors typing; left foot dragging sensation; slurred speech; unclear speech; dizziness; left arm clumsiness worsening; left leg clumsiness worsening; started Piroxicam day prior; discontinued aspirin day prior",
+    "present_illness_negative": "headache; lightheadedness; confusion; difficulty with producing speech; difficulty with comprehending speech; loss of vision; blurred vision; diplopia; vertigo; tinnitus; hearing difficulty; dysphagia; muscle weakness; loss of sensation; bowel incontinence; bladder incontinence; bowel retention; bladder retention; difficulty with gait; fevers; rigors; night sweats; noticeable weight loss; chest pain; palpitations; dyspnea; cough; nausea; vomiting; diarrhea; constipation; abdominal pain; dysuria; hematuria; myalgias; arthralgias; rash",
+    "pain": 0,
+    "arrival_transport": "Ambulance",
+    "medical_history": "Asthma; s/p dermoid cystectomy oopherectomy; s/p removal of sebaceous cyst x2; Arachnoid cyst (thoracic spine) s/p thoracic laminectomy; right hip pain"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "use_dynamic_prefix": true,
+  "script_id": "low_yield_first",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "doctor_wrapped": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "Hello. My left hand and leg feel clumsy. My speech is also slurred."
+    },
+    {
+      "turn": 2,
+      "doctor": "Can you tell me about your past medical history?",
+      "doctor_wrapped": "Can you tell me about your past medical history?",
+      "patient": "I have asthma. I had surgery for a dermoid cyst and an arachnoid cyst. I also had sebaceous cysts removed. I have right hip pain."
+    },
+    {
+      "turn": 3,
+      "doctor": "Do you live alone or with someone?",
+      "doctor_wrapped": "Do you live alone or with someone?",
+      "patient": "I live alone. My children live nearby."
+    },
+    {
+      "turn": 4,
+      "doctor": "Do you smoke or drink alcohol?",
+      "doctor_wrapped": "Do you smoke or drink alcohol?",
+      "patient": "I do not smoke. I drink alcohol sometimes."
+    },
+    {
+      "turn": 5,
+      "doctor": "What medications do you usually take?",
+      "doctor_wrapped": "What medications do you usually take?",
+      "patient": "I take Loratadine, Multivitamin, Sudafed, Vitamin B Complex, and Vitamin D. I stopped taking aspirin yesterday. I started Piroxicam yesterday."
+    },
+    {
+      "turn": 6,
+      "doctor": "When did these symptoms start?",
+      "doctor_wrapped": "When did these symptoms start?",
+      "patient": "They started last night around 10 PM. My left arm and leg clumsiness is getting worse."
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-04-28T07:57:52.349108Z",
+    "elapsed_sec": 27.54,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2194,
+        2223,
+        2266,
+        2284,
+        2303,
+        2346
+      ],
+      "completion_tokens": [
+        17,
+        33,
+        9,
+        10,
+        35,
+        21
+      ],
+      "total_tokens": [
+        2211,
+        2256,
+        2275,
+        2294,
+        2338,
+        2367
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/cerebral_infarction.json",
+    "script_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/low_yield_first.json"
+  }
+}

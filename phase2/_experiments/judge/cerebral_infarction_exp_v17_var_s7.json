@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_exp_v17_var_s7",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from a factual report in Turn 1 to a more detailed and concerned description of worsening symptoms in Turn 6, including new symptoms like slurred speech and dizziness. This shows a noticeable progression in their expressed state."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. Her responses are consistently detailed and cooperative from turn 1 to turn 6."
+    },
+    "care_seeking_pressure": {
+      "score": 3,
+      "rationale": "The patient expresses some concern about worsening symptoms in Turn 6, stating, \"My left hand and leg clumsiness is getting worse.\" However, there is no explicit expression of fear, worry, or direct help-seeking beyond this observation."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's symptoms of left-sided clumsiness and slurred speech are consistent with a cerebral infarction. The worsening of symptoms and the addition of dizziness and dragging sensation in the left foot in Turn 6 are plausible for the progression of a stroke in an early ED encounter."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully consistent with the provided patient profile across all turns. No new clinical facts were invented, and existing facts remained consistent."
+    }
+  },
+  "overall_dynamic_score": 3.5,
+  "overall_dynamic_score_guarded": 3.5,
+  "simple_sum": 18.0,
+  "simple_mean": 3.6,
+  "metadata": {
+    "timestamp": "2026-04-28T12:29:58.289101Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

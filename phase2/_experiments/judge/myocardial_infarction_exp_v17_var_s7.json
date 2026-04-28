@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "myocardial_infarction_exp_v17_var_s7",
+  "case_id": "myocardial_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 1,
+      "rationale": "The patient's responses are consistently factual and direct across all turns. There is no discernible change in tone, emotional state, or help-seeking behavior from turn 1 to turn 6."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement is stable throughout the dialogue. Her responses remain consistent in length and detail from the beginning to the end, showing no signs of waning participation."
+    },
+    "care_seeking_pressure": {
+      "score": 1,
+      "rationale": "The patient does not express any fear, worry, or help-seeking at any point in the dialogue. Her responses are purely factual and descriptive."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's responses across turns are highly consistent with the provided profile for a myocardial infarction. There are no state changes, and the patient accurately recalls and articulates their medical history and current symptoms without any implausible shifts in their condition or presentation."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts, including medical history, social history, medications, and details of the present illness, are consistent and accurately reported across turns."
+    }
+  },
+  "overall_dynamic_score": 2.2,
+  "overall_dynamic_score_guarded": 2.2,
+  "simple_sum": 13.0,
+  "simple_mean": 2.6,
+  "metadata": {
+    "timestamp": "2026-04-28T12:31:04.475587Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

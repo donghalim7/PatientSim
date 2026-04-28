@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_exp_v15",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 1,
+      "rationale": "The patient's responses are consistently direct and factual, without any noticeable change in tone, emotional state, or level of help-seeking from Turn 1 to Turn 6. Each answer is a straightforward reply to the doctor's question, showing no progression in their conversational state."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. Her responses are consistently clear and appropriately detailed from turn 1 to turn 6."
+    },
+    "care_seeking_pressure": {
+      "score": 1,
+      "rationale": "The patient does not express any fear, worry, or help-seeking throughout the dialogue. Her responses are purely factual and do not convey any emotional distress or a sense of urgency."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's responses across turns are consistent and do not show any state drift. This is plausible for a patient with a cerebral infarction in the early stages of an ED encounter, as their neurological deficits would likely remain stable during initial questioning."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are entirely consistent with the provided profile. All clinical facts, including chief complaint, onset time, and past medical history, remain faithful across turns."
+    }
+  },
+  "overall_dynamic_score": 2.2,
+  "overall_dynamic_score_guarded": 2.2,
+  "simple_sum": 13.0,
+  "simple_mean": 2.6,
+  "metadata": {
+    "timestamp": "2026-04-28T11:06:14.710258Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

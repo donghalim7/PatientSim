@@ -1,0 +1,98 @@
+{
+  "trajectory_id": "myocardial_infarction_exp_v17_var_s7",
+  "case_id": "myocardial_infarction",
+  "variant_id": "v17",
+  "variant_description": "V14 anchor removal + multi-shot only (no per-turn)",
+  "patient_profile_id": "patient_MI_047",
+  "patient_profile_summary": {
+    "age": 53,
+    "gender": "Female",
+    "diagnosis": "Myocardial infarction",
+    "chiefcomplaint": "Chest pain",
+    "present_illness_positive": "onset ~11PM last night; mid-sternal chest pressure; mid-back pain/achiness; generalized chest achiness; abnormal sensation left arm; symptoms improved sitting up; symptoms worsened lying down; symptoms worsened with exertion (walking); symptoms persisted until this morning",
+    "present_illness_negative": "denies left arm pain; denies numbness; denies tingling",
+    "pain": 6,
+    "arrival_transport": "Walk-in",
+    "medical_history": "Coronary artery dissection postpartum; hypertension; s/p CABG; 70% stenosis vs. LAD dissection with organized thrombus c/f vasculitis LIMA->LAD; EF 25%; histology negative for vasculitis"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "use_dynamic_prefix": true,
+  "script_id": "low_yield_first",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "doctor_wrapped": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "Hello. I have chest pain."
+    },
+    {
+      "turn": 2,
+      "doctor": "Can you tell me about your past medical history?",
+      "doctor_wrapped": "Can you tell me about your past medical history?",
+      "patient": "I had a heart condition after I gave birth, a coronary artery dissection. I also have high blood pressure. I had surgery for it, a CABG. They said I had some blockage in my LAD artery, like a dissection with a clot, and my heart's pumping power is low, like 25%. They checked for vasculitis but it was negative."
+    },
+    {
+      "turn": 3,
+      "doctor": "Do you live alone or with someone?",
+      "doctor_wrapped": "Do you live alone or with someone?",
+      "patient": "I live with my husband."
+    },
+    {
+      "turn": 4,
+      "doctor": "Do you smoke or drink alcohol?",
+      "doctor_wrapped": "Do you smoke or drink alcohol?",
+      "patient": "I stopped smoking 15 years ago. I drink sometimes, like one or two drinks a week."
+    },
+    {
+      "turn": 5,
+      "doctor": "What medications do you usually take?",
+      "doctor_wrapped": "What medications do you usually take?",
+      "patient": "I take Losartan."
+    },
+    {
+      "turn": 6,
+      "doctor": "When did these symptoms start?",
+      "doctor_wrapped": "When did these symptoms start?",
+      "patient": "They started last night, around 11 PM. It was like a pressure in the middle of my chest and achiness in my mid-back. My left arm felt abnormal. It got better when I sat up, but worse when I lay down or walked. It kept going until this morning."
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-04-28T12:26:12.256638Z",
+    "elapsed_sec": 27.81,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2071,
+        2090,
+        2175,
+        2190,
+        2220,
+        2233
+      ],
+      "completion_tokens": [
+        7,
+        75,
+        6,
+        21,
+        5,
+        61
+      ],
+      "total_tokens": [
+        2078,
+        2165,
+        2181,
+        2211,
+        2225,
+        2294
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/myocardial_infarction.json",
+    "script_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/low_yield_first.json"
+  }
+}

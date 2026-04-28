@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "myocardial_infarction_exp_v17",
+  "case_id": "myocardial_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from a factual, direct presentation of symptoms in early turns (Turn 1, Turn 2) to expressing more detail and concern in later turns (Turn 6, Turn 10). The shift is noticeable and feels dynamic, particularly with the added emotional context in Turn 10."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains consistently stable throughout the dialogue. There are no signs of waning participation or difficulty in responding to questions across turns."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient expresses some worry in Turn 7, stating 'No, not like this. I mean, I have a heart condition, but these specific symptoms, the way they started and felt, this is new.' This progresses to a more direct expression of worry and a desire for resolution in Turn 10: 'I'm a bit worried about it, especially with my heart history. I hope we can figure out what is happening soon.'"
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's state remains consistent throughout the dialogue, accurately reflecting the initial presentation of chest pain and associated symptoms. There are no implausible changes in the patient's condition or emotional state, which is appropriate for an early ED encounter for a myocardial infarction."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts, including onset time, symptom description, past medical history, social history, and allergies, are consistent across turns and with the patient's profile."
+    }
+  },
+  "overall_dynamic_score": 3.7,
+  "overall_dynamic_score_guarded": 3.7,
+  "simple_sum": 19.0,
+  "simple_mean": 3.8,
+  "metadata": {
+    "timestamp": "2026-04-28T11:39:28.464155Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

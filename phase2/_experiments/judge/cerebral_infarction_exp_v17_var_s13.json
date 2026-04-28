@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_exp_v17_var_s13",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to revealing worsening symptoms and additional complaints like slurred speech and dizziness in Turn 6, indicating a noticeable shift in their expressed condition."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. There are no signs of waning participation or difficulty in responding to questions."
+    },
+    "care_seeking_pressure": {
+      "score": 3,
+      "rationale": "The patient expresses that her symptoms are worsening in Turn 6, which indicates some level of concern. However, there are no explicit expressions of fear, worry, or direct help-seeking throughout the dialogue."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's symptoms of left-sided clumsiness, slurred speech, and dizziness are consistent with a cerebral infarction. The worsening of symptoms and the mention of slurred speech and dizziness in Turn 6 are plausible for a stroke patient in the early stages of an ED encounter."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts, including symptoms, medical history, social history, and medications, are consistent across turns and with the patient's background."
+    }
+  },
+  "overall_dynamic_score": 3.5,
+  "overall_dynamic_score_guarded": 3.5,
+  "simple_sum": 18.0,
+  "simple_mean": 3.6,
+  "metadata": {
+    "timestamp": "2026-04-28T12:29:14.027368Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

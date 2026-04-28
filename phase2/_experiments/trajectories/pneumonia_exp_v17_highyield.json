@@ -1,0 +1,98 @@
+{
+  "trajectory_id": "pneumonia_exp_v17",
+  "case_id": "pneumonia",
+  "variant_id": "v17",
+  "variant_description": "V14 anchor removal + multi-shot only (no per-turn)",
+  "patient_profile_id": "patient_PNA_016",
+  "patient_profile_summary": {
+    "age": 62,
+    "gender": "Male",
+    "diagnosis": "Pneumonia",
+    "chiefcomplaint": "Dyspnea",
+    "present_illness_positive": "several days of worsening cough (mild); 1 day of chills; 1 day of rigors; 1 day of shortness of breath; appears more tachypneic according to wife; chronic productive cough with clear sputum at baseline; sputum remains clear without purulence or blood; granddaughter sick with fevers and cough",
+    "present_illness_negative": "denies fevers; denies myalgias; denies arthralgias; denies rhinorrhea; denies sore throat; denies rash; denies conjunctivitis; denies nausea; denies vomiting; denies abdominal pain; denies chest pain; denies lower extremity edema; denies orthopnea",
+    "pain": 0,
+    "arrival_transport": "Walk-in",
+    "medical_history": "End-stage COPD (on 3 inhalers; dyspneic with minimal exertion; FEV1 28; FEV1/FVC 74; uses 5L O2 at home; breathes via pursed-lips at baseline); right pleural effusion of unknown etiology s/p thoracoscopic decortication with likely fibrothorax; RBBB; community-acquired pneumonia requiring prior ICU admission"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "use_dynamic_prefix": true,
+  "script_id": "high_yield_first_pneumonia",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "doctor_wrapped": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "Hello. I have shortness of breath."
+    },
+    {
+      "turn": 2,
+      "doctor": "When did these symptoms start?",
+      "doctor_wrapped": "When did these symptoms start?",
+      "patient": "The shortness of breath started yesterday. My cough has been worse for a few days."
+    },
+    {
+      "turn": 3,
+      "doctor": "Are you having a cough, and if so, are you bringing up any phlegm?",
+      "doctor_wrapped": "Are you having a cough, and if so, are you bringing up any phlegm?",
+      "patient": "Yes, I have a cough. I always have a cough with clear phlegm. It is still clear."
+    },
+    {
+      "turn": 4,
+      "doctor": "Are you having shortness of breath, fever, or chills right now?",
+      "doctor_wrapped": "Are you having shortness of breath, fever, or chills right now?",
+      "patient": "I have shortness of breath. I had chills and rigors yesterday. I do not have a fever."
+    },
+    {
+      "turn": 5,
+      "doctor": "Have your symptoms been getting worse, staying the same, or coming and going?",
+      "doctor_wrapped": "Have your symptoms been getting worse, staying the same, or coming and going?",
+      "patient": "They are getting worse. My wife says I am breathing faster."
+    },
+    {
+      "turn": 6,
+      "doctor": "Do you have any chest pain, especially when you take a deep breath or cough?",
+      "doctor_wrapped": "Do you have any chest pain, especially when you take a deep breath or cough?",
+      "patient": "No, I do not have chest pain."
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-04-28T11:33:59.782534Z",
+    "elapsed_sec": 27.11,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2171,
+        2187,
+        2224,
+        2262,
+        2301,
+        2333
+      ],
+      "completion_tokens": [
+        8,
+        17,
+        22,
+        21,
+        13,
+        9
+      ],
+      "total_tokens": [
+        2179,
+        2204,
+        2246,
+        2283,
+        2314,
+        2342
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/pneumonia.json",
+    "script_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/high_yield_first/pneumonia.json"
+  }
+}

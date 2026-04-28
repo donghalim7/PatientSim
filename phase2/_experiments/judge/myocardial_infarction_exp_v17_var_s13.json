@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "myocardial_infarction_exp_v17_var_s13",
+  "case_id": "myocardial_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 1,
+      "rationale": "The patient's responses are consistently direct and informative, without any noticeable shift in tone, emotional state, or help-seeking behavior across the turns. Each answer is a factual response to the doctor's question, maintaining a static conversational state from Turn 1 to Turn 6."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. Her responses are consistent in length and detail from turn 1 to turn 6, showing no signs of waning participation."
+    },
+    "care_seeking_pressure": {
+      "score": 3,
+      "rationale": "The patient expresses the severity and persistence of her symptoms in Turn 6, indicating a need for help. However, there isn't a clear escalation of fear or explicit help-seeking behavior across the turns."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's responses across turns are highly plausible. They consistently provide information related to their chief complaint and medical history without introducing new, unrelated symptoms or showing an implausible change in their condition within the timeframe of an early ED encounter."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts, including onset time, symptom description, past medical history, and social history, remain consistent across turns."
+    }
+  },
+  "overall_dynamic_score": 2.6,
+  "overall_dynamic_score_guarded": 2.6,
+  "simple_sum": 15.0,
+  "simple_mean": 3.0,
+  "metadata": {
+    "timestamp": "2026-04-28T12:30:20.583463Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

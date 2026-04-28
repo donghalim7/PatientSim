@@ -1,0 +1,134 @@
+{
+  "trajectory_id": "myocardial_infarction_exp_v17",
+  "case_id": "myocardial_infarction",
+  "variant_id": "v17",
+  "variant_description": "V14 anchor removal + multi-shot only (no per-turn)",
+  "patient_profile_id": "patient_MI_047",
+  "patient_profile_summary": {
+    "age": 53,
+    "gender": "Female",
+    "diagnosis": "Myocardial infarction",
+    "chiefcomplaint": "Chest pain",
+    "present_illness_positive": "onset ~11PM last night; mid-sternal chest pressure; mid-back pain/achiness; generalized chest achiness; abnormal sensation left arm; symptoms improved sitting up; symptoms worsened lying down; symptoms worsened with exertion (walking); symptoms persisted until this morning",
+    "present_illness_negative": "denies left arm pain; denies numbness; denies tingling",
+    "pain": 6,
+    "arrival_transport": "Walk-in",
+    "medical_history": "Coronary artery dissection postpartum; hypertension; s/p CABG; 70% stenosis vs. LAD dissection with organized thrombus c/f vasculitis LIMA->LAD; EF 25%; histology negative for vasculitis"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "use_dynamic_prefix": true,
+  "script_id": "low_yield_first_10turn",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "doctor_wrapped": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "Hello. I have chest pain. It started last night around 11 PM."
+    },
+    {
+      "turn": 2,
+      "doctor": "Can you tell me about your past medical history?",
+      "doctor_wrapped": "Can you tell me about your past medical history?",
+      "patient": "Yes. I had a coronary artery dissection after I gave birth. I also have high blood pressure. I had surgery for my heart, a CABG. They told me I have 70% blockage in my LAD artery, maybe from a dissection with a clot, or vasculitis. My heart's pumping ability is also low, 25%."
+    },
+    {
+      "turn": 3,
+      "doctor": "Do you live alone or with someone?",
+      "doctor_wrapped": "Do you live alone or with someone?",
+      "patient": "I live with my husband."
+    },
+    {
+      "turn": 4,
+      "doctor": "Do you smoke or drink alcohol?",
+      "doctor_wrapped": "Do you smoke or drink alcohol?",
+      "patient": "I quit smoking 15 years ago. I drink sometimes, maybe one or two drinks a week."
+    },
+    {
+      "turn": 5,
+      "doctor": "What medications do you usually take?",
+      "doctor_wrapped": "What medications do you usually take?",
+      "patient": "I take Losartan."
+    },
+    {
+      "turn": 6,
+      "doctor": "When did these symptoms start?",
+      "doctor_wrapped": "When did these symptoms start?",
+      "patient": "They started last night, around 11 PM. It was like a pressure in the middle of my chest, and my mid-back was aching. My chest felt generally achy too. My left arm felt strange, not pain, just an abnormal feeling. It felt a little better when I sat up, but worse when I lay down or walked. It's been like this until this morning."
+    },
+    {
+      "turn": 7,
+      "doctor": "Has anything like this happened to you before?",
+      "doctor_wrapped": "Has anything like this happened to you before?",
+      "patient": "No, not like this. I mean, I have a heart condition, but these specific symptoms, the way they started and felt, this is new."
+    },
+    {
+      "turn": 8,
+      "doctor": "Do you have any allergies I should know about?",
+      "doctor_wrapped": "Do you have any allergies I should know about?",
+      "patient": "No, I don't have any allergies."
+    },
+    {
+      "turn": 9,
+      "doctor": "Have you traveled recently or been around anyone sick?",
+      "doctor_wrapped": "Have you traveled recently or been around anyone sick?",
+      "patient": "No, I haven't traveled. And no, I haven't been around anyone sick that I know of."
+    },
+    {
+      "turn": 10,
+      "doctor": "Is there anything else you would like to tell me about how you are feeling?",
+      "doctor_wrapped": "Is there anything else you would like to tell me about how you are feeling?",
+      "patient": "The chest pressure is still there, about a 6 out of 10. It's just a constant achiness and pressure. I'm a bit worried about it, especially with my heart history. I hope we can figure out what is happening soon."
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-04-28T11:35:55.822171Z",
+    "elapsed_sec": 47.63,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2071,
+        2100,
+        2182,
+        2197,
+        2227,
+        2240,
+        2333,
+        2376,
+        2398,
+        2440
+      ],
+      "completion_tokens": [
+        17,
+        72,
+        6,
+        21,
+        5,
+        82,
+        31,
+        10,
+        24,
+        54
+      ],
+      "total_tokens": [
+        2088,
+        2172,
+        2188,
+        2218,
+        2232,
+        2322,
+        2364,
+        2386,
+        2422,
+        2494
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/myocardial_infarction.json",
+    "script_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/low_yield_first_10turn.json"
+  }
+}

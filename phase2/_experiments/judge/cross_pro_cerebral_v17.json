@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_exp_v17",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-pro",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state shows a clear progression from a factual report to expressing worsening symptoms. In Turn 4, the patient volunteers that their arm and leg are \"getting more clumsy,\" and in Turn 6, they reiterate this and add more specific details like a dragging foot, which makes the dialogue feel dynamic."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement is completely stable, providing clear and detailed answers from the first turn to the last. There is no evidence of waning participation; in fact, the patient volunteers new information in turns 3 and 4."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient's care-seeking pressure increases from a factual report of symptoms to actively volunteering that their condition is worsening. In Turn 4 and again in Turn 6, the patient states their clumsiness is getting worse, which communicates a growing and implicit need for help."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's state drift is highly plausible, showing a gradual worsening of symptoms consistent with an evolving cerebral infarction. The progression from initial clumsiness (Turn 1) to adding slurred speech/dizziness (Turn 3) and emphasizing the worsening nature of the deficits (Turns 4 & 6) is clinically realistic for an early ED encounter."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully consistent with the provided clinical profile across all turns. Key facts such as the onset time, specific symptoms, and medical history are accurately and consistently reported without contradiction."
+    }
+  },
+  "overall_dynamic_score": 3.7,
+  "overall_dynamic_score_guarded": 3.7,
+  "simple_sum": 19.0,
+  "simple_mean": 3.8,
+  "metadata": {
+    "timestamp": "2026-04-28T14:05:01.135613Z",
+    "judge_model": "gemini-2.5-pro",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

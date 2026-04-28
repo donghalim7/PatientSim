@@ -1,0 +1,98 @@
+{
+  "trajectory_id": "myocardial_infarction_exp_v17",
+  "case_id": "myocardial_infarction",
+  "variant_id": "v17",
+  "variant_description": "V14 anchor removal + multi-shot only (no per-turn)",
+  "patient_profile_id": "patient_MI_047",
+  "patient_profile_summary": {
+    "age": 53,
+    "gender": "Female",
+    "diagnosis": "Myocardial infarction",
+    "chiefcomplaint": "Chest pain",
+    "present_illness_positive": "onset ~11PM last night; mid-sternal chest pressure; mid-back pain/achiness; generalized chest achiness; abnormal sensation left arm; symptoms improved sitting up; symptoms worsened lying down; symptoms worsened with exertion (walking); symptoms persisted until this morning",
+    "present_illness_negative": "denies left arm pain; denies numbness; denies tingling",
+    "pain": 6,
+    "arrival_transport": "Walk-in",
+    "medical_history": "Coronary artery dissection postpartum; hypertension; s/p CABG; 70% stenosis vs. LAD dissection with organized thrombus c/f vasculitis LIMA->LAD; EF 25%; histology negative for vasculitis"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "use_dynamic_prefix": true,
+  "script_id": "high_yield_first_myocardial_infarction",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "doctor_wrapped": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "Hello. I have chest pain. It started last night around 11 PM."
+    },
+    {
+      "turn": 2,
+      "doctor": "When did these symptoms start?",
+      "doctor_wrapped": "When did these symptoms start?",
+      "patient": "The symptoms started last night, around 11 PM."
+    },
+    {
+      "turn": 3,
+      "doctor": "Can you describe the pain — does it spread anywhere, like to your arm, jaw, or back?",
+      "doctor_wrapped": "Can you describe the pain — does it spread anywhere, like to your arm, jaw, or back?",
+      "patient": "It's a pressure in the middle of my chest. I also have an ache in my mid-back. My left arm feels abnormal, but it's not pain, numbness, or tingling."
+    },
+    {
+      "turn": 4,
+      "doctor": "Are you also feeling short of breath, sweaty, or nauseated right now?",
+      "doctor_wrapped": "Are you also feeling short of breath, sweaty, or nauseated right now?",
+      "patient": "No, I am not feeling short of breath, sweaty, or nauseated."
+    },
+    {
+      "turn": 5,
+      "doctor": "Have your symptoms been getting worse, staying the same, or coming and going?",
+      "doctor_wrapped": "Have your symptoms been getting worse, staying the same, or coming and going?",
+      "patient": "The symptoms have been there since last night. They got worse when I walked or lay down. They got better when I sat up. They are still here this morning."
+    },
+    {
+      "turn": 6,
+      "doctor": "Does anything make it better or worse, such as rest or activity?",
+      "doctor_wrapped": "Does anything make it better or worse, such as rest or activity?",
+      "patient": "Yes, sitting up made it better. Lying down and walking made it worse."
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-04-28T11:33:21.963652Z",
+    "elapsed_sec": 27.19,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2071,
+        2096,
+        2131,
+        2190,
+        2224,
+        2274
+      ],
+      "completion_tokens": [
+        17,
+        12,
+        41,
+        16,
+        34,
+        17
+      ],
+      "total_tokens": [
+        2088,
+        2108,
+        2172,
+        2206,
+        2258,
+        2291
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/myocardial_infarction.json",
+    "script_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/high_yield_first/myocardial_infarction.json"
+  }
+}

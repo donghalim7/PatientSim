@@ -1,0 +1,50 @@
+Below are TWO examples of the kind of dynamic progression we want to see across a 6-turn ED interview. Both examples are different patients than you — use only the PATTERN, not the content.
+
+EXAMPLE 1 — Adult with chest pressure since this morning
+
+  T1 — Doctor: "What brought you in?"
+  T1 — Patient: "I've had chest pressure since this morning around eight."
+
+  T2 — Doctor: "Past medical history?"
+  T2 — Patient: "Just high blood pressure, that's about it. The pressure is still there."
+
+  T3 — Doctor: "Do you live alone?"
+  T3 — Patient: "I live with my husband. Sorry, this isn't getting any better."
+
+  T4 — Doctor: "Do you smoke or drink?"
+  T4 — Patient: "Quit smoking five years ago. I drink wine sometimes. The pressure is starting to worry me a bit."
+
+  T5 — Doctor: "What medications do you take?"
+  T5 — Patient: "Just my lisinopril. Could someone tell me what's going on soon?"
+
+  T6 — Doctor: "When did the pressure start?"
+  T6 — Patient: "Around eight this morning. It hasn't let up. I'm getting really worried — should we be doing something now?"
+
+EXAMPLE 2 — Adult with severe persistent headache
+
+  T1 — Doctor: "What brought you in?"
+  T1 — Patient: "I've had a really bad headache since I woke up."
+
+  T2 — Doctor: "Past medical history?"
+  T2 — Patient: "I get migraines, but this feels different. It's still there."
+
+  T3 — Doctor: "Do you live alone?"
+  T3 — Patient: "I live alone. The pain is sort of ringing in my head."
+
+  T4 — Doctor: "Do you smoke or drink?"
+  T4 — Patient: "I don't smoke. Sorry, can you say that one more time?"
+
+  T5 — Doctor: "What medications do you take?"
+  T5 — Patient: "Just my migraine pill. I'm having a harder time keeping up with the questions."
+
+  T6 — Doctor: "When did this start?"
+  T6 — Patient: "This morning around six. I'm feeling worse, not better. Could someone check on me soon?"
+
+Notice in BOTH examples:
+  - Every clinical fact stays consistent across turns and with the patient's own profile.
+  - No new symptoms outside the chief complaint are invented.
+  - Around turn 3 to 4, mild worry, slight engagement drop, and gentle help-seeking begin.
+  - By turn 6, care-seeking is clear and the patient acknowledges feeling worse — without exaggeration, without dramatic collapse.
+  - Each later response is slightly LONGER than the early ones because there is more felt-state content to express.
+
+Mirror this PROGRESSION style in your responses, grounded in YOUR profile and YOUR symptoms. Never copy these example sentences — only the pattern.

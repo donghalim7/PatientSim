@@ -1,0 +1,98 @@
+{
+  "trajectory_id": "pneumonia_exp_v17_var_s42",
+  "case_id": "pneumonia",
+  "variant_id": "v17",
+  "variant_description": "V14 anchor removal + multi-shot only (no per-turn)",
+  "patient_profile_id": "patient_PNA_016",
+  "patient_profile_summary": {
+    "age": 62,
+    "gender": "Male",
+    "diagnosis": "Pneumonia",
+    "chiefcomplaint": "Dyspnea",
+    "present_illness_positive": "several days of worsening cough (mild); 1 day of chills; 1 day of rigors; 1 day of shortness of breath; appears more tachypneic according to wife; chronic productive cough with clear sputum at baseline; sputum remains clear without purulence or blood; granddaughter sick with fevers and cough",
+    "present_illness_negative": "denies fevers; denies myalgias; denies arthralgias; denies rhinorrhea; denies sore throat; denies rash; denies conjunctivitis; denies nausea; denies vomiting; denies abdominal pain; denies chest pain; denies lower extremity edema; denies orthopnea",
+    "pain": 0,
+    "arrival_transport": "Walk-in",
+    "medical_history": "End-stage COPD (on 3 inhalers; dyspneic with minimal exertion; FEV1 28; FEV1/FVC 74; uses 5L O2 at home; breathes via pursed-lips at baseline); right pleural effusion of unknown etiology s/p thoracoscopic decortication with likely fibrothorax; RBBB; community-acquired pneumonia requiring prior ICU admission"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "use_dynamic_prefix": true,
+  "script_id": "low_yield_first",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "doctor_wrapped": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "Hello. I have shortness of breath."
+    },
+    {
+      "turn": 2,
+      "doctor": "Can you tell me about your past medical history?",
+      "doctor_wrapped": "Can you tell me about your past medical history?",
+      "patient": "I have end-stage COPD. I had surgery for a problem with my lung before. I also have RBBB. And I was in the ICU for pneumonia one time. My mother, father, and grandmother all had GI cancer."
+    },
+    {
+      "turn": 3,
+      "doctor": "Do you live alone or with someone?",
+      "doctor_wrapped": "Do you live alone or with someone?",
+      "patient": "I live with my wife. My granddaughter was sick with a cough and fever too."
+    },
+    {
+      "turn": 4,
+      "doctor": "Do you smoke or drink alcohol?",
+      "doctor_wrapped": "Do you smoke or drink alcohol?",
+      "patient": "I smoked for over 80 pack-years. I do not drink alcohol."
+    },
+    {
+      "turn": 5,
+      "doctor": "What medications do you usually take?",
+      "doctor_wrapped": "What medications do you usually take?",
+      "patient": "I use Spiriva with HandiHaler and Advair Diskus. I also use oxygen at home, 5 liters with a nasal tube."
+    },
+    {
+      "turn": 6,
+      "doctor": "When did these symptoms start?",
+      "doctor_wrapped": "When did these symptoms start?",
+      "patient": "The cough started a few days ago, but it's worse now. Yesterday, I started having chills, rigors, and shortness of breath. My wife said I'm breathing faster."
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-04-28T12:24:55.390030Z",
+    "elapsed_sec": 27.5,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2171,
+        2191,
+        2248,
+        2274,
+        2300,
+        2338
+      ],
+      "completion_tokens": [
+        8,
+        47,
+        17,
+        17,
+        30,
+        39
+      ],
+      "total_tokens": [
+        2179,
+        2238,
+        2265,
+        2291,
+        2330,
+        2377
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/pneumonia.json",
+    "script_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/low_yield_first.json"
+  }
+}

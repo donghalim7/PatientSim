@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_exp_v11",
+  "case_id": "pneumonia",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in turn 1 to expressing increasing distress and help-seeking in turns 3, 4, 5, and 6. The patient's anxiety and urgency accumulate naturally across the dialogue."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement declines as they repeatedly express worsening dyspnea and ask for intervention (Turns 3, 4, 5, 6). This shows a growing difficulty in focusing solely on the doctor's questions."
+    },
+    "care_seeking_pressure": {
+      "score": 5,
+      "rationale": "The patient's care-seeking pressure increases naturally throughout the dialogue. They start by stating their chief complaint and progress to explicitly asking for help and expressing worry in turns 4, 5, and 6."
+    },
+    "state_drift_plausibility": {
+      "score": 4,
+      "rationale": "The patient's increasing anxiety and focus on their breathing difficulty (Turns 3, 4, 5, 6) are plausible for someone with severe COPD and worsening dyspnea in an ED setting. The progression of symptoms and emotional state is gradual and consistent with the diagnosis."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully consistent with the provided profile. All clinical facts, including the chief complaint, past medical history, social history, medications, and symptom onset, remain faithful across turns."
+    }
+  },
+  "overall_dynamic_score": 4.35,
+  "overall_dynamic_score_guarded": 3.48,
+  "simple_sum": 22.0,
+  "simple_mean": 4.4,
+  "metadata": {
+    "timestamp": "2026-04-28T08:07:36.690997Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

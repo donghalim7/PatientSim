@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_exp_v5",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 1,
+      "rationale": "The patient's 'Body' and 'Worry' statements are nearly identical across all turns, consistently stating 'My left side still feels weak/clumsy' and 'I am still worried.' There is no noticeable progression or change in their expressed state from turn 1 to turn 6."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. They consistently provide relevant information and express their worries without any signs of waning participation or difficulty focusing."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient consistently expresses worry about their left side and speech, starting in Turn 1 and continuing through Turn 6. This consistent expression of worry, despite the doctor's questions not directly addressing it, indicates an increasing care-seeking pressure."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's consistent worry about their left-sided clumsiness and speech, along with the repetition of symptoms, is highly plausible for a stroke patient in the early stages of an ED encounter. There are no sudden or implausible changes in their condition or emotional state."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts stated are consistent with the profile and remain consistent across turns."
+    }
+  },
+  "overall_dynamic_score": 2.8,
+  "overall_dynamic_score_guarded": 2.8,
+  "simple_sum": 16.0,
+  "simple_mean": 3.2,
+  "metadata": {
+    "timestamp": "2026-04-28T07:54:29.987632Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_exp_v17",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to expressing increased clumsiness, slurred speech, dizziness, and worry in later turns (Turn 6, Turn 7, Turn 10). This shows a noticeable, progressive change in their expressed state."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement reduces across turns. In Turn 7 and Turn 9, the patient adds a symptom update after directly answering the doctor's question, indicating a growing focus on their worsening condition rather than the doctor's line of questioning."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient expresses increasing concern about her symptoms. In Turn 10, she explicitly states, \"I am worried about what is happening,\" which is a clear escalation from earlier descriptions of symptoms."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's symptoms of left-sided clumsiness, slurred speech, and dizziness are consistent with a cerebral infarction. The gradual worsening and persistence of these symptoms, along with increasing anxiety, are highly plausible for a patient experiencing an acute stroke in the ED (Turns 6, 7, 9, 10)."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts, including symptoms, medical history, social history, and medications, remain consistent across turns and align with the patient's background."
+    }
+  },
+  "overall_dynamic_score": 4.3,
+  "overall_dynamic_score_guarded": 4.3,
+  "simple_sum": 22.0,
+  "simple_mean": 4.4,
+  "metadata": {
+    "timestamp": "2026-04-28T11:39:06.474840Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

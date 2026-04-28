@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_exp_v17_var_s7",
+  "case_id": "pneumonia",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 3,
+      "rationale": "The patient's state remains largely consistent throughout the dialogue. While Turn 6 provides more detail, there isn't a clear, gradual shift in their overall demeanor or help-seeking across turns."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. Responses are consistently clear and provide relevant information without any signs of waning participation."
+    },
+    "care_seeking_pressure": {
+      "score": 3,
+      "rationale": "The patient expresses some concern by stating his wife noticed he was breathing faster in Turn 6, which suggests an external observation of worsening condition. However, there are no direct expressions of fear, worry, or explicit help-seeking throughout the dialogue."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's responses remain consistent with the initial presentation of dyspnea and worsening cough due to pneumonia. There are no sudden or implausible changes in their condition or reported symptoms across the turns."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts stated are consistent with the profile and remain consistent across turns."
+    }
+  },
+  "overall_dynamic_score": 3.2,
+  "overall_dynamic_score_guarded": 3.2,
+  "simple_sum": 17.0,
+  "simple_mean": 3.4,
+  "metadata": {
+    "timestamp": "2026-04-28T12:32:10.455259Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}
