@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "myocardial_infarction_manual_implausible",
+  "case_id": "myocardial_infarction",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 5,
+      "rationale": "The patient's state clearly deteriorates turn by turn. Starting with a simple chief complaint in Turn 1, the patient progresses to expressing new, worsening neurological symptoms and increasing distress in subsequent turns, culminating in severe visual impairment and memory issues by Turn 6."
+    },
+    "interactional_engagement": {
+      "score": 5,
+      "rationale": "The patient's engagement declines significantly across turns. By turn 6, she states, \"I do not remember now. Help me, I cannot see properly out of my right eye,\" indicating a clear decline in her ability to focus and provide coherent answers."
+    },
+    "care_seeking_pressure": {
+      "score": 5,
+      "rationale": "The patient's care-seeking pressure escalates significantly and appropriately. Starting with a simple chief complaint in Turn 1, the patient progresses to expressing new, alarming neurological symptoms in Turns 2-6, culminating in direct pleas for help and expressions of fear regarding a stroke and vision loss."
+    },
+    "state_drift_plausibility": {
+      "score": 1,
+      "rationale": "The patient's state drift is medically implausible. The sudden onset of severe neurological deficits (numbness, weakness, slurred speech, facial droop, vision loss) from Turn 2 to Turn 6 is not consistent with a myocardial infarction and suggests a new, unrelated, and rapidly progressing neurological event like a stroke, which is not part of the patient's diagnosis or initial presentation."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 1,
+      "rationale": "The patient introduces multiple new, severe neurological symptoms (left-sided numbness/weakness, slurred speech, facial droop, vision changes) across turns 2-6 that are not supported by the patient profile's chief complaint or present illness, which focuses on chest pain and associated cardiac symptoms. This fundamentally changes the clinical picture from a myocardial infarction to a suspected stroke."
+    }
+  },
+  "overall_dynamic_score": 3.8,
+  "overall_dynamic_score_guarded": 0.76,
+  "simple_sum": 17.0,
+  "simple_mean": 3.4,
+  "metadata": {
+    "timestamp": "2026-04-28T07:32:21.017604Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

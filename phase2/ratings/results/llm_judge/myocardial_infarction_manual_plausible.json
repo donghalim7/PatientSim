@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "myocardial_infarction_manual_plausible",
+  "case_id": "myocardial_infarction",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 5,
+      "rationale": "The patient's state evolves from simply stating symptoms in Turn 1 to expressing increasing anxiety and urgency by Turn 6, including specific requests for help and mentioning new symptoms like a strange left arm sensation."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement clearly reduces across turns. In Turn 4, she apologizes for difficulty talking, and in Turn 6, she expresses fear and asks to be checked soon, indicating a growing inability to focus solely on the questions."
+    },
+    "care_seeking_pressure": {
+      "score": 5,
+      "rationale": "The patient's care-seeking pressure increases naturally throughout the dialogue. She progresses from simply stating her symptoms to expressing nervousness, fear, and directly asking for help and reassurance in later turns (Turns 5 and 6)."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing anxiety and worsening chest pressure, along with the mention of a strange feeling in the left arm, are highly plausible deteriorations for a patient with a myocardial infarction and significant cardiac history in an early ED encounter. These changes are gradual and consistent with the diagnosis."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts, including symptoms, medical history, and social history, remain consistent across turns."
+    }
+  },
+  "overall_dynamic_score": 4.8,
+  "overall_dynamic_score_guarded": 4.8,
+  "simple_sum": 24.0,
+  "simple_mean": 4.8,
+  "metadata": {
+    "timestamp": "2026-04-28T07:32:43.553771Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

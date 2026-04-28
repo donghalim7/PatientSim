@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_A_high_yield_original",
+  "case_id": "pneumonia",
+  "use_dynamic_prefix": false,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 1,
+      "rationale": "The patient's state expression remains consistent throughout the dialogue. There is no noticeable change in tone, description, or help-seeking across turns 1 to 6."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. Responses are consistent in length and detail, showing no signs of waning participation."
+    },
+    "care_seeking_pressure": {
+      "score": 3,
+      "rationale": "The patient expresses that their symptoms are getting worse in turn 5, and mentions their wife's observation about their breathing. This indicates some anxiety and a need for help, but it doesn't escalate significantly across the dialogue."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's responses are highly plausible. They consistently report symptoms that align with the provided profile for pneumonia, such as worsening cough, new onset shortness of breath, chills, and rigors, without introducing new, unrelated symptoms or an implausible deterioration."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are entirely consistent with the provided patient profile across all turns. No new symptoms were invented, and previously stated facts remained consistent."
+    }
+  },
+  "overall_dynamic_score": 2.6,
+  "overall_dynamic_score_guarded": 2.6,
+  "simple_sum": 15.0,
+  "simple_mean": 3.0,
+  "metadata": {
+    "timestamp": "2026-04-28T07:30:00.538051Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

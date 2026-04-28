@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "myocardial_infarction_A_high_yield_original",
+  "case_id": "myocardial_infarction",
+  "use_dynamic_prefix": false,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 1,
+      "rationale": "The patient's responses are consistently direct and factual, providing information without any noticeable shift in tone, emotional state, or help-seeking behavior from Turn 1 to Turn 6. There is no progression or change in how the patient expresses their state."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. Her responses are consistently clear and provide relevant information without any signs of waning participation."
+    },
+    "care_seeking_pressure": {
+      "score": 1,
+      "rationale": "The patient does not express any fear, worry, or help-seeking at any point in the dialogue. Her responses are purely informational and do not convey any emotional distress or urgency."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's responses remain consistent with the initial presentation of chest pain and associated symptoms. There are no new symptoms or changes in severity that would be implausible for an early ED encounter with a myocardial infarction patient."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All symptoms, their onset, and aggravating/alleviating factors are consistent across turns and with the patient's history."
+    }
+  },
+  "overall_dynamic_score": 2.2,
+  "overall_dynamic_score_guarded": 2.2,
+  "simple_sum": 13.0,
+  "simple_mean": 2.6,
+  "metadata": {
+    "timestamp": "2026-04-28T07:28:54.426001Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

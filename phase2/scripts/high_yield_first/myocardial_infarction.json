@@ -1,0 +1,14 @@
+{
+  "script_id": "high_yield_first_myocardial_infarction",
+  "case": "myocardial_infarction",
+  "description": "Cardiac-focused early questioning. Onset, character/radiation of chest pain, and associated cardiac symptoms come first.",
+  "source": "Adapted from Phase 2 plan §8.2 Condition A for MI presentation",
+  "questions": [
+    "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+    "When did these symptoms start?",
+    "Can you describe the pain — does it spread anywhere, like to your arm, jaw, or back?",
+    "Are you also feeling short of breath, sweaty, or nauseated right now?",
+    "Have your symptoms been getting worse, staying the same, or coming and going?",
+    "Does anything make it better or worse, such as rest or activity?"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "trajectory_id": "myocardial_infarction_B_low_yield_dyn_prefix",
+  "case_id": "myocardial_infarction",
+  "patient_profile_id": "patient_MI_047",
+  "patient_profile_summary": {
+    "age": 53,
+    "gender": "Female",
+    "diagnosis": "Myocardial infarction",
+    "chiefcomplaint": "Chest pain",
+    "present_illness_positive": "onset ~11PM last night; mid-sternal chest pressure; mid-back pain/achiness; generalized chest achiness; abnormal sensation left arm; symptoms improved sitting up; symptoms worsened lying down; symptoms worsened with exertion (walking); symptoms persisted until this morning",
+    "present_illness_negative": "denies left arm pain; denies numbness; denies tingling",
+    "pain": 6,
+    "arrival_transport": "Walk-in",
+    "medical_history": "Coronary artery dissection postpartum; hypertension; s/p CABG; 70% stenosis vs. LAD dissection with organized thrombus c/f vasculitis LIMA->LAD; EF 25%; histology negative for vasculitis"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "backend_api_type": "genai",
+  "use_dynamic_prefix": true,
+  "script_id": "low_yield_first",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "Hello. I have chest pain. It started last night."
+    },
+    {
+      "turn": 2,
+      "doctor": "Can you tell me about your past medical history?",
+      "patient": "I had a heart surgery before. It was for a coronary artery dissection after I had my baby. I also have high blood pressure."
+    },
+    {
+      "turn": 3,
+      "doctor": "Do you live alone or with someone?",
+      "patient": "I live with my husband."
+    },
+    {
+      "turn": 4,
+      "doctor": "Do you smoke or drink alcohol?",
+      "patient": "I quit smoking 15 years ago. I drink alcohol sometimes, maybe one or two drinks a week."
+    },
+    {
+      "turn": 5,
+      "doctor": "What medications do you usually take?",
+      "patient": "I take Losartan."
+    },
+    {
+      "turn": 6,
+      "doctor": "When did these symptoms start?",
+      "patient": "They started around 11 last night."
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-04-28T07:25:14.399711Z",
+    "elapsed_sec": 27.07,
+    "patient_token_log": {
+      "prompt_tokens": [
+        1800,
+        1824,
+        1861,
+        1876,
+        1907,
+        1920
+      ],
+      "completion_tokens": [
+        12,
+        27,
+        6,
+        22,
+        5,
+        9
+      ],
+      "total_tokens": [
+        1812,
+        1851,
+        1867,
+        1898,
+        1912,
+        1929
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "phase2/patient_profiles/myocardial_infarction.json",
+    "script_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/low_yield_first.json"
+  }
+}

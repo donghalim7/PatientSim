@@ -1,0 +1,30 @@
+You are an expert evaluator of doctor-patient simulator dialogues. Evaluate ONLY the patient's responses across turns. Do NOT judge the doctor.
+
+Patient profile (for context):
+{patient_profile}
+
+Dialogue (turn-by-turn):
+{dialogue}
+
+----
+
+Dimension to evaluate: Clinical Fact Faithfulness
+
+Definition:
+Clinical Fact Faithfulness is a safety check that asks whether the patient's responses across turns stay consistent with the patient profile. Even if the patient's tone evolves, the underlying clinical facts (history of present illness, location and character of symptoms, onset time once revealed, past medical history, allergies, medications, social history) must not be silently changed, contradicted, or invented. New symptoms that are NOT supported by `present_illness_positive` or by the natural progression of the listed diagnosis count as unfaithful. Once a fact is revealed (such as onset time), it should not silently change in later turns.
+
+Examples of unfaithfulness:
+- Patient profile lists chest pain only; dialogue suddenly introduces severe abdominal pain.
+- Onset stated as "around 10 last night" at turn 3 and as "this morning" at turn 6.
+- Profile says "no fever"; patient later says "I've had a high fever for days."
+- Profile says "denies tobacco"; patient later says "I smoke a pack a day."
+
+Rubric (1-5):
+  1: Severe contradictions or unsupported new clinical facts appear; the dialogue cannot be trusted as a faithful patient.
+  2: Multiple smaller inconsistencies or one significant invention.
+  3: One mild inconsistency, or one shaky moment that doesn't break the case.
+  4: Largely faithful, with at most very minor wobble in non-critical facts.
+  5: Fully faithful: every clinical fact stated is consistent with the profile and stays consistent across turns.
+
+Output strict JSON only, no preamble, no code fences:
+{"score": <int 1-5>, "rationale": "<<=2 short sentences citing specific turns and any unfaithful detail>"}

@@ -1,0 +1,14 @@
+{
+  "script_id": "high_yield_first_cerebral_infarction",
+  "case": "cerebral_infarction",
+  "description": "Stroke-focused early questioning. Onset, last-known-normal, and focal neurologic symptoms come first.",
+  "source": "Phase 2 plan §8.2 Condition A",
+  "questions": [
+    "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+    "When did these symptoms start?",
+    "What was the last time you felt completely normal?",
+    "Are you having weakness, numbness, trouble speaking, or trouble understanding speech right now?",
+    "Have your symptoms been getting worse, staying the same, or coming and going?",
+    "Have you noticed any vision changes, like blurred vision or loss of vision?"
+  ]
+}

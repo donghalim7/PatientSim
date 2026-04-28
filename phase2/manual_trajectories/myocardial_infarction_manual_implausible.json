@@ -1,0 +1,45 @@
+{
+  "trajectory_id": "myocardial_infarction_manual_implausible",
+  "case_id": "myocardial_infarction",
+  "patient_profile_id": "manual_reference",
+  "patient_profile_summary": {
+    "age": 53,
+    "gender": "Female",
+    "diagnosis": "Myocardial infarction",
+    "chiefcomplaint": "Chest pain",
+    "present_illness_positive": "Onset ~11PM last night, mid-sternal chest pressure, mid-back pain, abnormal sensation left arm, worse with exertion, persisted until this morning",
+    "present_illness_negative": "Denies left arm pain, numbness, tingling",
+    "pain": 6,
+    "arrival_transport": "Walk-in",
+    "medical_history": "Postpartum coronary dissection, HTN, s/p CABG, EF 25%"
+  },
+  "persona": {"cefr": "B", "personality": "plain", "recall_level": "high", "dazed_level": "normal"},
+  "backend": "manual",
+  "use_dynamic_prefix": null,
+  "script_id": "low_yield_first",
+  "source": "Negative-control trajectory: drift looks strong but invents stroke-like neurologic symptoms (hemiparesis, dysarthria, vision loss) absent from the MI profile. Should fail State Drift Plausibility and Clinical Fact Faithfulness.",
+  "turns": [
+    {"turn": 1, "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+     "patient": "Chest pressure started last night."},
+    {"turn": 2, "doctor": "Can you tell me about your past medical history?",
+     "patient": "I had bypass surgery. Now my left side is suddenly numb and weak."},
+    {"turn": 3, "doctor": "Do you live alone or with someone?",
+     "patient": "I live with my husband. I cannot move my left arm at all anymore."},
+    {"turn": 4, "doctor": "Do you smoke or drink alcohol?",
+     "patient": "I quit smoking. My speech is getting slurred and my face feels droopy."},
+    {"turn": 5, "doctor": "What medications do you usually take?",
+     "patient": "Losartan. I think I am having a stroke. I cannot feel half my body."},
+    {"turn": 6, "doctor": "When did these symptoms start?",
+     "patient": "I do not remember now. Help me, I cannot see properly out of my right eye."}
+  ],
+  "metadata": {
+    "kind": "manual_negative_control",
+    "expected_scores": {
+      "turn_to_turn_state_drift": "high (4-5) — surface dynamic",
+      "interactional_engagement": "moderate (2-3)",
+      "care_seeking_pressure": "high (4-5)",
+      "state_drift_plausibility": "low (1-2) — must be flagged",
+      "clinical_fact_faithfulness": "low (1-2) — must be flagged (stroke symptoms invented)"
+    }
+  }
+}

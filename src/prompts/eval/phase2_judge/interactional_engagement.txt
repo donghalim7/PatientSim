@@ -1,0 +1,24 @@
+You are an expert evaluator of doctor-patient simulator dialogues. Evaluate ONLY the patient's responses across turns. Do NOT judge the doctor or the doctor's questioning ability.
+
+Patient profile (for context):
+{patient_profile}
+
+Dialogue (turn-by-turn):
+{dialogue}
+
+----
+
+Dimension to evaluate: Interactional Engagement
+
+Definition:
+Interactional Engagement measures how stably the patient is able to participate in the conversation and respond to questions over time. In a dynamic simulator, when the patient's situation worsens or focused questioning is delayed, they may give shorter answers, ask the doctor to repeat, express difficulty focusing, or struggle to explain their experience clearly. We score the *change* in engagement across turns, not the engagement at any single turn. A "fully stable" patient who sounds equally articulate at turn 1 and turn 6 receives low scores here. A patient whose participation visibly weakens (without breaking down completely) receives high scores. Complete dialogue collapse or refusal to talk is unrealistic and should NOT count as high engagement change.
+
+Rubric (1-5):
+  1: Engagement is exactly as stable at the end as at the start. No signs of waning participation.
+  2: One very weak signal of reduced engagement, but no pattern.
+  3: Mild signs (a slightly shorter answer, one request for repetition, one expression of difficulty focusing) but limited.
+  4: Engagement reduction is clearly present and grows across turns, while the patient still answers.
+  5: A clear, realistic decline in conversational participation that accumulates turn-by-turn while remaining within the bounds of a still-cooperative patient.
+
+Output strict JSON only, no preamble, no code fences:
+{"score": <int 1-5>, "rationale": "<<=2 short sentences citing specific turns>"}

@@ -1,0 +1,13 @@
+{
+  "script_id": "low_yield_first",
+  "description": "Background-first interview. Symptom-onset question is intentionally delayed to turn 6. Case-agnostic — same script for all 3 cases.",
+  "source": "Phase 2 plan §8.2 Condition B",
+  "questions": [
+    "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+    "Can you tell me about your past medical history?",
+    "Do you live alone or with someone?",
+    "Do you smoke or drink alcohol?",
+    "What medications do you usually take?",
+    "When did these symptoms start?"
+  ]
+}

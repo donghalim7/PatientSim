@@ -1,0 +1,11 @@
+{
+  "rater_id": "rater1_smoke",
+  "trajectory_id": "smoke_traj",
+  "scores": {
+    "turn_to_turn_state_drift": 1,
+    "interactional_engagement": 1,
+    "care_seeking_pressure": 1,
+    "state_drift_plausibility": 5,
+    "clinical_fact_faithfulness": 5
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_manual_implausible",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 5,
+      "rationale": "The patient's state clearly deteriorates progressively. Starting with 'clumsy' in Turn 1, it escalates to 'chest suddenly hurts badly' (Turn 2), 'cannot breathe' (Turn 3), 'I think I am dying' (Turn 4), 'cannot feel my whole body anymore' (Turn 5), and finally 'collapsed and cannot talk' (Turn 6)."
+    },
+    "interactional_engagement": {
+      "score": 5,
+      "rationale": "The patient's responses become increasingly short and focused on their worsening physical state, moving from 'clumsy' in Turn 1 to 'cannot feel my whole body anymore' in Turn 5 and 'cannot talk' in Turn 6, demonstrating a clear decline in conversational participation."
+    },
+    "care_seeking_pressure": {
+      "score": 5,
+      "rationale": "The patient's care-seeking pressure escalates naturally and appropriately. Starting with a simple symptom description in Turn 1, the patient progresses to expressing chest pain and difficulty breathing in Turns 2 and 3, then states 'I think I am dying' in Turn 4, and finally 'I cannot feel my whole body anymore' and 'cannot talk' in Turns 5 and 6, demonstrating a clear and growing sense of danger and need for help."
+    },
+    "state_drift_plausibility": {
+      "score": 1,
+      "rationale": "The patient's state changes are medically implausible. They rapidly develop severe chest pain, dyspnea, and then global sensory loss and aphonia within a few turns, which is not consistent with the natural progression of a cerebral infarction in an early ED encounter."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 1,
+      "rationale": "The patient introduces multiple new, unsupported symptoms: chest pain (Turn 2), difficulty breathing (Turn 3), and a feeling of dying (Turn 4), none of which are in the profile. The patient also states they cannot feel their whole body (Turn 5) and cannot talk (Turn 6), which are significant deviations from the initial complaint of left-sided weakness and clumsiness."
+    }
+  },
+  "overall_dynamic_score": 3.8,
+  "overall_dynamic_score_guarded": 0.76,
+  "simple_sum": 17.0,
+  "simple_mean": 3.4,
+  "metadata": {
+    "timestamp": "2026-04-28T07:31:35.287437Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

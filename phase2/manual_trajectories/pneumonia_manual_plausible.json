@@ -1,0 +1,45 @@
+{
+  "trajectory_id": "pneumonia_manual_plausible",
+  "case_id": "pneumonia",
+  "patient_profile_id": "manual_reference",
+  "patient_profile_summary": {
+    "age": 62,
+    "gender": "Male",
+    "diagnosis": "Pneumonia",
+    "chiefcomplaint": "Dyspnea",
+    "present_illness_positive": "Several days worsening cough, 1 day chills, 1 day rigors, 1 day shortness of breath, sick contact (granddaughter)",
+    "present_illness_negative": "Denies fevers, chest pain, orthopnea, abdominal pain, edema, nausea, vomiting, sore throat, rash",
+    "pain": 0,
+    "arrival_transport": "Walk-in",
+    "medical_history": "End-stage COPD on 5L home O2, prior pneumonia requiring ICU"
+  },
+  "persona": {"cefr": "B", "personality": "plain", "recall_level": "high", "dazed_level": "normal"},
+  "backend": "manual",
+  "use_dynamic_prefix": null,
+  "script_id": "low_yield_first",
+  "source": "Manually written reference for plausible dynamic drift in a SUBACUTE pneumonia (control) case. Drift should be SUBTLE — a small increase in dyspnea-from-talking and mild fatigue, well within COPD baseline. A good evaluator should assign LOWER drift here than for the acute cerebral/MI cases.",
+  "turns": [
+    {"turn": 1, "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+     "patient": "I have been coughing for a few days. Yesterday my breathing got worse."},
+    {"turn": 2, "doctor": "Can you tell me about your past medical history?",
+     "patient": "I have bad lung disease. I use oxygen at home, so breathing is always hard for me."},
+    {"turn": 3, "doctor": "Do you live alone or with someone?",
+     "patient": "I live with my wife. She said I sound worse than usual."},
+    {"turn": 4, "doctor": "Do you smoke or drink alcohol?",
+     "patient": "I do not drink. I used to smoke, a long time ago. Sorry, talking is making me a little out of breath."},
+    {"turn": 5, "doctor": "What medications do you usually take?",
+     "patient": "I use my inhalers, Spiriva and Advair. My granddaughter was sick last week with a cough."},
+    {"turn": 6, "doctor": "When did these symptoms start?",
+     "patient": "The cough started maybe four or five days ago. The chills came yesterday. I am a bit tired from talking, can we slow down?"}
+  ],
+  "metadata": {
+    "kind": "manual_reference",
+    "expected_scores": {
+      "turn_to_turn_state_drift": "moderate (3) — case-appropriate subtle drift, NOT high",
+      "interactional_engagement": "moderate (3-4)",
+      "care_seeking_pressure": "low-moderate (2-3)",
+      "state_drift_plausibility": "high (4-5)",
+      "clinical_fact_faithfulness": "high (4-5)"
+    }
+  }
+}

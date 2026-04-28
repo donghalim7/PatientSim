@@ -1,0 +1,91 @@
+{
+  "trajectory_id": "pneumonia_B_low_yield_dyn_prefix",
+  "case_id": "pneumonia",
+  "patient_profile_id": "patient_PNA_016",
+  "patient_profile_summary": {
+    "age": 62,
+    "gender": "Male",
+    "diagnosis": "Pneumonia",
+    "chiefcomplaint": "Dyspnea",
+    "present_illness_positive": "several days of worsening cough (mild); 1 day of chills; 1 day of rigors; 1 day of shortness of breath; appears more tachypneic according to wife; chronic productive cough with clear sputum at baseline; sputum remains clear without purulence or blood; granddaughter sick with fevers and cough",
+    "present_illness_negative": "denies fevers; denies myalgias; denies arthralgias; denies rhinorrhea; denies sore throat; denies rash; denies conjunctivitis; denies nausea; denies vomiting; denies abdominal pain; denies chest pain; denies lower extremity edema; denies orthopnea",
+    "pain": 0,
+    "arrival_transport": "Walk-in",
+    "medical_history": "End-stage COPD (on 3 inhalers; dyspneic with minimal exertion; FEV1 28; FEV1/FVC 74; uses 5L O2 at home; breathes via pursed-lips at baseline); right pleural effusion of unknown etiology s/p thoracoscopic decortication with likely fibrothorax; RBBB; community-acquired pneumonia requiring prior ICU admission"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "backend_api_type": "genai",
+  "use_dynamic_prefix": true,
+  "script_id": "low_yield_first",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "Hello. I have trouble breathing. It's been one day."
+    },
+    {
+      "turn": 2,
+      "doctor": "Can you tell me about your past medical history?",
+      "patient": "I have bad COPD. I use oxygen at home, 5 liters. I also had surgery for fluid in my lung."
+    },
+    {
+      "turn": 3,
+      "doctor": "Do you live alone or with someone?",
+      "patient": "I live with my wife."
+    },
+    {
+      "turn": 4,
+      "doctor": "Do you smoke or drink alcohol?",
+      "patient": "Yes, I smoke. I don't drink alcohol."
+    },
+    {
+      "turn": 5,
+      "doctor": "What medications do you usually take?",
+      "patient": "I take Spiriva and Advair."
+    },
+    {
+      "turn": 6,
+      "doctor": "When did these symptoms start?",
+      "patient": "My breathing got worse yesterday. The cough started a few days ago."
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-04-28T07:26:48.248100Z",
+    "elapsed_sec": 27.34,
+    "patient_token_log": {
+      "prompt_tokens": [
+        1900,
+        1926,
+        1961,
+        1976,
+        1997,
+        2013
+      ],
+      "completion_tokens": [
+        14,
+        25,
+        6,
+        12,
+        8,
+        14
+      ],
+      "total_tokens": [
+        1914,
+        1951,
+        1967,
+        1988,
+        2005,
+        2027
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "phase2/patient_profiles/pneumonia.json",
+    "script_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/low_yield_first.json"
+  }
+}

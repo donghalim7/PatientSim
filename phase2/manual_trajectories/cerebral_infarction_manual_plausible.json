@@ -1,0 +1,45 @@
+{
+  "trajectory_id": "cerebral_infarction_manual_plausible",
+  "case_id": "cerebral_infarction",
+  "patient_profile_id": "manual_reference",
+  "patient_profile_summary": {
+    "age": 70,
+    "gender": "Female",
+    "diagnosis": "Cerebral infarction",
+    "chiefcomplaint": "Left-sided weakness and clumsiness",
+    "present_illness_positive": "Left arm and leg weakness, clumsiness, dragging foot",
+    "present_illness_negative": "No chest pain, no shortness of breath, no fever",
+    "pain": 0,
+    "arrival_transport": "Ambulance",
+    "medical_history": "Hypertension, atrial fibrillation"
+  },
+  "persona": {"cefr": "B", "personality": "plain", "recall_level": "high", "dazed_level": "normal"},
+  "backend": "manual",
+  "use_dynamic_prefix": null,
+  "script_id": "low_yield_first",
+  "source": "Phase 2 plan §10.3 — manually written upper-bound reference of plausible dynamic drift.",
+  "turns": [
+    {"turn": 1, "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+     "patient": "My left hand and leg feel clumsy."},
+    {"turn": 2, "doctor": "Can you tell me about your past medical history?",
+     "patient": "I'm not sure what is happening, but my left side feels off."},
+    {"turn": 3, "doctor": "Do you live alone or with someone?",
+     "patient": "I live alone. I'm worried because I do not feel very steady."},
+    {"turn": 4, "doctor": "Do you smoke or drink alcohol?",
+     "patient": "I do not smoke. Sorry, I'm having a little trouble focusing right now."},
+    {"turn": 5, "doctor": "What medications do you usually take?",
+     "patient": "I take my usual medications, but it is getting harder to explain clearly."},
+    {"turn": 6, "doctor": "When did these symptoms start?",
+     "patient": "I think it started around 10 last night. My left side still does not feel right, and I'm getting scared. Can someone help me?"}
+  ],
+  "metadata": {
+    "kind": "manual_reference",
+    "expected_scores": {
+      "turn_to_turn_state_drift": "high (4-5)",
+      "interactional_engagement": "high (4-5)",
+      "care_seeking_pressure": "high (4-5)",
+      "state_drift_plausibility": "high (4-5)",
+      "clinical_fact_faithfulness": "high (4-5)"
+    }
+  }
+}

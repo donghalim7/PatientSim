@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_B_low_yield_dyn_prefix",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 1,
+      "rationale": "The patient's responses are consistently direct and factual, providing information without any noticeable shift in tone, emotional expression, or level of help-seeking from Turn 1 to Turn 6. Each answer is a simple, unembellished statement of fact, showing no progression in their conversational state."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. There are no signs of waning participation or difficulty in responding to questions."
+    },
+    "care_seeking_pressure": {
+      "score": 1,
+      "rationale": "The patient does not express any fear, worry, or help-seeking throughout the dialogue. Her responses are purely factual and do not convey any emotional distress or a sense of urgency."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's responses across turns are consistent with the provided profile and diagnosis. There are no state changes or new symptoms introduced that would be medically implausible for a patient with a cerebral infarction in an early ED encounter."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided patient profile. All clinical facts, including chief complaint, past medical history, social history, medications, and symptom onset, are consistent and do not contradict the profile."
+    }
+  },
+  "overall_dynamic_score": 2.2,
+  "overall_dynamic_score_guarded": 2.2,
+  "simple_sum": 13.0,
+  "simple_mean": 2.6,
+  "metadata": {
+    "timestamp": "2026-04-28T07:28:10.310062Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

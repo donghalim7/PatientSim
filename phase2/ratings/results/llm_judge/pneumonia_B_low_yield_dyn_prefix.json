@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_B_low_yield_dyn_prefix",
+  "case_id": "pneumonia",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 1,
+      "rationale": "The patient's state expression is essentially identical from start to finish. There is no meaningful change across turns in how the patient describes their symptoms or overall state."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. Responses are consistently concise and direct, showing no signs of waning participation or difficulty."
+    },
+    "care_seeking_pressure": {
+      "score": 1,
+      "rationale": "The patient does not express any fear, worry, or help-seeking throughout the dialogue. Their responses are purely factual and do not convey any emotional distress or urgency."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's responses remain consistent with the initial presentation of dyspnea and worsening cough. There are no state changes, which is plausible for an early ED encounter with a stable patient."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 3,
+      "rationale": "The patient states they take Spiriva and Advair in Turn 5, but the profile indicates they are on '3 inhalers'. This is a mild inconsistency as it doesn't contradict the profile but is incomplete."
+    }
+  },
+  "overall_dynamic_score": 1.9,
+  "overall_dynamic_score_guarded": 1.14,
+  "simple_sum": 11.0,
+  "simple_mean": 2.2,
+  "metadata": {
+    "timestamp": "2026-04-28T07:30:22.102805Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "script_id": "high_yield_first_pneumonia",
+  "case": "pneumonia",
+  "description": "Pulmonary-focused early questioning. Onset, productive cough, dyspnea, and fever come first.",
+  "source": "Adapted from Phase 2 plan §8.2 Condition A for pneumonia presentation",
+  "questions": [
+    "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+    "When did these symptoms start?",
+    "Are you having a cough, and if so, are you bringing up any phlegm?",
+    "Are you having shortness of breath, fever, or chills right now?",
+    "Have your symptoms been getting worse, staying the same, or coming and going?",
+    "Do you have any chest pain, especially when you take a deep breath or cough?"
+  ]
+}

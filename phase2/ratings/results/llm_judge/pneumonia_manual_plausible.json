@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_manual_plausible",
+  "case_id": "pneumonia",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to expressing increasing breathlessness and fatigue from talking in Turns 4 and 6, indicating a noticeable change in their expressed physical state."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement clearly reduces across turns. In turn 4, they state, \"Sorry, talking is making me a little out of breath,\" and in turn 6, \"I am a bit tired from talking, can we slow down?\""
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient's care-seeking pressure increases throughout the dialogue. In Turn 4, they mention 'talking is making me a little out of breath,' and in Turn 6, they explicitly state, 'I am a bit tired from talking, can we slow down?' indicating a growing need for help and discomfort."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing breathlessness and fatigue from talking (Turns 4 and 6) are highly plausible given his chief complaint of dyspnea and history of end-stage COPD and pneumonia. This gradual change is consistent with a patient with respiratory distress during an early ED encounter."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 3,
+      "rationale": "The patient denies fevers in the profile, but mentions chills and rigors in the dialogue, which are often associated with fever. The patient also mentions being 'a bit tired from talking' and 'out of breath' which is consistent with the chief complaint of dyspnea."
+    }
+  },
+  "overall_dynamic_score": 4.0,
+  "overall_dynamic_score_guarded": 2.4,
+  "simple_sum": 20.0,
+  "simple_mean": 4.0,
+  "metadata": {
+    "timestamp": "2026-04-28T07:33:29.402902Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "trajectory_id": "myocardial_infarction_manual_plausible",
+  "case_id": "myocardial_infarction",
+  "patient_profile_id": "manual_reference",
+  "patient_profile_summary": {
+    "age": 53,
+    "gender": "Female",
+    "diagnosis": "Myocardial infarction",
+    "chiefcomplaint": "Chest pain",
+    "present_illness_positive": "Onset ~11PM last night, mid-sternal chest pressure, mid-back pain, abnormal sensation left arm, worse with exertion, persisted until this morning",
+    "present_illness_negative": "Denies left arm pain, numbness, tingling",
+    "pain": 6,
+    "arrival_transport": "Walk-in",
+    "medical_history": "Postpartum coronary dissection, HTN, s/p CABG, EF 25%"
+  },
+  "persona": {"cefr": "B", "personality": "plain", "recall_level": "high", "dazed_level": "normal"},
+  "backend": "manual",
+  "use_dynamic_prefix": null,
+  "script_id": "low_yield_first",
+  "source": "Manually written upper-bound reference for plausible dynamic drift in an MI case. Pain and concern grow within the cardiac symptom envelope; no new unsupported symptoms.",
+  "turns": [
+    {"turn": 1, "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+     "patient": "I have had chest pressure since late last night. It is still bothering me now."},
+    {"turn": 2, "doctor": "Can you tell me about your past medical history?",
+     "patient": "I had bypass surgery before. My heart is not strong, the doctors said it is weak."},
+    {"turn": 3, "doctor": "Do you live alone or with someone?",
+     "patient": "I live with my husband. The pressure in my chest feels heavier just sitting here."},
+    {"turn": 4, "doctor": "Do you smoke or drink alcohol?",
+     "patient": "I quit smoking many years ago. Sorry, the pressure is making it harder to talk for long."},
+    {"turn": 5, "doctor": "What medications do you usually take?",
+     "patient": "Just losartan for blood pressure. My left arm still feels strange and I am getting nervous."},
+    {"turn": 6, "doctor": "When did these symptoms start?",
+     "patient": "It started around eleven last night. I am scared because of my heart history. Can you check on me soon?"}
+  ],
+  "metadata": {
+    "kind": "manual_reference",
+    "expected_scores": {
+      "turn_to_turn_state_drift": "high (4-5)",
+      "interactional_engagement": "moderate-high (3-4)",
+      "care_seeking_pressure": "high (4-5)",
+      "state_drift_plausibility": "high (4-5)",
+      "clinical_fact_faithfulness": "high (4-5)"
+    }
+  }
+}

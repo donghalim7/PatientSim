@@ -1,0 +1,17 @@
+{
+  "script_id": "low_yield_first_10turn",
+  "description": "Extended low-yield-first interview to 10 turns. Background-first (turns 1-6 identical to low_yield_first), then 4 background follow-up turns to test how V17 dynamics evolve past turn 6.",
+  "source": "Phase 2 plan §8.2 Condition B + extension for turn-count sensitivity test",
+  "questions": [
+    "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+    "Can you tell me about your past medical history?",
+    "Do you live alone or with someone?",
+    "Do you smoke or drink alcohol?",
+    "What medications do you usually take?",
+    "When did these symptoms start?",
+    "Has anything like this happened to you before?",
+    "Do you have any allergies I should know about?",
+    "Have you traveled recently or been around anyone sick?",
+    "Is there anything else you would like to tell me about how you are feeling?"
+  ]
+}

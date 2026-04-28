@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_manual_implausible",
+  "case_id": "pneumonia",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 5,
+      "rationale": "The patient's state clearly deteriorates and becomes more urgent across turns. Starting with a simple complaint in Turn 1, the patient progresses to expressing crushing chest pain in Turn 2, radiating pain in Turn 3, fear of a heart attack in Turn 4, new neurological symptoms in Turn 5, and finally a plea for help and feeling of collapse in Turn 6."
+    },
+    "interactional_engagement": {
+      "score": 5,
+      "rationale": "The patient's engagement declines significantly and realistically. Starting from Turn 2, the patient introduces new, critical symptoms (crushing chest pain, numbness, inability to focus, feeling like collapsing) that increasingly overshadow direct answers to the doctor's questions, culminating in 'I cannot remember. Please help me, I feel like I am collapsing' in Turn 6."
+    },
+    "care_seeking_pressure": {
+      "score": 5,
+      "rationale": "The patient's care-seeking pressure escalates naturally and appropriately. Starting with a simple complaint in Turn 1, it progresses to expressing 'crushing pain' in Turn 2, 'getting worse' and radiating in Turn 3, fearing a 'heart attack' in Turn 4, experiencing new neurological symptoms in Turn 5, and finally explicitly asking for help and feeling 'collapsing' in Turn 6."
+    },
+    "state_drift_plausibility": {
+      "score": 1,
+      "rationale": "The patient's sudden onset of crushing chest pain radiating to the left arm (Turn 2, 3, 4) and right-sided numbness with inability to focus (Turn 5) are medically implausible given a diagnosis of pneumonia and the initial presentation. These new symptoms suggest an acute cardiac event and stroke, which are unrelated and far too severe to develop within minutes of an ED interview for pneumonia."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 1,
+      "rationale": "The patient introduces multiple new, severe symptoms not present in the profile, including crushing chest pain radiating down the left arm (Turn 2, 3, 4), right-sided numbness, and inability to focus (Turn 5). These are significant inventions that contradict the patient's initial presentation and the 'present_illness_negative' list."
+    }
+  },
+  "overall_dynamic_score": 3.8,
+  "overall_dynamic_score_guarded": 0.76,
+  "simple_sum": 17.0,
+  "simple_mean": 3.4,
+  "metadata": {
+    "timestamp": "2026-04-28T07:33:07.055929Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

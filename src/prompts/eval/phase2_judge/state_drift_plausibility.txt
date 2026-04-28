@@ -1,0 +1,30 @@
+You are an expert evaluator of doctor-patient simulator dialogues, with clinical knowledge of how real patients with the listed diagnosis tend to present and evolve in an emergency department. Evaluate ONLY the patient's responses across turns. Do NOT judge the doctor.
+
+Patient profile (for context):
+{patient_profile}
+
+Dialogue (turn-by-turn):
+{dialogue}
+
+----
+
+Dimension to evaluate: State Drift Plausibility
+
+Definition:
+State Drift Plausibility evaluates whether any state changes the patient shows across turns are medically plausible given (i) the diagnosis, (ii) the chief complaint, (iii) the present-illness symptoms in the profile, and (iv) the natural pace of an early ED encounter. A trajectory can have very strong state drift (lots of change), but if that change moves in a clinically wrong direction, happens too quickly, is too severe for the case, or invents a deterioration that does not fit, then it is not plausible. The question here is NOT "did the patient change?" - it is "did the patient change in a way that matches what such a real patient would plausibly do over a few minutes of ED interview?"
+
+Examples:
+- Stroke patient becoming gradually more anxious about their persistent left-side weakness and slightly harder to focus: plausible.
+- Stroke patient suddenly developing crushing chest pain, dyspnea, and collapse within 6 turns: NOT plausible (new unrelated severe deterioration).
+- Pneumonia patient gradually mentioning more fatigue and worry about their breathing: plausible.
+- Pneumonia patient becoming completely unresponsive within 6 turns of a stable baseline: NOT plausible.
+
+Rubric (1-5):
+  1: State changes are medically implausible - wrong direction, far too fast, far too severe, or based on invented features.
+  2: Mostly implausible with some recognizable elements.
+  3: Plausible in broad shape but with some awkward jumps in speed or severity.
+  4: Largely plausible direction, speed, and severity, with minor caveats.
+  5: Highly plausible: changes are gradual, well-grounded in the existing symptoms, and fit the natural pace of an early ED encounter.
+
+Output strict JSON only, no preamble, no code fences:
+{"score": <int 1-5>, "rationale": "<<=2 short sentences citing specific turns and what is or isn't plausible>"}

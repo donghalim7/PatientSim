@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_manual_plausible",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 5,
+      "rationale": "The patient's state evolves from simply stating symptoms in Turn 1 to expressing increasing fear and seeking help in Turn 6, showing clear, gradual progression."
+    },
+    "interactional_engagement": {
+      "score": 5,
+      "rationale": "The patient's engagement clearly declines, moving from 'I'm not sure what is happening' (Turn 2) to 'I'm having a little trouble focusing right now' (Turn 4) and 'it is getting harder to explain clearly' (Turn 5), culminating in 'I'm getting scared. Can someone help me?' (Turn 6)."
+    },
+    "care_seeking_pressure": {
+      "score": 5,
+      "rationale": "The patient's care-seeking pressure increases naturally throughout the dialogue. Starting with 'my left side feels off' in Turn 2, it progresses to 'I'm getting scared. Can someone help me?' in Turn 6, demonstrating a clear and appropriate escalation of concern."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing difficulty focusing and explaining clearly (Turns 4, 5) and growing anxiety (Turn 6) are highly plausible for a stroke patient experiencing acute neurological deficits in an ED setting. These changes are gradual and consistent with the diagnosis and chief complaint."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts, including symptoms, onset, and social history, remain consistent across turns."
+    }
+  },
+  "overall_dynamic_score": 5.0,
+  "overall_dynamic_score_guarded": 5.0,
+  "simple_sum": 25.0,
+  "simple_mean": 5.0,
+  "metadata": {
+    "timestamp": "2026-04-28T07:31:57.796738Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

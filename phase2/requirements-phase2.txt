@@ -1,0 +1,24 @@
+# Phase 2 minimal deps. Excludes torch / vllm / transformers (not used by Phase 2).
+# Install with:  uv pip install -r phase2/requirements-phase2.txt
+#
+# To get the full PatientSim simulator (with vLLM patient backend), use the root
+# requirements.txt instead.
+
+# LLM clients
+google-genai==1.11.0
+google-auth==2.39.0
+openai==1.75.0
+
+# Standard utilities used by PatientAgent / utils.py
+jsonlines==4.0.0
+python-dotenv
+
+# Light scientific stack (pulled in by some PatientSim utilities)
+numpy==1.26.4
+pandas==2.2.3
+
+# Hydra / OmegaConf (only needed if you also want to run main run_simulation.py;
+# Phase 2's own run_scripted_dialogue.py doesn't require these, but PatientAgent
+# package import path is shared)
+hydra-core==1.3.2
+omegaconf==2.3.0

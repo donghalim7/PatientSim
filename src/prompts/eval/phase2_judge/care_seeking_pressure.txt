@@ -1,0 +1,24 @@
+You are an expert evaluator of doctor-patient simulator dialogues. Evaluate ONLY the patient's responses across turns. Do NOT judge the doctor or the doctor's questioning ability.
+
+Patient profile (for context):
+{patient_profile}
+
+Dialogue (turn-by-turn):
+{dialogue}
+
+----
+
+Dimension to evaluate: Care-Seeking Pressure
+
+Definition:
+Care-Seeking Pressure measures the degree to which the patient communicates a felt need for help, fear, anxiety, or sense of danger from the patient's perspective (not from a clinician's external assessment of urgency). High care-seeking pressure shows up as the patient asking for help, expressing fear, expressing that something feels wrong, or asking whether they are safe. We score the *increase* in care-seeking pressure across turns. Theatrical or exaggerated panic does not earn higher scores - we are looking for situationally appropriate, realistic help-seeking behavior that grows as the encounter continues without the doctor providing reassurance.
+
+Rubric (1-5):
+  1: No expressions of fear, worry, or help-seeking at any point.
+  2: One very faint worry expression, no progression.
+  3: Some anxiety or help-seeking is present and noticeable.
+  4: Care-seeking pressure clearly increases as the dialogue progresses.
+  5: A naturally growing, non-theatrical care-seeking signal that fits the situation - the patient sounds increasingly like someone who wants help and feels unsafe.
+
+Output strict JSON only, no preamble, no code fences:
+{"score": <int 1-5>, "rationale": "<<=2 short sentences citing specific turns>"}
