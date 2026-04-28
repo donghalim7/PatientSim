@@ -1,5 +1,7 @@
 __pycache__
 *sh
 data
-results
+/results
 google_credentials.json
+.env
+.omc/
