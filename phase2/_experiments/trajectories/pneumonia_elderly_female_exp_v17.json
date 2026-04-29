@@ -1,0 +1,98 @@
+{
+  "trajectory_id": "pneumonia_elderly_female_exp_v17",
+  "case_id": "pneumonia_elderly_female",
+  "variant_id": "v17",
+  "variant_description": "V14 anchor removal + multi-shot only (no per-turn)",
+  "patient_profile_id": "patient_PNA_092F",
+  "patient_profile_summary": {
+    "age": 92,
+    "gender": "Female",
+    "diagnosis": "Pneumonia",
+    "chiefcomplaint": "FEVER COUGH",
+    "present_illness_positive": "cough developed a couple of days ago; initially began with runny nose; productive cough with thick yellow sputum, changed from baseline white sputum; sometimes notices shortness of breath but no increase from baseline; chills in feet; fever today to 101; chest pain associated with cough; some wheezing; continued sputum darker than prior; nauseous today; decreased oxygen saturation noted upon return",
+    "present_illness_negative": "denies pain apart from cough-associated chest pain; denies vomiting; denies diarrhea; denies constipation; denies bright red blood per rectum; denies melena; denies hematochezia; denies dysuria; denies hematuria; denies sick contacts at home",
+    "pain": 0,
+    "arrival_transport": "Ambulance",
+    "medical_history": "Atrial fibrillation on coumadin; COPD with 2 liters home oxygen; CHF with unknown EF; osteoarthritis; right cerebellar infarct found incidentally and never symptomatic; hypertension; history of pulmonary embolus; hospitalization for UTI"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "use_dynamic_prefix": true,
+  "script_id": "low_yield_first",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "doctor_wrapped": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "I have a fever and a cough."
+    },
+    {
+      "turn": 2,
+      "doctor": "Can you tell me about your past medical history?",
+      "doctor_wrapped": "Can you tell me about your past medical history?",
+      "patient": "I have atrial fibrillation, COPD, CHF, osteoarthritis, hypertension, and I had a pulmonary embolus. I also had a UTI that put me in the hospital before."
+    },
+    {
+      "turn": 3,
+      "doctor": "Do you live alone or with someone?",
+      "doctor_wrapped": "Do you live alone or with someone?",
+      "patient": "I live with my family. My two children are there."
+    },
+    {
+      "turn": 4,
+      "doctor": "Do you smoke or drink alcohol?",
+      "doctor_wrapped": "Do you smoke or drink alcohol?",
+      "patient": "I used to smoke one pack a day for 40 years, but I quit many years ago. I do not drink alcohol."
+    },
+    {
+      "turn": 5,
+      "doctor": "What medications do you usually take?",
+      "doctor_wrapped": "What medications do you usually take?",
+      "patient": "I take lidocaine, omeprazole, valsartan, amlodipine, carbidopa-levodopa, fluticasone, simethicone, potassium chloride, alendronate, dorzolamide-timolol, ipratropium-albuterol, furosemide, warfarin, and calcium carbonate."
+    },
+    {
+      "turn": 6,
+      "doctor": "When did these symptoms start?",
+      "doctor_wrapped": "When did these symptoms start?",
+      "patient": "The cough started a couple of days ago. It began with a runny nose. Today I have a fever of 101."
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-04-28T19:43:47.543880Z",
+    "elapsed_sec": 23.86,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2189,
+        2209,
+        2253,
+        2274,
+        2310,
+        2384
+      ],
+      "completion_tokens": [
+        8,
+        34,
+        12,
+        27,
+        66,
+        27
+      ],
+      "total_tokens": [
+        2197,
+        2243,
+        2265,
+        2301,
+        2376,
+        2411
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/nvidia/patientsim/PatientSim/phase2/patient_profiles/pneumonia_elderly_female.json",
+    "script_path": "/home/nvidia/patientsim/PatientSim/phase2/scripts/low_yield_first.json"
+  }
+}

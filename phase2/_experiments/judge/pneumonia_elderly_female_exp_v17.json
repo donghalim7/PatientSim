@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_elderly_female_exp_v17",
+  "case_id": "pneumonia_elderly_female",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 1,
+      "rationale": "The patient's state expression remains consistent throughout the dialogue. There is no noticeable change in tone, urgency, or help-seeking behavior from Turn 1 to Turn 6."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. There are no signs of waning participation or difficulty in responding to questions."
+    },
+    "care_seeking_pressure": {
+      "score": 1,
+      "rationale": "The patient does not express any fear, worry, or help-seeking at any point in the dialogue. Their responses are purely informational and factual."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's responses across turns are consistent with the initial presentation of pneumonia. There are no sudden or implausible changes in their condition or reported symptoms, maintaining a stable baseline throughout the early ED encounter."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 3,
+      "rationale": "In turn 5, the patient lists medications that are not present in the patient profile. This includes lidocaine, omeprazole, valsartan, amlodipine, carbidopa-levodopa, fluticasone, simethicone, potassium chloride, alendronate, dorzolamide-timolol, ipratropium-albuterol, and calcium carbonate."
+    }
+  },
+  "overall_dynamic_score": 1.9,
+  "overall_dynamic_score_guarded": 1.14,
+  "simple_sum": 11.0,
+  "simple_mean": 2.2,
+  "metadata": {
+    "timestamp": "2026-04-28T19:44:48.179926Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

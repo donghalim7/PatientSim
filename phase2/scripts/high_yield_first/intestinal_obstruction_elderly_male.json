@@ -1,0 +1,14 @@
+{
+  "script_id": "high_yield_first_intestinal_obstruction_elderly_male",
+  "case": "intestinal_obstruction_elderly_male",
+  "description": "Obstruction-focused early questioning. Pain pattern, vomiting, bowel function, and bleeding negatives come first.",
+  "source": "Added for the 71M intestinal obstruction dynamic-status scenario",
+  "questions": [
+    "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+    "When did this abdominal pain start, and where is it located?",
+    "Does the pain come in waves, and how severe does it get?",
+    "Have you been vomiting, and has there been any blood or green bile?",
+    "Have you been constipated, had diarrhea, or passed any blood or black stool?",
+    "Have you had similar episodes before, and are they happening more often?"
+  ]
+}

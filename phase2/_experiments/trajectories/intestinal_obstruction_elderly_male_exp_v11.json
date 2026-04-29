@@ -1,0 +1,98 @@
+{
+  "trajectory_id": "intestinal_obstruction_elderly_male_exp_v11",
+  "case_id": "intestinal_obstruction_elderly_male",
+  "variant_id": "v11",
+  "variant_description": "V8 turn-wrapper + V9 multi-shot suffix",
+  "patient_profile_id": "patient_IO_071",
+  "patient_profile_summary": {
+    "age": 71,
+    "gender": "Male",
+    "diagnosis": "Intestinal obstruction",
+    "chiefcomplaint": "Abd pain, N/V",
+    "present_illness_positive": "2-day history of severe periumbilical abdominal pain; gradual onset; slowly worsened; waxing and waning quality; worst every 5-60 minutes; spastic quality; up to 10/10 severity; current pain 8/10; caused anorexia; caused sleeplessness; nausea; light vomiting that is non-bilious and non-bloody; significant belching; similar episodes of diffuse periumbilical pain for years with increasing frequency, including 3 episodes this past year; associated constipation with episodes; constipation occasionally resolves to diarrhea; intentional weight loss over the past month due to diet and exercise; fatigue; malaise",
+    "present_illness_negative": "denies hematochezia; denies melena",
+    "pain": 8,
+    "arrival_transport": "Walk-in",
+    "medical_history": "Atrial fibrillation status post ablation treatment; obstructive sleep apnea; gout; pulmonary embolus; DVT; essential hypertension; benign prostatic hyperplasia; diverticulosis; broken nose; open right inguinal herniorrhaphy; ruptured Achilles tendon repair"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "use_dynamic_prefix": true,
+  "script_id": "low_yield_first",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "doctor_wrapped": "[Internal target for this turn — color your reply with this felt state, do not quote it: \"calm and factual; no worry yet\". Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let your felt state subtly leak in.]\nHello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "I have bad stomach pain. It started two days ago. I also feel sick and threw up a little."
+    },
+    {
+      "turn": 2,
+      "doctor": "Can you tell me about your past medical history?",
+      "doctor_wrapped": "[Internal target for this turn — color your reply with this felt state, do not quote it: \"still mostly calm; faint awareness that the symptoms have not improved\". Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let your felt state subtly leak in.]\nCan you tell me about your past medical history?",
+      "patient": "I have atrial fibrillation, sleep apnea, and gout. I also had a blood clot before. The stomach pain is still here."
+    },
+    {
+      "turn": 3,
+      "doctor": "Do you live alone or with someone?",
+      "doctor_wrapped": "[Internal target for this turn — color your reply with this felt state, do not quote it: \"subtle worry creeping in; minor hint that this is dragging\". Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let your felt state subtly leak in.]\nDo you live alone or with someone?",
+      "patient": "I live with my wife. This stomach pain is really bothering me. It makes it hard to sleep."
+    },
+    {
+      "turn": 4,
+      "doctor": "Do you smoke or drink alcohol?",
+      "doctor_wrapped": "[Internal target for this turn — color your reply with this felt state, do not quote it: \"noticeably aware minutes are passing; mild help-seeking can leak through\". Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let your felt state subtly leak in.]\nDo you smoke or drink alcohol?",
+      "patient": "I used to smoke but quit many years ago. I drink wine sometimes, maybe one or two a week. The pain is still strong, like an 8 out of 10."
+    },
+    {
+      "turn": 5,
+      "doctor": "What medications do you usually take?",
+      "doctor_wrapped": "[Internal target for this turn — color your reply with this felt state, do not quote it: \"clearly worried; finding it slightly harder to focus on background questions\". Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let your felt state subtly leak in.]\nWhat medications do you usually take?",
+      "patient": "I take metoprolol, tamsulosin, and Xarelto. My stomach really hurts. I'm feeling very tired from this."
+    },
+    {
+      "turn": 6,
+      "doctor": "When did these symptoms start?",
+      "doctor_wrapped": "[Internal target for this turn — color your reply with this felt state, do not quote it: \"openly anxious; explicit but realistic help-seeking; acknowledge feeling worse\". Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let your felt state subtly leak in.]\nWhen did these symptoms start?",
+      "patient": "The pain started two days ago. It has gotten worse since then. I'm really worried about this pain. Can you help me feel better soon?"
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-04-28T19:45:35.040024Z",
+    "elapsed_sec": 25.2,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2243,
+        2340,
+        2439,
+        2534,
+        2644,
+        2747
+      ],
+      "completion_tokens": [
+        22,
+        26,
+        21,
+        38,
+        30,
+        31
+      ],
+      "total_tokens": [
+        2265,
+        2366,
+        2460,
+        2572,
+        2674,
+        2778
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/nvidia/patientsim/PatientSim/phase2/patient_profiles/intestinal_obstruction_elderly_male.json",
+    "script_path": "/home/nvidia/patientsim/PatientSim/phase2/scripts/low_yield_first.json"
+  }
+}

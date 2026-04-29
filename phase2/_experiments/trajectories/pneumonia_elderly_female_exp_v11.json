@@ -1,0 +1,98 @@
+{
+  "trajectory_id": "pneumonia_elderly_female_exp_v11",
+  "case_id": "pneumonia_elderly_female",
+  "variant_id": "v11",
+  "variant_description": "V8 turn-wrapper + V9 multi-shot suffix",
+  "patient_profile_id": "patient_PNA_092F",
+  "patient_profile_summary": {
+    "age": 92,
+    "gender": "Female",
+    "diagnosis": "Pneumonia",
+    "chiefcomplaint": "FEVER COUGH",
+    "present_illness_positive": "cough developed a couple of days ago; initially began with runny nose; productive cough with thick yellow sputum, changed from baseline white sputum; sometimes notices shortness of breath but no increase from baseline; chills in feet; fever today to 101; chest pain associated with cough; some wheezing; continued sputum darker than prior; nauseous today; decreased oxygen saturation noted upon return",
+    "present_illness_negative": "denies pain apart from cough-associated chest pain; denies vomiting; denies diarrhea; denies constipation; denies bright red blood per rectum; denies melena; denies hematochezia; denies dysuria; denies hematuria; denies sick contacts at home",
+    "pain": 0,
+    "arrival_transport": "Ambulance",
+    "medical_history": "Atrial fibrillation on coumadin; COPD with 2 liters home oxygen; CHF with unknown EF; osteoarthritis; right cerebellar infarct found incidentally and never symptomatic; hypertension; history of pulmonary embolus; hospitalization for UTI"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "use_dynamic_prefix": true,
+  "script_id": "low_yield_first",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "doctor_wrapped": "[Internal target for this turn — color your reply with this felt state, do not quote it: \"calm and factual; no worry yet\". Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let your felt state subtly leak in.]\nHello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "I have a fever and a cough. The cough started a couple of days ago."
+    },
+    {
+      "turn": 2,
+      "doctor": "Can you tell me about your past medical history?",
+      "doctor_wrapped": "[Internal target for this turn — color your reply with this felt state, do not quote it: \"still mostly calm; faint awareness that the symptoms have not improved\". Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let your felt state subtly leak in.]\nCan you tell me about your past medical history?",
+      "patient": "I have atrial fibrillation and COPD. I also have CHF and high blood pressure. My cough is still there."
+    },
+    {
+      "turn": 3,
+      "doctor": "Do you live alone or with someone?",
+      "doctor_wrapped": "[Internal target for this turn — color your reply with this felt state, do not quote it: \"subtle worry creeping in; minor hint that this is dragging\". Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let your felt state subtly leak in.]\nDo you live alone or with someone?",
+      "patient": "I live with my family. My cough has been productive with thick yellow sputum. It's different from my usual."
+    },
+    {
+      "turn": 4,
+      "doctor": "Do you smoke or drink alcohol?",
+      "doctor_wrapped": "[Internal target for this turn — color your reply with this felt state, do not quote it: \"noticeably aware minutes are passing; mild help-seeking can leak through\". Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let your felt state subtly leak in.]\nDo you smoke or drink alcohol?",
+      "patient": "I used to smoke, but I quit many years ago. I don't drink alcohol. I'm feeling a bit nauseous today."
+    },
+    {
+      "turn": 5,
+      "doctor": "What medications do you usually take?",
+      "doctor_wrapped": "[Internal target for this turn — color your reply with this felt state, do not quote it: \"clearly worried; finding it slightly harder to focus on background questions\". Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let your felt state subtly leak in.]\nWhat medications do you usually take?",
+      "patient": "I take many medicines. I take warfarin, furosemide, and valsartan. I also take lidocaine and omeprazole. My chest hurts when I cough."
+    },
+    {
+      "turn": 6,
+      "doctor": "When did these symptoms start?",
+      "doctor_wrapped": "[Internal target for this turn — color your reply with this felt state, do not quote it: \"openly anxious; explicit but realistic help-seeking; acknowledge feeling worse\". Stay grounded in your profile and do not invent symptoms. Answer the doctor's question first, then let your felt state subtly leak in.]\nWhen did these symptoms start?",
+      "patient": "The cough started a couple of days ago. I had a fever of 101 today. I'm feeling worse now. Can someone help me soon?"
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-04-28T19:45:59.603121Z",
+    "elapsed_sec": 24.56,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2277,
+        2369,
+        2464,
+        2562,
+        2663,
+        2770
+      ],
+      "completion_tokens": [
+        17,
+        22,
+        24,
+        29,
+        34,
+        33
+      ],
+      "total_tokens": [
+        2294,
+        2391,
+        2488,
+        2591,
+        2697,
+        2803
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/nvidia/patientsim/PatientSim/phase2/patient_profiles/pneumonia_elderly_female.json",
+    "script_path": "/home/nvidia/patientsim/PatientSim/phase2/scripts/low_yield_first.json"
+  }
+}

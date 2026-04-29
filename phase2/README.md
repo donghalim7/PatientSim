@@ -140,3 +140,15 @@ python -m src.phase2.dynamic_state_eval \
     --trajectory phase2/manual_trajectories/cerebral_infarction_manual_plausible.json \
     --dry_run
 ```
+
+## Additional dynamic-status scenarios
+
+`phase2/_experiments/REPORT_DYNAMIC_STATUS_PATIENTS.md` adds actual
+PatientSim V17/V11 runs for two supplied patient profiles not in the original
+3-case benchmark:
+
+- `intestinal_obstruction_elderly_male`
+- `pneumonia_elderly_female`
+
+These include complete profile JSONs, high-yield scripts for future generated
+runs, low-yield PatientSim trajectories, and LLM-judge score JSONs.

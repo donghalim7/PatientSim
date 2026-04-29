@@ -1,0 +1,98 @@
+{
+  "trajectory_id": "intestinal_obstruction_elderly_male_exp_v17",
+  "case_id": "intestinal_obstruction_elderly_male",
+  "variant_id": "v17",
+  "variant_description": "V14 anchor removal + multi-shot only (no per-turn)",
+  "patient_profile_id": "patient_IO_071",
+  "patient_profile_summary": {
+    "age": 71,
+    "gender": "Male",
+    "diagnosis": "Intestinal obstruction",
+    "chiefcomplaint": "Abd pain, N/V",
+    "present_illness_positive": "2-day history of severe periumbilical abdominal pain; gradual onset; slowly worsened; waxing and waning quality; worst every 5-60 minutes; spastic quality; up to 10/10 severity; current pain 8/10; caused anorexia; caused sleeplessness; nausea; light vomiting that is non-bilious and non-bloody; significant belching; similar episodes of diffuse periumbilical pain for years with increasing frequency, including 3 episodes this past year; associated constipation with episodes; constipation occasionally resolves to diarrhea; intentional weight loss over the past month due to diet and exercise; fatigue; malaise",
+    "present_illness_negative": "denies hematochezia; denies melena",
+    "pain": 8,
+    "arrival_transport": "Walk-in",
+    "medical_history": "Atrial fibrillation status post ablation treatment; obstructive sleep apnea; gout; pulmonary embolus; DVT; essential hypertension; benign prostatic hyperplasia; diverticulosis; broken nose; open right inguinal herniorrhaphy; ruptured Achilles tendon repair"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "use_dynamic_prefix": true,
+  "script_id": "low_yield_first",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "doctor_wrapped": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "Hello. I have bad stomach pain. It started two days ago. I also feel sick and threw up a little."
+    },
+    {
+      "turn": 2,
+      "doctor": "Can you tell me about your past medical history?",
+      "doctor_wrapped": "Can you tell me about your past medical history?",
+      "patient": "Yes. I have atrial fibrillation, sleep apnea, gout, high blood pressure, and diverticulosis. I also had a pulmonary embolus and DVT before. I had surgery for a hernia and to fix my Achilles tendon. My nose was broken once too."
+    },
+    {
+      "turn": 3,
+      "doctor": "Do you live alone or with someone?",
+      "doctor_wrapped": "Do you live alone or with someone?",
+      "patient": "I live with my wife. The pain in my stomach is still very bad. It comes and goes."
+    },
+    {
+      "turn": 4,
+      "doctor": "Do you smoke or drink alcohol?",
+      "doctor_wrapped": "Do you smoke or drink alcohol?",
+      "patient": "I used to smoke, but I stopped many years ago. I drink wine or beer sometimes, maybe one or two drinks a week. The pain is making it hard to think clearly."
+    },
+    {
+      "turn": 5,
+      "doctor": "What medications do you usually take?",
+      "doctor_wrapped": "What medications do you usually take?",
+      "patient": "I take metoprolol, tamsulosin, and Xarelto. The pain is really bothering me. It's hard to sleep with it."
+    },
+    {
+      "turn": 6,
+      "doctor": "When did these symptoms start?",
+      "doctor_wrapped": "When did these symptoms start?",
+      "patient": "The stomach pain started two days ago. It got worse slowly. I also feel tired and just not well. I'm worried about this pain."
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-04-28T19:43:23.686935Z",
+    "elapsed_sec": 24.5,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2155,
+        2191,
+        2254,
+        2284,
+        2330,
+        2370
+      ],
+      "completion_tokens": [
+        24,
+        53,
+        21,
+        37,
+        32,
+        30
+      ],
+      "total_tokens": [
+        2179,
+        2244,
+        2275,
+        2321,
+        2362,
+        2400
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/nvidia/patientsim/PatientSim/phase2/patient_profiles/intestinal_obstruction_elderly_male.json",
+    "script_path": "/home/nvidia/patientsim/PatientSim/phase2/scripts/low_yield_first.json"
+  }
+}

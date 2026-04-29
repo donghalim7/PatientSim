@@ -1,0 +1,14 @@
+{
+  "script_id": "high_yield_first_pneumonia_elderly_female",
+  "case": "pneumonia_elderly_female",
+  "description": "Pulmonary-focused early questioning for an elderly COPD patient on home oxygen.",
+  "source": "Added for the 92F pneumonia dynamic-status scenario",
+  "questions": [
+    "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+    "When did the cough and runny nose start?",
+    "Are you bringing up sputum, and has its color changed from your usual sputum?",
+    "Have you had fever, chills, wheezing, or shortness of breath today?",
+    "Do you use oxygen at home, and was your oxygen level lower than usual?",
+    "Do you have chest pain with coughing, nausea, or any vomiting?"
+  ]
+}

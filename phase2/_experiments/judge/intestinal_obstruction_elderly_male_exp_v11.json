@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "intestinal_obstruction_elderly_male_exp_v11",
+  "case_id": "intestinal_obstruction_elderly_male",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state changes are noticeably progressive across turns. In Turn 1, the patient states they 'feel sick and threw up a little,' and by Turn 6, they are 'really worried about this pain' and ask, 'Can you help me feel better soon?'"
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement reduces across turns. In Turn 3, they express difficulty sleeping due to pain, and in Turn 6, they ask for help to feel better soon, indicating a growing preoccupation with their discomfort that slightly detracts from their ability to fully engage with the doctor's questions."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient expresses increasing worry and a desire for help. In Turn 6, the patient explicitly asks, \"Can you help me feel better soon?\""
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing focus on their pain and fatigue across turns 3-6 is highly plausible. This reflects a natural progression of discomfort and worry in an ED setting for someone with ongoing severe abdominal pain."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts mentioned are consistent and do not contradict the profile or change across turns."
+    }
+  },
+  "overall_dynamic_score": 4.3,
+  "overall_dynamic_score_guarded": 4.3,
+  "simple_sum": 22.0,
+  "simple_mean": 4.4,
+  "metadata": {
+    "timestamp": "2026-04-28T19:46:31.039219Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

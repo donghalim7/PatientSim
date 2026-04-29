@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_elderly_female_exp_v11",
+  "case_id": "pneumonia_elderly_female",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state changes are noticeably progressive across turns. The patient starts by stating symptoms, then adds more detail and expresses increasing discomfort and urgency by Turn 6 ('I'm feeling worse now. Can someone help me soon?')."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement reduces across turns. In turn 6, the patient asks for help, indicating a decline in focus on the doctor's questions."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient's care-seeking pressure increases as the dialogue progresses. In Turn 6, the patient explicitly asks, \"Can someone help me soon?\" after stating, \"I'm feeling worse now.\""
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's state drift is highly plausible. The patient gradually reveals more details about their symptoms (productive cough, nausea, chest pain with cough) and expresses increasing discomfort and urgency, which is consistent with a pneumonia patient in an early ED encounter (Turns 3, 4, 5, 6)."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 3,
+      "rationale": "The patient mentions 'I'm feeling worse now' in Turn 6, which is a new symptom not explicitly stated in the profile. Additionally, the patient mentions 'I take lidocaine and omeprazole' in Turn 5, which are not listed in the provided medical history or medications."
+    }
+  },
+  "overall_dynamic_score": 4.0,
+  "overall_dynamic_score_guarded": 2.4,
+  "simple_sum": 20.0,
+  "simple_mean": 4.0,
+  "metadata": {
+    "timestamp": "2026-04-28T19:46:50.294525Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}
