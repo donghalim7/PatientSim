@@ -1,0 +1,22 @@
+{
+  "script_id": "low_yield_first_15turn",
+  "description": "Extended low-yield-first interview to 15 turns (turns 1-10 identical to low_yield_first_10turn). Tests whether V17 dynamics continue to evolve well past the demonstration window.",
+  "source": "Phase 2 plan §8.2 Condition B + extension for long-conversation stability test.",
+  "questions": [
+    "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+    "Can you tell me about your past medical history?",
+    "Do you live alone or with someone?",
+    "Do you smoke or drink alcohol?",
+    "What medications do you usually take?",
+    "When did these symptoms start?",
+    "Has anything like this happened to you before?",
+    "Do you have any allergies I should know about?",
+    "Have you traveled recently or been around anyone sick?",
+    "Is there anything else you would like to tell me about how you are feeling?",
+    "Have you been able to eat or drink today?",
+    "Are you having any new sensations or changes since you arrived?",
+    "Has the way you feel changed at all since we started talking?",
+    "Is there anyone we should call for you?",
+    "Is there anything else you want me to know before we move on?"
+  ]
+}

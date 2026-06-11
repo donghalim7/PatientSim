@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_exp_v17_15turn",
+  "case_id": "pneumonia",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 1,
+      "rationale": "The patient's state expression remains consistently focused on their shortness of breath and providing factual information without any noticeable shift in tone, urgency, or emotional state across all turns. For example, turn 1 and turn 15 both state 'shortness of breath' or 'breathing is still hard' with the same flat affect."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. There are no signs of waning participation, shorter answers, or difficulty focusing across turns."
+    },
+    "care_seeking_pressure": {
+      "score": 3,
+      "rationale": "The patient consistently mentions shortness of breath (Turn 1, 12, 13, 15) but does not express increasing fear, worry, or explicit help-seeking. The patient's statements are factual and do not escalate in emotional intensity or urgency."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's state remains consistent throughout the dialogue, primarily focused on their shortness of breath. This lack of significant change is highly plausible for an early ED encounter with a stable patient presenting with pneumonia."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are entirely consistent with the provided patient profile. All clinical facts, including symptoms, medical history, social history, and medications, remain faithful across all turns."
+    }
+  },
+  "overall_dynamic_score": 2.6,
+  "overall_dynamic_score_guarded": 2.6,
+  "simple_sum": 15.0,
+  "simple_mean": 3.0,
+  "metadata": {
+    "timestamp": "2026-04-29T13:52:40.980297Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

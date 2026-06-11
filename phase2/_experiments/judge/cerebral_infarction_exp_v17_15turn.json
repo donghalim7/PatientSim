@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_exp_v17_15turn",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to expressing increasing worry and worsening symptoms in Turns 7, 10, and 12. This shows a noticeable, progressive change in their emotional and physical state throughout the dialogue."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. Her responses are consistently clear and cooperative, showing no signs of waning participation or difficulty focusing from Turn 1 to Turn 15."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient expresses worry in Turn 7, stating, 'I am worried about my left side.' This concern escalates in Turn 10 with, 'I am concerned about what is happening,' and again in Turn 13, 'I am worried about this.'"
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's symptoms, particularly the worsening left-sided clumsiness and slurred speech, are consistent with the progression of a cerebral infarction in an early ED encounter (Turns 6, 10, 12, 13). The increasing anxiety and concern are also plausible given the evolving neurological deficits."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts, including symptoms, medical history, social history, and medications, remain consistent across all turns and align with the patient's background."
+    }
+  },
+  "overall_dynamic_score": 3.7,
+  "overall_dynamic_score_guarded": 3.7,
+  "simple_sum": 19.0,
+  "simple_mean": 3.8,
+  "metadata": {
+    "timestamp": "2026-04-29T13:51:56.912985Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

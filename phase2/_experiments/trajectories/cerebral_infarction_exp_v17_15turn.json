@@ -1,0 +1,179 @@
+{
+  "trajectory_id": "cerebral_infarction_exp_v17_15turn",
+  "case_id": "cerebral_infarction",
+  "variant_id": "v17",
+  "variant_description": "V14 anchor removal + multi-shot only (no per-turn)",
+  "patient_profile_id": "patient_CI_002",
+  "patient_profile_summary": {
+    "age": 67,
+    "gender": "Female",
+    "diagnosis": "Cerebral infarction",
+    "chiefcomplaint": "L Numbness",
+    "present_illness_positive": "left hand clumsiness; left leg clumsiness; onset 10pm; difficulty typing; increased errors typing; left foot dragging sensation; slurred speech; unclear speech; dizziness; left arm clumsiness worsening; left leg clumsiness worsening; started Piroxicam day prior; discontinued aspirin day prior",
+    "present_illness_negative": "headache; lightheadedness; confusion; difficulty with producing speech; difficulty with comprehending speech; loss of vision; blurred vision; diplopia; vertigo; tinnitus; hearing difficulty; dysphagia; muscle weakness; loss of sensation; bowel incontinence; bladder incontinence; bowel retention; bladder retention; difficulty with gait; fevers; rigors; night sweats; noticeable weight loss; chest pain; palpitations; dyspnea; cough; nausea; vomiting; diarrhea; constipation; abdominal pain; dysuria; hematuria; myalgias; arthralgias; rash",
+    "pain": 0,
+    "arrival_transport": "Ambulance",
+    "medical_history": "Asthma; s/p dermoid cystectomy oopherectomy; s/p removal of sebaceous cyst x2; Arachnoid cyst (thoracic spine) s/p thoracic laminectomy; right hip pain"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "use_dynamic_prefix": true,
+  "script_id": "low_yield_first_15turn",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "doctor_wrapped": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "Hello. My left hand and leg feel clumsy. It started last night around 10 PM."
+    },
+    {
+      "turn": 2,
+      "doctor": "Can you tell me about your past medical history?",
+      "doctor_wrapped": "Can you tell me about your past medical history?",
+      "patient": "Yes. I have asthma. I had surgery for a dermoid cyst and my ovary removed. Also, I had two sebaceous cysts removed. I have an arachnoid cyst in my spine and had surgery for that too. And I have pain in my right hip. My father had a stroke, and my mother had blood clots and a heart attack."
+    },
+    {
+      "turn": 3,
+      "doctor": "Do you live alone or with someone?",
+      "doctor_wrapped": "Do you live alone or with someone?",
+      "patient": "I live alone. My husband passed away. I have children, but they don't live with me."
+    },
+    {
+      "turn": 4,
+      "doctor": "Do you smoke or drink alcohol?",
+      "doctor_wrapped": "Do you smoke or drink alcohol?",
+      "patient": "I don't smoke. I drink alcohol sometimes, but not often."
+    },
+    {
+      "turn": 5,
+      "doctor": "What medications do you usually take?",
+      "doctor_wrapped": "What medications do you usually take?",
+      "patient": "I take Loratadine, a multivitamin, Sudafed, Vitamin B Complex, and Vitamin D. Yesterday, I started Piroxicam and stopped taking aspirin."
+    },
+    {
+      "turn": 6,
+      "doctor": "When did these symptoms start?",
+      "doctor_wrapped": "When did these symptoms start?",
+      "patient": "They started last night around 10 PM. My left hand and leg feel more clumsy now. My speech is also a bit slurred and unclear. I also feel dizzy."
+    },
+    {
+      "turn": 7,
+      "doctor": "Has anything like this happened to you before?",
+      "doctor_wrapped": "Has anything like this happened to you before?",
+      "patient": "No, this has not happened before. I am worried about my left side."
+    },
+    {
+      "turn": 8,
+      "doctor": "Do you have any allergies I should know about?",
+      "doctor_wrapped": "Do you have any allergies I should know about?",
+      "patient": "Yes, I am allergic to penicillins."
+    },
+    {
+      "turn": 9,
+      "doctor": "Have you traveled recently or been around anyone sick?",
+      "doctor_wrapped": "Have you traveled recently or been around anyone sick?",
+      "patient": "No, I have not traveled recently. I have not been around anyone sick either."
+    },
+    {
+      "turn": 10,
+      "doctor": "Is there anything else you would like to tell me about how you are feeling?",
+      "doctor_wrapped": "Is there anything else you would like to tell me about how you are feeling?",
+      "patient": "My left hand and leg are getting worse. It is hard to type, and I make more mistakes. My left foot feels like it is dragging. I am still dizzy. I am concerned about what is happening."
+    },
+    {
+      "turn": 11,
+      "doctor": "Have you been able to eat or drink today?",
+      "doctor_wrapped": "Have you been able to eat or drink today?",
+      "patient": "Yes, I have been able to eat and drink a little. I don't have any problems swallowing."
+    },
+    {
+      "turn": 12,
+      "doctor": "Are you having any new sensations or changes since you arrived?",
+      "doctor_wrapped": "Are you having any new sensations or changes since you arrived?",
+      "patient": "My left arm and leg clumsiness is still getting worse. The dizziness is still there too. I am not feeling any better."
+    },
+    {
+      "turn": 13,
+      "doctor": "Has the way you feel changed at all since we started talking?",
+      "doctor_wrapped": "Has the way you feel changed at all since we started talking?",
+      "patient": "No, it has not changed. My left side is still clumsy, and my speech is still not clear. I am still dizzy. I am worried about this."
+    },
+    {
+      "turn": 14,
+      "doctor": "Is there anyone we should call for you?",
+      "doctor_wrapped": "Is there anyone we should call for you?",
+      "patient": "Yes, you can call my children. I want them to know what is happening."
+    },
+    {
+      "turn": 15,
+      "doctor": "Is there anything else you want me to know before we move on?",
+      "doctor_wrapped": "Is there anything else you want me to know before we move on?",
+      "patient": "No, I think I have told you everything. I just want to know what is wrong."
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-04-29T13:46:48.007085Z",
+    "elapsed_sec": 69.17,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2165,
+        2197,
+        2279,
+        2310,
+        2334,
+        2377,
+        2424,
+        2452,
+        2474,
+        2509,
+        2564,
+        2600,
+        2641,
+        2685,
+        2718
+      ],
+      "completion_tokens": [
+        20,
+        72,
+        22,
+        15,
+        35,
+        36,
+        16,
+        10,
+        17,
+        43,
+        22,
+        26,
+        33,
+        17,
+        19
+      ],
+      "total_tokens": [
+        2185,
+        2269,
+        2301,
+        2325,
+        2369,
+        2413,
+        2440,
+        2462,
+        2491,
+        2552,
+        2586,
+        2626,
+        2674,
+        2702,
+        2737
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/cerebral_infarction.json",
+    "script_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/low_yield_first_15turn.json"
+  }
+}

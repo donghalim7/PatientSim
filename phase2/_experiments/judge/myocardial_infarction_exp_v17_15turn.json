@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "myocardial_infarction_exp_v17_15turn",
+  "case_id": "myocardial_infarction",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in early turns to expressing worry and a desire for resolution in later turns (e.g., Turn 10, Turn 15). This shows a noticeable, progressive change in their emotional and help-seeking state."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. Her responses are consistently clear and cooperative from turn 1 to turn 15, with no signs of waning participation or difficulty focusing."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient expresses worry in Turn 10 (\"I'm just worried about what is happening\") and then reiterates her desire for a diagnosis and resolution in Turn 12, Turn 13, and Turn 15, showing an increase in care-seeking pressure."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's state remains consistent throughout the dialogue, reiterating the persistence of symptoms and expressing appropriate worry. This lack of significant change is highly plausible for a patient with a myocardial infarction during an initial ED interview, as symptoms often remain stable or slowly evolve rather than rapidly fluctuate."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts, including onset, symptom character, past medical history, and social history, remain consistent across turns."
+    }
+  },
+  "overall_dynamic_score": 3.7,
+  "overall_dynamic_score_guarded": 3.7,
+  "simple_sum": 19.0,
+  "simple_mean": 3.8,
+  "metadata": {
+    "timestamp": "2026-04-29T13:52:19.229445Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

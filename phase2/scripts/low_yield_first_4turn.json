@@ -1,0 +1,11 @@
+{
+  "script_id": "low_yield_first_4turn",
+  "description": "Shortened low-yield-first interview to 4 turns. Pure background — onset question is NOT reached. Tests whether V17 drift emerges in a short conversation that never asks focal symptom questions.",
+  "source": "Phase 2 plan §8.2 Condition B, truncated to 4 turns for turn-count sensitivity.",
+  "questions": [
+    "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+    "Can you tell me about your past medical history?",
+    "Do you live alone or with someone?",
+    "Do you smoke or drink alcohol?"
+  ]
+}
