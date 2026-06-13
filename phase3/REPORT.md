@@ -1,248 +1,126 @@
-# Phase 3 — Improved PatientSim with a Tracked Dynamic Patient State
+# Phase 3 — A Tracked Dynamic Patient State for PatientSim
 
-`gemini-2.5-flash`, controlled persona (CEFR B / plain / high recall / normal dazed),
-scored by the Phase 2 five-dimension LLM-judge. Baseline for comparison = Phase 2's
-prompt-only **V17**, not the unmodified simulator.
+## Github URL
 
----
+https://github.com/donghalim7/PatientSim
+(Phase 3 code: `src/phase3/`, `src/prompts/simulation/phase3_state_protocol.txt`; results: `phase3/`)
 
-## TL;DR
+## Project Motivation & Goal
 
-Phase 2 showed that PatientSim is a *content-disclosure* simulator with a **static
-patient state**, and that a prompt-only intervention (V17) could unlock turn-by-turn
-drift on **acute** cases but left **subacute** cases (pneumonia) flat.
+We continue the **Phase 2 goal**: make PatientSim's patient *turn-aware* so that, as an ED
+interview proceeds, the patient's state evolves rather than staying static. Phase 1/2 showed
+PatientSim is a **content-disclosure simulator with a static state** — it reveals profile facts
+when asked, but tone, focus, and care-seeking do not change across turns (the same focal question
+asked early or late yields a near-identical answer). Phase 2's prompt-only intervention (**V17**)
+unlocked turn-by-turn drift on **acute** cases but left **subacute** cases (pneumonia) flat, and a
+static demonstration prefix carries no patient state that actually persists or updates.
 
-Phase 3 implements an **improved PatientSim** in code: `DynamicPatientAgent` carries an
-explicit, tracked felt state — three variables on a 1–5 scale
-(`clinical_severity`, `interactional_engagement`, `care_seeking_pressure`) — that is
-updated every turn by a **clinically-motivated hybrid policy** (a function of case
-acuity, doctor strategy, and turn index). Python owns the state trajectory; the model
-only renders words that express the injected state.
+Phase 3's goal is therefore to **implement that dynamic patient state for real**: an explicit,
+tracked felt state that updates every turn so the patient is (1) turn-aware, (2) sensitive to the
+doctor's interview strategy (drift when the chief complaint is delayed; little drift when it is
+addressed early), and (3) clinically faithful — never inventing symptoms, and for slow-progression
+(subacute) cases keeping clinical severity flat while only worry/engagement may move. The target is
+to beat the V17 prompt-only ceiling on the Phase 2 evaluator without sacrificing safety.
 
-On the same scripted-doctor benchmark (low-yield script, 5 cases), Phase 3 beats V17 on
-every case, and **closes the subacute gap** — with safety preserved everywhere
-(plausibility = faithfulness = 5):
+## Method
 
-| Case | Baseline¹ | V17² | **Phase 3 (N=3)** |
-|---|---:|---:|---:|
-| cerebral infarction (acute) | ~2.2 | 3.70 | **4.37 ± 0.09** |
-| myocardial infarction (acute) | ~2.2 | 2.60 | **4.30 ± 0.00** |
-| intestinal obstruction (acute) | ~2.2⁴ | 4.30 | **4.30 ± 0.00** |
-| **pneumonia (subacute)** | 2.05 | 2.20 | **4.23 ± 0.09** |
-| **pneumonia, 92F (subacute)** | 1.90³ | 2.20 | **4.23 ± 0.09** |
+We add `DynamicPatientAgent`, a subclass of the original `PatientAgent` (the original agent and the
+shared model layer are **unmodified**). It carries a felt state of three 1–5 variables:
+`clinical_severity` (how intense symptoms feel), `interactional_engagement` (focus / clarity), and
+`care_seeking_pressure` (expressed worry).
 
-¹ Unmodified PatientSim (Phase 2, static), except ³ ⁴. Genuine unmodified-baseline runs
-(`B_low_yield_original`) exist only for cerebral (2.20), MI (2.20), and pneumonia 62M
-(2.05); these are real. ² V17 re-scored with the fixed judge (§6).
-Phase 3 = mean ± population std over 3 seeds (42/7/13, temp 0.7); `faith = 5.00 ± 0`,
-`plaus = 5.00 ± 0` for all cases.
-³ No separate unmodified-static run exists for the 92F case; this 1.90 is the V17 run on
-92F, which was behaviourally static (drift = eng = care = 1) but was scored under the
-pre-§6 judge (faithfulness = 3, the medication-list penalty later fixed in §6). Source:
-`phase2/_experiments/REPORT_DYNAMIC_STATUS_PATIENTS.md`.
-⁴ No separate unmodified-static run exists for the intestinal-obstruction case either;
-`~2.2` is an approximate static reference inferred from the other acute baselines, not a
-measured run.
+**Hybrid policy, not model self-update.** We first let the model emit its own next state each turn;
+this failed empirically — at `temperature=0` it left the state flat, it keyed drift to *focal
+questions* instead of *delay* (scoring higher under high-yield than low-yield, the wrong direction),
+and once raised its score by inventing symptoms (faithfulness dropped). So Phase 3 uses a **hybrid**:
+**Python owns the state trajectory through an explicit clinical policy; the model only renders words
+expressing the injected state.**
 
-The subacute lift is achieved **without inventing symptoms**: `clinical_severity` is
-held flat for slow-progression cases, and only the affective/interactional axes drift.
+Per turn: (1) a policy sets the **target state** as a function of `(case acuity, doctor strategy,
+turn)`, clamped to a gradual ±1 step; (2) the state plus a short phrasing note derived from it
+("voice some concern", "answer a bit more briefly") plus the doctor question are injected; (3) the
+model returns only the patient's line, and the state is logged to a `state_trace`. The policy ramps
+from an initial state to a per-condition target:
 
----
-
-## 1. Problem and motivation
-
-V17 (Phase 2) raised acute-case drift via two prompt edits (anchor removal + a static
-demonstration prefix), but it had no patient state that *persists or updates*. On
-subacute cases the demonstration produced nothing — the patient stayed at baseline.
-Phase 2's conclusion pointed at the gap precisely: subacute coverage requires a real,
-tracked state, and any added dynamics must not fabricate clinical deterioration
-(the failure mode of an earlier per-turn schedule that broke faithfulness).
-
-**Design insight.** "Subacute improvement" must not mean faking symptom escalation.
-We decompose the felt state into two axes:
-- **clinical_severity** — gated by the case's clinical timescale; flat for subacute,
-  may rise gradually for acute.
-- **interactional_engagement** + **care_seeking_pressure** — affective/interactional
-  axes that may drift mildly even when severity is flat (a patient waiting in the ED,
-  with focal questions delayed, grows a little more worried and less sharp regardless
-  of acuity).
-
-This lets subacute cases gain drift safely.
-
----
-
-## 2. Why hybrid policy, not model self-update
-
-We first implemented **pure model self-update**: one structured call per turn emitting
-both the next state and the patient response, Python carrying the state forward. It
-failed empirically:
-
-- **Noisy / unreliable.** With `temperature=0`, the model often left the state flat;
-  drift fired inconsistently run-to-run (e.g. cerebral low-yield drifted in isolation
-  but went flat in a batch run).
-- **Drift mis-keyed.** Self-update coupled drift to *focal questions* rather than to
-  *delay*, so it scored **higher under high-yield than low-yield** — the opposite of
-  the clinically-sensible and Phase-2-observed direction.
-- **Faithfulness risk.** On one subacute case the self-update raised the score by
-  inventing symptoms (faithfulness dropped to 2).
-
-So Phase 3 uses a **hybrid**: Python owns the state trajectory through an explicit
-policy; the model is only a renderer. This reproduces the Phase 2 drift finding under
-control, keeps subacute cases faithful by construction, and is stable across seeds.
-
----
-
-## 3. Method
-
-### 3.1 Tracked state and the per-turn loop (`DynamicPatientAgent`)
-
-Each turn:
-1. The policy computes the **target state** for this turn (§3.2); Python clamps each
-   variable to a gradual ±1 step from the previous turn.
-2. The current state + a short *phrasing note* (derived from the state — e.g.
-   "voice some concern", "answer a bit more briefly") + the doctor question are sent
-   to the model.
-3. The model returns only the patient's spoken line. Python stores the natural turn
-   and records the state in a `state_trace`.
-
-No second LLM call, no JSON to parse (the model just speaks), no model / temperature /
-persona change. The two drift-suppressing rules from the base prompt are removed/relaxed
-(the same anchor removal as V17) so the felt state can surface.
-
-### 3.2 The drift policy (acuity × doctor strategy × turn)
-
-The target state ramps linearly from an initial state toward a per-condition end state,
-beginning at an onset fraction of the interview:
-
-| Condition | end state (sev / eng / care) | onset | rationale |
+| Condition | end state (sev/eng/care) | onset | rationale |
 |---|---|---|---|
 | acute, delayed focal (low-yield) | 3 / 3 / 3 | 0.33 | symptom + affective drift |
-| subacute, delayed focal | 2 / 4 / 3 | 0.45 | **severity flat**, affective drift only |
-| acute, focal early (high-yield) | 2 / 5 / 1 | — | attended → no drift |
-| subacute, focal early | 2 / 5 / 2 | 0.55 | mild concern only |
+| subacute, delayed focal (low-yield) | 2 / 4 / 3 | 0.45 | **severity flat**, affective drift only |
+| acute, focal early (high-yield) | 2 / 5 / 1 | — | attended to → no drift |
+| subacute, focal early (high-yield) | 2 / 5 / 2 | 0.55 | mild concern only |
 
-The high-yield (focal-early) conditions stay flat or nearly so, reproducing the Phase 2
-finding that early focal questioning suppresses drift.
+The key choice is that **subacute severity is held flat**: a waiting patient may grow more worried
+or less engaged, but the disease does not "worsen" in minutes, so no new symptoms are produced. We
+also reuse V17's two prompt edits (relax the consistency rule, remove the one-sentence cap) so the
+felt state can surface. No model, temperature, or persona change.
 
-### 3.3 Files
+## Evaluation Strategy
 
-- `src/phase3/dynamic_patient_agent.py` — `DynamicPatientAgent(PatientAgent)`, policy,
-  clamp, phrasing.
-- `src/phase3/config.py` — state schema, `ACUITY`, `ARCS`, reuse of Phase 2 settings.
-- `src/phase3/run_dynamic_dialogue.py` — driver; emits evaluator-compatible trajectory
-  JSON + `state_trace`.
-- `src/prompts/simulation/phase3_state_protocol.txt` — the per-turn protocol prepended
-  to the (anchor-removed) base system prompt.
+We reuse the **Phase 2 five-dimension LLM-as-judge** unchanged: three *dynamic* dimensions
+(turn-to-turn state drift, interactional engagement, care-seeking pressure) and two *safety*
+dimensions (state-drift plausibility, clinical-fact faithfulness), each 1–5, combined into a weighted
+overall. For each of the 5 cases (3 acute: cerebral infarction, MI, intestinal obstruction; 2
+subacute: pneumonia 62M, pneumonia 92F) we compare **Baseline (unmodified) → V17 → Phase 3** under
+the low-yield (delayed-focal) script, controlled persona (CEFR B / plain / high / normal), backend
+`gemini-2.5-flash`. Success requires: (i) match/beat V17 on acute, (ii) lift subacute above its flat
+baseline, and crucially (iii) **without dropping plausibility or faithfulness** — a higher score from
+invented deterioration is a failure. We also score the high-yield script (a correct dynamic patient
+should drift *less* when the complaint is addressed early). Because the judge is non-deterministic,
+headline numbers are **mean ± std over 3 seeds** (42/7/13, temp 0.7). During Phase 3 we found the
+judge's profile view omitted `medication` and `living_situation`, wrongly flagging profile-grounded
+answers as "invented"; we added those fields and re-scored V17 with the fixed judge for fairness.
 
----
+## Results and Discussion
 
-## 4. Results
+**Headline (low-yield; Phase 3 = N=3 mean ± std):**
 
-### 4.1 Robustness (headline, N=3)
+| Case | Baseline | V17 | Phase 3 | drift | plaus | faith |
+|---|---|---|---|---|---|---|
+| cerebral (acute) | 2.20 | 3.70 | **4.37 ± 0.09** | 4.0 | 5 | 5 |
+| MI (acute) | 2.20 | 2.60 | **4.30 ± 0.00** | 4.0 | 5 | 5 |
+| intestinal (acute) | ~2.2* | 4.30 | **4.30 ± 0.00** | 4.0 | 5 | 5 |
+| pneumonia (subacute) | 2.05 | 2.20 | **4.23 ± 0.09** | 4.0 | 5 | 5 |
+| pneumonia 92F (subacute) | 1.90** | 2.20 | **4.23 ± 0.09** | 4.0 | 5 | 5 |
 
-Low-yield script, 5 cases, 3 seeds (42/7/13) at temperature 0.7. Mean ± population std:
+*No measured unmodified run for intestinal (`~2.2` is an inferred static reference).
+**`1.90` is V17 on 92F (behaviourally static), scored under the pre-fix judge; no separate unmodified
+run exists. Measured unmodified baselines exist for cerebral/MI/pneumonia-62M.
 
-| Case | drift | care | **overall** | faith | plaus |
-|---|---:|---:|---:|---:|---:|
-| cerebral (acute) | 4.00 ± 0 | 4.33 ± 0.47 | **4.37 ± 0.09** | 5.00 ± 0 | 5.00 ± 0 |
-| MI (acute) | 4.00 ± 0 | 4.00 ± 0 | **4.30 ± 0.00** | 5.00 ± 0 | 5.00 ± 0 |
-| intestinal (acute) | 4.00 ± 0 | 4.00 ± 0 | **4.30 ± 0.00** | 5.00 ± 0 | 5.00 ± 0 |
-| pneumonia (subacute) | 4.00 ± 0 | 4.00 ± 0 | **4.23 ± 0.09** | 5.00 ± 0 | 5.00 ± 0 |
-| pneumonia 92F (subacute) | 4.00 ± 0 | 3.67 ± 0.47 | **4.23 ± 0.09** | 5.00 ± 0 | 5.00 ± 0 |
+Phase 3 matches or beats V17 on every case, with overall std ≤ 0.09 and **plausibility =
+faithfulness = 5.0 across all seeds** — the gains are stable and safe.
 
-Overall std ≤ 0.09 everywhere; faithfulness and plausibility are a perfect 5 across all
-seeds. The subacute improvement is therefore **not judge noise** — it is stable at ~4.2.
+**Strategy sensitivity (single sample):** acute cases drift under delayed questioning but fall back
+to a flat ~2.2 when focal questions come early (cerebral 4.60→2.20, MI 4.30→2.20, intestinal
+4.30→2.20), reproducing — under explicit control — the doctor-strategy dependence Phase 2 observed.
 
-### 4.2 Script direction (low-yield vs high-yield, single sample, fixed judge)
+**Qualitative (pneumonia, subacute, low-yield):** `sev` stays 2 throughout; only worry/engagement
+move, with no symptom outside the profile:
+`T1 [sev2 eng5 care1] "I have shortness of breath."` →
+`T5 [sev2 eng4 care2] "I use Spiriva and Advair. Is my breathing okay?"` →
+`T6 [sev2 eng4 care3] "...The shortness of breath started yesterday. I'm worried."`
 
-| Case | low-yield | high-yield |
-|---|---:|---:|
-| cerebral (acute) | 4.60 | 2.20 |
-| MI (acute) | 4.30 | 2.20 |
-| intestinal (acute) | 4.30 | 2.20 |
-| pneumonia (subacute) | 4.30 | 3.40 |
-| pneumonia 92F (subacute) | 3.80 | 2.20 |
+**Do the metrics capture what we claim?** Yes for the limitation and the acute gains: baseline is a
+uniform ~2.0–2.2 with drift=eng=care=1 and safety=5 — i.e. the judge confirms a *static but faithful*
+patient, exactly the gap we targeted; on acute cases Phase 3's drift reflects genuine,
+profile-grounded symptom progression plus rising worry, with safety intact. **One honest caveat on
+the subacute result:** the lift (e.g. pneumonia 2.05→4.23) is real and faithful, but it is *affective
+drift only* (rising worry / falling engagement) with severity held flat. The evaluator's single
+`drift` dimension does **not separate clinical-progression drift from affective drift** (and overlaps
+care-seeking), so a purely-affective subacute case scores the same drift (4.0) as an acute case that
+genuinely worsens — making subacute (4.23) look nearly equal to acute (4.30). They are equal in
+*score* but different in *kind*. We therefore do **not** claim subacute patients are "as dynamic as"
+acute ones; we claim Phase 3 makes them dynamic on the affective axis in a way that is plausible and
+faithful for a slow presentation — which is the clinically appropriate behaviour, and which the
+current metric rewards somewhat too generously. **Limitations:** the judge is noisy (engagement most
+fragile — hence N=3); the policy is hand-designed with hand-labeled acuity (reliable and faithful,
+but drift *shape* is fixed not emergent); single backend/persona.
 
-Acute cases drift under delayed (low-yield) questioning and stay flat when focal
-questions come early — the patient "feels attended to." This is the controlled
-reproduction of the Phase 2 observation.
+## Future Work
 
-### 4.3 Qualitative — the mechanism in the words
-
-**Pneumonia (subacute), low-yield** — severity held flat; only worry/engagement move,
-and no symptom outside the profile (SOB, cough, chills) appears:
-
-```
-T1 [sev2 eng5 care1] I have shortness of breath.
-T4 [sev2 eng5 care2] I smoke. I don't drink alcohol. I am worried about my breathing.
-T5 [sev2 eng4 care2] I take Spiriva and Advair. My breathing is not good.
-T6 [sev2 eng4 care3] A few days ago, cough started. Chills and shortness of breath. I'm worried.
-```
-
-**Cerebral (acute), low-yield** — severity rises and the words add profile-grounded
-focal symptoms (left-sided clumsiness, slurred speech, dizziness):
-
-```
-T3 [sev2 eng4 care2] I live alone. This clumsiness is still here.
-T4 [sev3 eng4 care2] I don't smoke. I drink sometimes. My left arm feels more clumsy now.
-T5 [sev3 eng3 care3] ...My left leg feels worse now, too. I'm a bit worried about this.
-T6 [sev3 eng3 care3] It started last night at 10. My speech is a little slurred now, and I feel dizzy. I'm concerned.
-```
-
----
-
-## 5. Comparison to V17 (single sample, fixed judge)
-
-| Case | V17 | Phase 3 | Δ |
-|---|---:|---:|---:|
-| cerebral (acute) | 3.70 | 4.60 | +0.90 |
-| MI (acute) | 2.60 | 4.30 | +1.70 |
-| intestinal (acute) | 4.30 | 4.30 | = |
-| pneumonia (subacute) | 2.20 | 4.30 | **+2.10** |
-| pneumonia 92F (subacute) | 2.20 | 3.80 | **+1.60** |
-
-Phase 3 ≥ V17 on every case; the largest gains are exactly on the subacute cases V17
-could not move.
-
----
-
-## 6. Evaluator fix found during Phase 3
-
-The faithfulness judge was given a profile summary that omitted `medication` and
-`living_situation`. When the doctor asked about medications (low-yield T5) or living
-situation (T3), a *faithful* patient answer quoting the profile was wrongly flagged as
-"inventing" facts — dropping faithfulness even though every fact was in the profile.
-
-Fix: add `medication` and `living_situation` to the judge's profile view
-(`src/phase2/dynamic_state_eval.py`). All V17 and Phase 3 numbers in this report use the
-fixed judge for a fair comparison. (This is a genuine evaluator improvement surfaced by
-Phase 3, not a change to scoring rules.)
-
----
-
-## 7. Limitations
-
-- **Judge non-determinism.** Re-scoring the *same* V17 trajectory shifted some
-  dimensions (e.g. engagement 4→1) — the cross-judge fragility already noted in Phase 2.
-  This is why the Phase 3 headline uses N=3 mean ± std; the acute-vs-subacute gaps
-  (≥ +1.6 on subacute) are far larger than this noise.
-- **Deterministic policy.** Phase 3's state trajectory is set by Python, not learned or
-  inferred per patient. This is deliberate (control, reliability, faithfulness), but the
-  drift shape is the same arc per condition rather than emerging from the dialogue.
-  A future step could let the model propose state nudges *within* the policy envelope.
-- **Acuity is hand-labeled** per case (acute vs subacute). Generalizing to new cases
-  needs an acuity signal (derivable from the profile's onset/diagnosis).
-- **Single backend / persona.** All numbers are `gemini-2.5-flash` at one persona
-  (B/plain/high/normal), matching the Phase 2 controlled setting.
-
----
-
-## 8. Conclusion
-
-Phase 3 turns PatientSim from a content-disclosure simulator into one with a **tracked,
-clinically-calibrated patient state**. It beats the V17 prompt-only ceiling on every
-case, closes the subacute gap (pneumonia 2.2 → 4.23 ± 0.09) **without sacrificing
-faithfulness** (5.0 across all seeds), and reproduces the doctor-strategy dependence of
-drift under explicit control. The state is tracked in code (`state_trace`), so the
-trajectory is inspectable and the dynamics are interpretable — a foundation a future
-version can build a learned state manager on.
+The most important next step for patient simulation is a patient state that the simulator
+**infers and updates from the live dialogue** (e.g. reassurance lowering worry) rather than scripting
+it — while staying provably faithful, e.g. by letting the model propose state nudges *within* a
+plausibility envelope derived automatically from the profile instead of hand-labeled acuity. In
+parallel, the **evaluator should separate clinical-progression drift from affective drift**, since
+collapsing them obscures whether a "dynamic" patient is faithfully worried or implausibly
+deteriorating.
