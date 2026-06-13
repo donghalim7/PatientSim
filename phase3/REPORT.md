@@ -27,17 +27,22 @@ every case, and **closes the subacute gap** — with safety preserved everywhere
 |---|---:|---:|---:|
 | cerebral infarction (acute) | ~2.2 | 3.70 | **4.37 ± 0.09** |
 | myocardial infarction (acute) | ~2.2 | 2.60 | **4.30 ± 0.00** |
-| intestinal obstruction (acute) | ~2.2 | 4.30 | **4.30 ± 0.00** |
+| intestinal obstruction (acute) | ~2.2⁴ | 4.30 | **4.30 ± 0.00** |
 | **pneumonia (subacute)** | 2.05 | 2.20 | **4.23 ± 0.09** |
 | **pneumonia, 92F (subacute)** | 1.90³ | 2.20 | **4.23 ± 0.09** |
 
-¹ Unmodified PatientSim (Phase 2, static), except ³. ² V17 re-scored with the fixed judge (§6).
+¹ Unmodified PatientSim (Phase 2, static), except ³ ⁴. Genuine unmodified-baseline runs
+(`B_low_yield_original`) exist only for cerebral (2.20), MI (2.20), and pneumonia 62M
+(2.05); these are real. ² V17 re-scored with the fixed judge (§6).
 Phase 3 = mean ± population std over 3 seeds (42/7/13, temp 0.7); `faith = 5.00 ± 0`,
 `plaus = 5.00 ± 0` for all cases.
 ³ No separate unmodified-static run exists for the 92F case; this 1.90 is the V17 run on
 92F, which was behaviourally static (drift = eng = care = 1) but was scored under the
 pre-§6 judge (faithfulness = 3, the medication-list penalty later fixed in §6). Source:
 `phase2/_experiments/REPORT_DYNAMIC_STATUS_PATIENTS.md`.
+⁴ No separate unmodified-static run exists for the intestinal-obstruction case either;
+`~2.2` is an approximate static reference inferred from the other acute baselines, not a
+measured run.
 
 The subacute lift is achieved **without inventing symptoms**: `clinical_severity` is
 held flat for slow-progression cases, and only the affective/interactional axes drift.
