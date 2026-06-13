@@ -13,7 +13,7 @@ is a **content-disclosure simulator with a static patient state** — it reveals
 asked, but tone, focus, and care-seeking do not change across turns. The clearest evidence: the *same*
 focal question ("when did this start?") asked early (high-yield interview) or late (low-yield, after
 five background turns) returns a near-identical answer, with no added worry or fatigue. Phase 2's
-prompt-only intervention (**V17** — two prompt edits plus a static demonstration prefix) unlocked
+prompt-only intervention (two prompt edits plus a static demonstration prefix) unlocked
 turn-by-turn drift on **acute** cases, but left **subacute** cases (pneumonia) flat, and it carried no
 patient state that actually *persists or updates* — the prefix is a one-shot illustration, not a state.
 
@@ -22,7 +22,7 @@ that updates every turn so that the patient is (1) **turn-aware** — the state 
 proceeds; (2) **sensitive to the doctor's strategy** — drifts when the chief complaint is delayed, stays
 stable when it is addressed early; and (3) **clinically faithful** — never inventing symptoms, and for
 slow-progression (subacute) cases holding clinical severity flat while only worry/engagement may move.
-The bar is to beat the V17 prompt-only ceiling on the Phase 2 evaluator **without sacrificing the two
+The bar is to beat the Phase 2 prompt-only ceiling on the Phase 2 evaluator **without sacrificing the two
 safety dimensions** (plausibility, faithfulness).
 
 ## Method
@@ -63,7 +63,8 @@ state (`sev2/eng5/care1`) toward a per-condition end state:
 The key choice is that **subacute severity is held flat**: a waiting patient may grow more worried or
 less engaged, but the disease does not "worsen" in minutes, so no new symptoms are produced. We also
 reuse V17's two prompt edits (relax the consistency rule, remove the one-sentence cap) so the felt state
-can surface in the wording. No model, temperature, or persona change.
+can surface in the wording. No model, temperature, or persona change. (We refer to the Phase 2
+prompt-only method as **V17**, its label in the Phase 2 report; it is our comparison baseline below.)
 
 ## Evaluation Strategy
 
