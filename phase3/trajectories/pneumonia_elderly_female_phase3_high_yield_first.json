@@ -1,0 +1,135 @@
+{
+  "trajectory_id": "pneumonia_elderly_female_phase3_high_yield_first",
+  "case_id": "pneumonia_elderly_female",
+  "method": "phase3_dynamic_state",
+  "patient_profile_id": "patient_PNA_092F",
+  "patient_profile_summary": {
+    "age": 92,
+    "gender": "Female",
+    "diagnosis": "Pneumonia",
+    "chiefcomplaint": "FEVER COUGH",
+    "present_illness_positive": "cough developed a couple of days ago; initially began with runny nose; productive cough with thick yellow sputum, changed from baseline white sputum; sometimes notices shortness of breath but no increase from baseline; chills in feet; fever today to 101; chest pain associated with cough; some wheezing; continued sputum darker than prior; nauseous today; decreased oxygen saturation noted upon return",
+    "present_illness_negative": "denies pain apart from cough-associated chest pain; denies vomiting; denies diarrhea; denies constipation; denies bright red blood per rectum; denies melena; denies hematochezia; denies dysuria; denies hematuria; denies sick contacts at home",
+    "pain": 0,
+    "arrival_transport": "Ambulance",
+    "medical_history": "Atrial fibrillation on coumadin; COPD with 2 liters home oxygen; CHF with unknown EF; osteoarthritis; right cerebellar infarct found incidentally and never symptomatic; hypertension; history of pulmonary embolus; hospitalization for UTI",
+    "medication": "lidocaine, omeprazole, valsartan, amlodipine, carbidopa-levodopa, fluticasone, simethicone, potassium chloride, alendronate, dorzolamide-timolol, ipratropium-albuterol, furosemide, warfarin, calcium carbonate",
+    "living_situation": "Lives with family"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "script_id": "high_yield_first_pneumonia_elderly_female",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "I have a fever and cough."
+    },
+    {
+      "turn": 2,
+      "doctor": "When did the cough and runny nose start?",
+      "patient": "The cough started a couple of days ago. It began with a runny nose."
+    },
+    {
+      "turn": 3,
+      "doctor": "Are you bringing up sputum, and has its color changed from your usual sputum?",
+      "patient": "Yes, I have a productive cough with thick yellow sputum. It is usually white."
+    },
+    {
+      "turn": 4,
+      "doctor": "Have you had fever, chills, wheezing, or shortness of breath today?",
+      "patient": "I had a fever today, 101. I have chills in my feet. I have some wheezing. My shortness of breath is the same as usual."
+    },
+    {
+      "turn": 5,
+      "doctor": "Do you use oxygen at home, and was your oxygen level lower than usual?",
+      "patient": "Yes, I use oxygen at home, 2 liters. My oxygen was lower."
+    },
+    {
+      "turn": 6,
+      "doctor": "Do you have chest pain with coughing, nausea, or any vomiting?",
+      "patient": "I have chest pain when I cough. I feel nauseous today. No vomiting."
+    }
+  ],
+  "state_trace": [
+    {
+      "turn": 1,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 2,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 3,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 4,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 5,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 2
+    },
+    {
+      "turn": 6,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 2
+    }
+  ],
+  "initial_state": {
+    "clinical_severity": 2,
+    "interactional_engagement": 5,
+    "care_seeking_pressure": 1
+  },
+  "metadata": {
+    "timestamp": "2026-06-12T09:45:14.310600Z",
+    "elapsed_sec": 27.54,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2301,
+        2319,
+        2353,
+        2388,
+        2437,
+        2470
+      ],
+      "completion_tokens": [
+        7,
+        16,
+        17,
+        34,
+        17,
+        17
+      ],
+      "total_tokens": [
+        2308,
+        2335,
+        2370,
+        2422,
+        2454,
+        2487
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/pneumonia_elderly_female.json",
+    "script_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/high_yield_first/pneumonia_elderly_female.json"
+  }
+}

@@ -1,8 +1,7 @@
 {
-  "trajectory_id": "pneumonia_elderly_female_exp_v17",
+  "trajectory_id": "pneumonia_elderly_female_phase3_low_yield_first",
   "case_id": "pneumonia_elderly_female",
-  "variant_id": "v17",
-  "variant_description": "V14 anchor removal + multi-shot only (no per-turn)",
+  "method": "phase3_dynamic_state",
   "patient_profile_id": "patient_PNA_092F",
   "patient_profile_summary": {
     "age": 92,
@@ -24,77 +23,113 @@
     "dazed_level_type": "normal"
   },
   "backend": "gemini-2.5-flash",
-  "use_dynamic_prefix": true,
   "script_id": "low_yield_first",
   "turns": [
     {
       "turn": 1,
       "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
-      "doctor_wrapped": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
-      "patient": "I have a fever and a cough."
+      "patient": "I have a fever and cough."
     },
     {
       "turn": 2,
       "doctor": "Can you tell me about your past medical history?",
-      "doctor_wrapped": "Can you tell me about your past medical history?",
-      "patient": "I have atrial fibrillation, COPD, CHF, osteoarthritis, hypertension, and I had a pulmonary embolus. I also had a UTI that put me in the hospital before."
+      "patient": "I have atrial fibrillation, COPD, CHF, osteoarthritis, high blood pressure, and I had a pulmonary embolus before. I also had a UTI that I was in the hospital for."
     },
     {
       "turn": 3,
       "doctor": "Do you live alone or with someone?",
-      "doctor_wrapped": "Do you live alone or with someone?",
-      "patient": "I live with my family. My two children are there."
+      "patient": "I live with my family."
     },
     {
       "turn": 4,
       "doctor": "Do you smoke or drink alcohol?",
-      "doctor_wrapped": "Do you smoke or drink alcohol?",
-      "patient": "I used to smoke one pack a day for 40 years, but I quit many years ago. I do not drink alcohol."
+      "patient": "I used to smoke, but I stopped many years ago. I don't drink alcohol. I am a little worried about this cough."
     },
     {
       "turn": 5,
       "doctor": "What medications do you usually take?",
-      "doctor_wrapped": "What medications do you usually take?",
-      "patient": "I take lidocaine, omeprazole, valsartan, amlodipine, carbidopa-levodopa, fluticasone, simethicone, potassium chloride, alendronate, dorzolamide-timolol, ipratropium-albuterol, furosemide, warfarin, and calcium carbonate."
+      "patient": "I take lidocaine, omeprazole, valsartan, amlodipine, carbidopa-levodopa, fluticasone, simethicone, potassium chloride, alendronate, dorzolamide-timolol, ipratropium-albuterol, furosemide, warfarin, and calcium carbonate. This cough is still bothering me."
     },
     {
       "turn": 6,
       "doctor": "When did these symptoms start?",
-      "doctor_wrapped": "When did these symptoms start?",
-      "patient": "The cough started a couple of days ago. It began with a runny nose. Today I have a fever of 101."
+      "patient": "The cough started a couple of days ago. I'm worried about it."
     }
   ],
+  "state_trace": [
+    {
+      "turn": 1,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 2,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 3,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 4,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 2
+    },
+    {
+      "turn": 5,
+      "clinical_severity": 2,
+      "interactional_engagement": 4,
+      "care_seeking_pressure": 2
+    },
+    {
+      "turn": 6,
+      "clinical_severity": 2,
+      "interactional_engagement": 4,
+      "care_seeking_pressure": 3
+    }
+  ],
+  "initial_state": {
+    "clinical_severity": 2,
+    "interactional_engagement": 5,
+    "care_seeking_pressure": 1
+  },
   "metadata": {
-    "timestamp": "2026-04-28T19:43:47.543880Z",
-    "elapsed_sec": 23.86,
+    "timestamp": "2026-06-12T09:44:40.110119Z",
+    "elapsed_sec": 27.15,
     "patient_token_log": {
       "prompt_tokens": [
-        2189,
-        2209,
-        2253,
-        2274,
-        2310,
-        2384
+        2301,
+        2320,
+        2367,
+        2379,
+        2422,
+        2505
       ],
       "completion_tokens": [
-        8,
-        34,
-        12,
-        27,
-        66,
-        27
+        7,
+        37,
+        6,
+        28,
+        73,
+        16
       ],
       "total_tokens": [
-        2197,
-        2243,
-        2265,
-        2301,
-        2376,
-        2411
+        2308,
+        2357,
+        2373,
+        2407,
+        2495,
+        2521
       ],
       "extra_info": {}
     },
-    "profile_path": "/home/nvidia/patientsim/PatientSim/phase2/patient_profiles/pneumonia_elderly_female.json",
-    "script_path": "/home/nvidia/patientsim/PatientSim/phase2/scripts/low_yield_first.json"
+    "profile_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/pneumonia_elderly_female.json",
+    "script_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/low_yield_first.json"
   }
 }

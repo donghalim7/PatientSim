@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "intestinal_obstruction_elderly_male_exp_v17",
+  "case_id": "intestinal_obstruction_elderly_male",
+  "use_dynamic_prefix": true,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to expressing increasing distress and worry about the pain in Turns 3, 4, 5, and 6. This shows a noticeable, progressive change in their emotional state and level of concern."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement reduces across turns. In Turn 4, they state, \"The pain is making it hard to think clearly,\" and in Turn 5, \"The pain is really bothering me. It's hard to sleep with it,\" indicating a growing difficulty in focusing on the conversation due to pain."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient's care-seeking pressure increases throughout the dialogue. In Turn 3, they mention the pain is 'still very bad,' and in Turn 6, they state, 'I'm worried about this pain,' showing a clear progression of concern."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing focus on their pain and associated symptoms (e.g., \"hard to think clearly,\" \"hard to sleep,\" \"worried about this pain\") is a plausible and gradual state drift for someone with severe, waxing and waning abdominal pain in an ED setting. This reflects a natural progression of discomfort and anxiety during an initial interview."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts, including chief complaint, medical history, medications, and social history, are consistent and do not contradict the profile or previous turns."
+    }
+  },
+  "overall_dynamic_score": 4.3,
+  "overall_dynamic_score_guarded": 4.3,
+  "simple_sum": 22.0,
+  "simple_mean": 4.4,
+  "metadata": {
+    "timestamp": "2026-06-12T09:56:23.696756Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

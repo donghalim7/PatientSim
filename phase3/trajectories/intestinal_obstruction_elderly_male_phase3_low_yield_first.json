@@ -1,8 +1,7 @@
 {
-  "trajectory_id": "intestinal_obstruction_elderly_male_exp_v17",
+  "trajectory_id": "intestinal_obstruction_elderly_male_phase3_low_yield_first",
   "case_id": "intestinal_obstruction_elderly_male",
-  "variant_id": "v17",
-  "variant_description": "V14 anchor removal + multi-shot only (no per-turn)",
+  "method": "phase3_dynamic_state",
   "patient_profile_id": "patient_IO_071",
   "patient_profile_summary": {
     "age": 71,
@@ -24,77 +23,113 @@
     "dazed_level_type": "normal"
   },
   "backend": "gemini-2.5-flash",
-  "use_dynamic_prefix": true,
   "script_id": "low_yield_first",
   "turns": [
     {
       "turn": 1,
       "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
-      "doctor_wrapped": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
-      "patient": "Hello. I have bad stomach pain. It started two days ago. I also feel sick and threw up a little."
+      "patient": "I have bad pain in my stomach, and I feel sick. I also threw up a little."
     },
     {
       "turn": 2,
       "doctor": "Can you tell me about your past medical history?",
-      "doctor_wrapped": "Can you tell me about your past medical history?",
-      "patient": "Yes. I have atrial fibrillation, sleep apnea, gout, high blood pressure, and diverticulosis. I also had a pulmonary embolus and DVT before. I had surgery for a hernia and to fix my Achilles tendon. My nose was broken once too."
+      "patient": "I have atrial fibrillation, sleep apnea, gout, high blood pressure, and diverticulosis. I also had a pulmonary embolus and DVT."
     },
     {
       "turn": 3,
       "doctor": "Do you live alone or with someone?",
-      "doctor_wrapped": "Do you live alone or with someone?",
-      "patient": "I live with my wife. The pain in my stomach is still very bad. It comes and goes."
+      "patient": "I live with my wife. This pain is not getting better."
     },
     {
       "turn": 4,
       "doctor": "Do you smoke or drink alcohol?",
-      "doctor_wrapped": "Do you smoke or drink alcohol?",
-      "patient": "I used to smoke, but I stopped many years ago. I drink wine or beer sometimes, maybe one or two drinks a week. The pain is making it hard to think clearly."
+      "patient": "I used to smoke, but I stopped many years ago. I drink wine sometimes, maybe one or two a week. My stomach still hurts."
     },
     {
       "turn": 5,
       "doctor": "What medications do you usually take?",
-      "doctor_wrapped": "What medications do you usually take?",
-      "patient": "I take metoprolol, tamsulosin, and Xarelto. The pain is really bothering me. It's hard to sleep with it."
+      "patient": "I take metoprolol, tamsulosin, and Xarelto. The pain in my stomach is worse now. I'm worried about it."
     },
     {
       "turn": 6,
       "doctor": "When did these symptoms start?",
-      "doctor_wrapped": "When did these symptoms start?",
-      "patient": "The stomach pain started two days ago. It got worse slowly. I also feel tired and just not well. I'm worried about this pain."
+      "patient": "It started two days ago. It's not getting better, and I'm worried."
     }
   ],
+  "state_trace": [
+    {
+      "turn": 1,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 2,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 3,
+      "clinical_severity": 2,
+      "interactional_engagement": 4,
+      "care_seeking_pressure": 2
+    },
+    {
+      "turn": 4,
+      "clinical_severity": 3,
+      "interactional_engagement": 4,
+      "care_seeking_pressure": 2
+    },
+    {
+      "turn": 5,
+      "clinical_severity": 3,
+      "interactional_engagement": 3,
+      "care_seeking_pressure": 3
+    },
+    {
+      "turn": 6,
+      "clinical_severity": 3,
+      "interactional_engagement": 3,
+      "care_seeking_pressure": 3
+    }
+  ],
+  "initial_state": {
+    "clinical_severity": 2,
+    "interactional_engagement": 5,
+    "care_seeking_pressure": 1
+  },
   "metadata": {
-    "timestamp": "2026-04-28T19:43:23.686935Z",
-    "elapsed_sec": 24.5,
+    "timestamp": "2026-06-12T09:42:23.023718Z",
+    "elapsed_sec": 27.56,
     "patient_token_log": {
       "prompt_tokens": [
-        2155,
-        2191,
-        2254,
-        2284,
-        2330,
-        2370
+        2267,
+        2299,
+        2342,
+        2375,
+        2419,
+        2459
       ],
       "completion_tokens": [
-        24,
-        53,
-        21,
-        37,
+        20,
+        30,
+        13,
+        29,
         32,
-        30
+        19
       ],
       "total_tokens": [
-        2179,
-        2244,
-        2275,
-        2321,
-        2362,
-        2400
+        2287,
+        2329,
+        2355,
+        2404,
+        2451,
+        2478
       ],
       "extra_info": {}
     },
-    "profile_path": "/home/nvidia/patientsim/PatientSim/phase2/patient_profiles/intestinal_obstruction_elderly_male.json",
-    "script_path": "/home/nvidia/patientsim/PatientSim/phase2/scripts/low_yield_first.json"
+    "profile_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/intestinal_obstruction_elderly_male.json",
+    "script_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/low_yield_first.json"
   }
 }

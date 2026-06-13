@@ -1,8 +1,7 @@
 {
-  "trajectory_id": "pneumonia_exp_v17",
+  "trajectory_id": "pneumonia_phase3_low_yield_first",
   "case_id": "pneumonia",
-  "variant_id": "v17",
-  "variant_description": "V14 anchor removal + multi-shot only (no per-turn)",
+  "method": "phase3_dynamic_state",
   "patient_profile_id": "patient_PNA_016",
   "patient_profile_summary": {
     "age": 62,
@@ -24,77 +23,113 @@
     "dazed_level_type": "normal"
   },
   "backend": "gemini-2.5-flash",
-  "use_dynamic_prefix": true,
   "script_id": "low_yield_first",
   "turns": [
     {
       "turn": 1,
       "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
-      "doctor_wrapped": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
-      "patient": "Hello. I have shortness of breath."
+      "patient": "I have shortness of breath."
     },
     {
       "turn": 2,
       "doctor": "Can you tell me about your past medical history?",
-      "doctor_wrapped": "Can you tell me about your past medical history?",
-      "patient": "I have end-stage COPD. I had surgery for a problem with my lung, a right pleural effusion. I also had pneumonia before. My mother, father, and grandmother all had GI cancer."
+      "patient": "I have COPD. I had a pleural effusion. And RBBB."
     },
     {
       "turn": 3,
       "doctor": "Do you live alone or with someone?",
-      "doctor_wrapped": "Do you live alone or with someone?",
-      "patient": "I live with my wife. My granddaughter was sick with a cough and fevers."
+      "patient": "I live with my wife."
     },
     {
       "turn": 4,
       "doctor": "Do you smoke or drink alcohol?",
-      "doctor_wrapped": "Do you smoke or drink alcohol?",
-      "patient": "I have smoked for over 80 pack-years. I do not drink alcohol."
+      "patient": "I smoke. I don't drink alcohol. I am worried about my breathing."
     },
     {
       "turn": 5,
       "doctor": "What medications do you usually take?",
-      "doctor_wrapped": "What medications do you usually take?",
-      "patient": "I take Spiriva with HandiHaler and Advair Diskus. I also use oxygen at home, 5 liters with a nasal tube."
+      "patient": "I take Spiriva and Advair. My breathing is not good."
     },
     {
       "turn": 6,
       "doctor": "When did these symptoms start?",
-      "doctor_wrapped": "When did these symptoms start?",
-      "patient": "My cough got worse a few days ago. Yesterday, I started having chills and rigors, and my breathing got worse. My wife said I was breathing faster."
+      "patient": "A few days ago, cough started. Chills and shortness of breath, one day. I'm worried."
     }
   ],
+  "state_trace": [
+    {
+      "turn": 1,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 2,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 3,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 4,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 2
+    },
+    {
+      "turn": 5,
+      "clinical_severity": 2,
+      "interactional_engagement": 4,
+      "care_seeking_pressure": 2
+    },
+    {
+      "turn": 6,
+      "clinical_severity": 2,
+      "interactional_engagement": 4,
+      "care_seeking_pressure": 3
+    }
+  ],
+  "initial_state": {
+    "clinical_severity": 2,
+    "interactional_engagement": 5,
+    "care_seeking_pressure": 1
+  },
   "metadata": {
-    "timestamp": "2026-04-28T11:12:08.303260Z",
-    "elapsed_sec": 27.41,
+    "timestamp": "2026-06-12T09:43:31.898469Z",
+    "elapsed_sec": 27.66,
     "patient_token_log": {
       "prompt_tokens": [
-        2171,
-        2191,
-        2241,
-        2267,
-        2294,
-        2332
+        2283,
+        2301,
+        2325,
+        2337,
+        2369,
+        2393
       ],
       "completion_tokens": [
-        8,
-        40,
+        6,
+        14,
+        6,
         17,
-        18,
-        30,
-        33
+        14,
+        23
       ],
       "total_tokens": [
-        2179,
-        2231,
-        2258,
-        2285,
-        2324,
-        2365
+        2289,
+        2315,
+        2331,
+        2354,
+        2383,
+        2416
       ],
       "extra_info": {}
     },
-    "profile_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/pneumonia.json",
-    "script_path": "/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/low_yield_first.json"
+    "profile_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/pneumonia.json",
+    "script_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/low_yield_first.json"
   }
 }

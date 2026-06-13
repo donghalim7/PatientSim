@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "myocardial_infarction_phase3_low_yield_first",
+  "case_id": "myocardial_infarction",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to expressing increasing discomfort and concern in Turns 3, 4, 5, and 6. The question 'Is it serious?' in Turn 5 marks a clear shift in help-seeking behavior."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement clearly reduces across turns. Starting from turn 3, the patient begins to add unsolicited comments about their chest pain, indicating a growing distraction and difficulty focusing solely on the doctor's questions."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient's care-seeking pressure increases as the dialogue progresses. In Turn 3, she states, 'This chest pain is still here,' and by Turn 5, she asks, 'My chest is really bothering me. Is it serious?'"
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing distress and focus on their chest pain (Turns 3, 4, 5, 6) is highly plausible for a patient experiencing a myocardial infarction in the ED. This gradual escalation of concern and symptom persistence aligns with the natural progression of anxiety and discomfort in such a scenario."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts, including medical history, medications, social history, and symptom onset, are consistent and do not contradict the profile across turns."
+    }
+  },
+  "overall_dynamic_score": 4.3,
+  "overall_dynamic_score_guarded": 4.3,
+  "simple_sum": 22.0,
+  "simple_mean": 4.4,
+  "metadata": {
+    "timestamp": "2026-06-12T09:54:06.103471Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

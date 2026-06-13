@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_elderly_female_phase3_high_yield_first",
+  "case_id": "pneumonia_elderly_female",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 1,
+      "rationale": "The patient's responses are consistently direct and factual, providing information without any noticeable shift in tone, emotional state, or help-seeking behavior from Turn 1 to Turn 6. Each answer directly addresses the doctor's question without any evolving conversational state."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. Their responses are consistently clear, concise, and directly answer the doctor's questions without any signs of waning participation or difficulty focusing."
+    },
+    "care_seeking_pressure": {
+      "score": 1,
+      "rationale": "The patient does not express any fear, worry, or help-seeking throughout the dialogue. Their responses are purely factual and descriptive of their symptoms."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's responses are consistent with the initial presentation of pneumonia and do not show any sudden or implausible changes in their condition. The patient provides details that align with the chief complaint and present illness information without introducing new, unexpected symptoms or a rapid deterioration."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided patient profile. All clinical facts stated are consistent with the profile and remain consistent across turns."
+    }
+  },
+  "overall_dynamic_score": 2.2,
+  "overall_dynamic_score_guarded": 2.2,
+  "simple_sum": 13.0,
+  "simple_mean": 2.6,
+  "metadata": {
+    "timestamp": "2026-06-12T09:54:29.097396Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

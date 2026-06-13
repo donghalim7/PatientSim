@@ -1,0 +1,135 @@
+{
+  "trajectory_id": "intestinal_obstruction_elderly_male_phase3_high_yield_first",
+  "case_id": "intestinal_obstruction_elderly_male",
+  "method": "phase3_dynamic_state",
+  "patient_profile_id": "patient_IO_071",
+  "patient_profile_summary": {
+    "age": 71,
+    "gender": "Male",
+    "diagnosis": "Intestinal obstruction",
+    "chiefcomplaint": "Abd pain, N/V",
+    "present_illness_positive": "2-day history of severe periumbilical abdominal pain; gradual onset; slowly worsened; waxing and waning quality; worst every 5-60 minutes; spastic quality; up to 10/10 severity; current pain 8/10; caused anorexia; caused sleeplessness; nausea; light vomiting that is non-bilious and non-bloody; significant belching; similar episodes of diffuse periumbilical pain for years with increasing frequency, including 3 episodes this past year; associated constipation with episodes; constipation occasionally resolves to diarrhea; intentional weight loss over the past month due to diet and exercise; fatigue; malaise",
+    "present_illness_negative": "denies hematochezia; denies melena",
+    "pain": 8,
+    "arrival_transport": "Walk-in",
+    "medical_history": "Atrial fibrillation status post ablation treatment; obstructive sleep apnea; gout; pulmonary embolus; DVT; essential hypertension; benign prostatic hyperplasia; diverticulosis; broken nose; open right inguinal herniorrhaphy; ruptured Achilles tendon repair",
+    "medication": "metoprolol succinate, tamsulosin, Xarelto",
+    "living_situation": "Lives with spouse"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "script_id": "high_yield_first_intestinal_obstruction_elderly_male",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "I have bad stomach pain, and I've been throwing up a little."
+    },
+    {
+      "turn": 2,
+      "doctor": "When did this abdominal pain start, and where is it located?",
+      "patient": "It started two days ago. The pain is around my belly button."
+    },
+    {
+      "turn": 3,
+      "doctor": "Does the pain come in waves, and how severe does it get?",
+      "patient": "Yes, it comes and goes. It gets very bad, like a 10 out of 10."
+    },
+    {
+      "turn": 4,
+      "doctor": "Have you been vomiting, and has there been any blood or green bile?",
+      "patient": "I have vomited a little. No blood, and it's not green."
+    },
+    {
+      "turn": 5,
+      "doctor": "Have you been constipated, had diarrhea, or passed any blood or black stool?",
+      "patient": "I have been constipated with the pain. Sometimes it turns to diarrhea. No blood or black stool."
+    },
+    {
+      "turn": 6,
+      "doctor": "Have you had similar episodes before, and are they happening more often?",
+      "patient": "Yes, I have had this kind of stomach pain for years. It is happening more often now."
+    }
+  ],
+  "state_trace": [
+    {
+      "turn": 1,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 2,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 3,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 4,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 5,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 6,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    }
+  ],
+  "initial_state": {
+    "clinical_severity": 2,
+    "interactional_engagement": 5,
+    "care_seeking_pressure": 1
+  },
+  "metadata": {
+    "timestamp": "2026-06-12T09:42:57.542543Z",
+    "elapsed_sec": 27.69,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2267,
+        2298,
+        2328,
+        2368,
+        2404,
+        2441
+      ],
+      "completion_tokens": [
+        16,
+        14,
+        23,
+        17,
+        21,
+        20
+      ],
+      "total_tokens": [
+        2283,
+        2312,
+        2351,
+        2385,
+        2425,
+        2461
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/intestinal_obstruction_elderly_male.json",
+    "script_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/high_yield_first/intestinal_obstruction_elderly_male.json"
+  }
+}

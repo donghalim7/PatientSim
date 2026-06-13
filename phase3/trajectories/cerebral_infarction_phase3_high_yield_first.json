@@ -1,0 +1,135 @@
+{
+  "trajectory_id": "cerebral_infarction_phase3_high_yield_first",
+  "case_id": "cerebral_infarction",
+  "method": "phase3_dynamic_state",
+  "patient_profile_id": "patient_CI_002",
+  "patient_profile_summary": {
+    "age": 67,
+    "gender": "Female",
+    "diagnosis": "Cerebral infarction",
+    "chiefcomplaint": "L Numbness",
+    "present_illness_positive": "left hand clumsiness; left leg clumsiness; onset 10pm; difficulty typing; increased errors typing; left foot dragging sensation; slurred speech; unclear speech; dizziness; left arm clumsiness worsening; left leg clumsiness worsening; started Piroxicam day prior; discontinued aspirin day prior",
+    "present_illness_negative": "headache; lightheadedness; confusion; difficulty with producing speech; difficulty with comprehending speech; loss of vision; blurred vision; diplopia; vertigo; tinnitus; hearing difficulty; dysphagia; muscle weakness; loss of sensation; bowel incontinence; bladder incontinence; bowel retention; bladder retention; difficulty with gait; fevers; rigors; night sweats; noticeable weight loss; chest pain; palpitations; dyspnea; cough; nausea; vomiting; diarrhea; constipation; abdominal pain; dysuria; hematuria; myalgias; arthralgias; rash",
+    "pain": 0,
+    "arrival_transport": "Ambulance",
+    "medical_history": "Asthma; s/p dermoid cystectomy oopherectomy; s/p removal of sebaceous cyst x2; Arachnoid cyst (thoracic spine) s/p thoracic laminectomy; right hip pain",
+    "medication": "Loratadine, Multivitamin, Sudafed, Vitamin B Complex, Vitamin D",
+    "living_situation": "Lives alone"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "script_id": "high_yield_first_cerebral_infarction",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "Hello. My left hand and leg feel clumsy. It started last night around 10."
+    },
+    {
+      "turn": 2,
+      "doctor": "When did these symptoms start?",
+      "patient": "They started last night, around 10 PM."
+    },
+    {
+      "turn": 3,
+      "doctor": "What was the last time you felt completely normal?",
+      "patient": "I felt normal before 10 PM last night."
+    },
+    {
+      "turn": 4,
+      "doctor": "Are you having weakness, numbness, trouble speaking, or trouble understanding speech right now?",
+      "patient": "I have clumsiness in my left hand and leg. My speech is a little slurred. I don't have weakness or numbness. I can understand you fine."
+    },
+    {
+      "turn": 5,
+      "doctor": "Have your symptoms been getting worse, staying the same, or coming and going?",
+      "patient": "My left arm and leg clumsiness is getting worse."
+    },
+    {
+      "turn": 6,
+      "doctor": "Have you noticed any vision changes, like blurred vision or loss of vision?",
+      "patient": "No, I have not noticed any vision changes."
+    }
+  ],
+  "state_trace": [
+    {
+      "turn": 1,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 2,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 3,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 4,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 5,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 6,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    }
+  ],
+  "initial_state": {
+    "clinical_severity": 2,
+    "interactional_engagement": 5,
+    "care_seeking_pressure": 1
+  },
+  "metadata": {
+    "timestamp": "2026-06-12T09:40:40.504900Z",
+    "elapsed_sec": 27.55,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2277,
+        2304,
+        2327,
+        2357,
+        2409,
+        2437
+      ],
+      "completion_tokens": [
+        19,
+        11,
+        11,
+        34,
+        11,
+        10
+      ],
+      "total_tokens": [
+        2296,
+        2315,
+        2338,
+        2391,
+        2420,
+        2447
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/cerebral_infarction.json",
+    "script_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/high_yield_first/cerebral_infarction.json"
+  }
+}

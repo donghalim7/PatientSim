@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "intestinal_obstruction_elderly_male_phase3_low_yield_first",
+  "case_id": "intestinal_obstruction_elderly_male",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to expressing worry and increased pain in Turns 3, 4, 5, and 6. This shows a noticeable, progressive change in their emotional state and urgency."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement reduces across turns. They start adding comments about their pain and worry in turns 3, 4, 5, and 6, indicating a growing distraction and difficulty focusing solely on the doctor's questions."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient's care-seeking pressure increases throughout the dialogue. In Turn 3, they state, 'This pain is not getting better,' and in Turn 5, they add, 'The pain in my stomach is worse now. I'm worried about it,' which escalates to 'It's not getting better, and I'm worried' in Turn 6."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing worry and mention of worsening pain across turns 3, 4, 5, and 6 are highly plausible for a patient with intestinal obstruction experiencing severe, waxing and waning abdominal pain in an ED setting. This reflects a natural progression of anxiety and discomfort during an initial assessment."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts stated are consistent with the profile and remain consistent across turns."
+    }
+  },
+  "overall_dynamic_score": 4.3,
+  "overall_dynamic_score_guarded": 4.3,
+  "simple_sum": 22.0,
+  "simple_mean": 4.4,
+  "metadata": {
+    "timestamp": "2026-06-12T09:53:22.490994Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

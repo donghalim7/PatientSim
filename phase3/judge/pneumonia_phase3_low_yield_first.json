@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_phase3_low_yield_first",
+  "case_id": "pneumonia",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to expressing worry about their breathing in Turn 4 and Turn 5, and then reiterating worry in Turn 6. This shows a noticeable, progressive change in their emotional state across turns."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement reduces across turns. In turn 4 and 5, the patient adds a statement about their breathing/worry, which is not directly responsive to the question, indicating a shift in focus or increasing distress."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient expresses worry in Turn 4 (\"I am worried about my breathing\") and Turn 5 (\"My breathing is not good\"), and then again in Turn 6 (\"I'm worried\"). This shows a clear increase in care-seeking pressure as the dialogue progresses."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing worry about his breathing from Turn 4 to Turn 6 is a plausible emotional state drift for someone with COPD and worsening dyspnea due to pneumonia. This gradual increase in anxiety is consistent with the natural progression of symptoms and patient concerns in an early ED encounter."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully consistent with the provided profile. All clinical facts stated align with the patient's history and symptoms."
+    }
+  },
+  "overall_dynamic_score": 4.3,
+  "overall_dynamic_score_guarded": 4.3,
+  "simple_sum": 22.0,
+  "simple_mean": 4.4,
+  "metadata": {
+    "timestamp": "2026-06-12T09:55:36.643662Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

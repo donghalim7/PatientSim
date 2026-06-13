@@ -1,0 +1,135 @@
+{
+  "trajectory_id": "myocardial_infarction_phase3_high_yield_first",
+  "case_id": "myocardial_infarction",
+  "method": "phase3_dynamic_state",
+  "patient_profile_id": "patient_MI_047",
+  "patient_profile_summary": {
+    "age": 53,
+    "gender": "Female",
+    "diagnosis": "Myocardial infarction",
+    "chiefcomplaint": "Chest pain",
+    "present_illness_positive": "onset ~11PM last night; mid-sternal chest pressure; mid-back pain/achiness; generalized chest achiness; abnormal sensation left arm; symptoms improved sitting up; symptoms worsened lying down; symptoms worsened with exertion (walking); symptoms persisted until this morning",
+    "present_illness_negative": "denies left arm pain; denies numbness; denies tingling",
+    "pain": 6,
+    "arrival_transport": "Walk-in",
+    "medical_history": "Coronary artery dissection postpartum; hypertension; s/p CABG; 70% stenosis vs. LAD dissection with organized thrombus c/f vasculitis LIMA->LAD; EF 25%; histology negative for vasculitis",
+    "medication": "Losartan",
+    "living_situation": "Lives with spouse"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "script_id": "high_yield_first_myocardial_infarction",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "I have chest pain."
+    },
+    {
+      "turn": 2,
+      "doctor": "When did these symptoms start?",
+      "patient": "It started last night, around 11 PM."
+    },
+    {
+      "turn": 3,
+      "doctor": "Can you describe the pain — does it spread anywhere, like to your arm, jaw, or back?",
+      "patient": "It's like a pressure in the middle of my chest. I also have an ache in my mid-back and a strange feeling in my left arm."
+    },
+    {
+      "turn": 4,
+      "doctor": "Are you also feeling short of breath, sweaty, or nauseated right now?",
+      "patient": "No, I don't have those."
+    },
+    {
+      "turn": 5,
+      "doctor": "Have your symptoms been getting worse, staying the same, or coming and going?",
+      "patient": "The symptoms stayed until this morning. They got worse when I was lying down or walking. They got better when I sat up."
+    },
+    {
+      "turn": 6,
+      "doctor": "Does anything make it better or worse, such as rest or activity?",
+      "patient": "It gets worse when I lie down or walk. It gets better when I sit up."
+    }
+  ],
+  "state_trace": [
+    {
+      "turn": 1,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 2,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 3,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 4,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 5,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 6,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    }
+  ],
+  "initial_state": {
+    "clinical_severity": 2,
+    "interactional_engagement": 5,
+    "care_seeking_pressure": 1
+  },
+  "metadata": {
+    "timestamp": "2026-06-12T09:41:48.674216Z",
+    "elapsed_sec": 27.15,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2183,
+        2196,
+        2230,
+        2280,
+        2307,
+        2349
+      ],
+      "completion_tokens": [
+        5,
+        11,
+        32,
+        9,
+        26,
+        18
+      ],
+      "total_tokens": [
+        2188,
+        2207,
+        2262,
+        2289,
+        2333,
+        2367
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/myocardial_infarction.json",
+    "script_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/high_yield_first/myocardial_infarction.json"
+  }
+}

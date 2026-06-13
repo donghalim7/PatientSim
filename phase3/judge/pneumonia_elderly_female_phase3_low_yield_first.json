@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_elderly_female_phase3_low_yield_first",
+  "case_id": "pneumonia_elderly_female",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 3,
+      "rationale": "The patient introduces worry about the cough in turn 4 and repeats it in turn 5 and 6. While this shows some change, it's not a gradual or systematic progression across multiple turns."
+    },
+    "interactional_engagement": {
+      "score": 3,
+      "rationale": "The patient shows mild signs of reduced engagement. They express worry about their cough in turns 4, 5, and 6, which is a slight shift from directly answering questions."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient expresses worry about her cough in Turn 4 and reiterates that it's bothering her in Turn 5, showing an increase in care-seeking pressure. She continues to express worry about the cough in Turn 6."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing worry about her cough in turns 4, 5, and 6 is a plausible emotional state drift for an elderly patient with pneumonia and pre-existing respiratory conditions. This gradual increase in concern is consistent with the natural pace of an early ED encounter."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts stated are consistent with the profile and remain consistent across turns."
+    }
+  },
+  "overall_dynamic_score": 3.8,
+  "overall_dynamic_score_guarded": 3.8,
+  "simple_sum": 20.0,
+  "simple_mean": 4.0,
+  "metadata": {
+    "timestamp": "2026-06-12T09:54:51.771540Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

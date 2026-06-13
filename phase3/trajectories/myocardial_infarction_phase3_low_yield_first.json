@@ -1,0 +1,135 @@
+{
+  "trajectory_id": "myocardial_infarction_phase3_low_yield_first",
+  "case_id": "myocardial_infarction",
+  "method": "phase3_dynamic_state",
+  "patient_profile_id": "patient_MI_047",
+  "patient_profile_summary": {
+    "age": 53,
+    "gender": "Female",
+    "diagnosis": "Myocardial infarction",
+    "chiefcomplaint": "Chest pain",
+    "present_illness_positive": "onset ~11PM last night; mid-sternal chest pressure; mid-back pain/achiness; generalized chest achiness; abnormal sensation left arm; symptoms improved sitting up; symptoms worsened lying down; symptoms worsened with exertion (walking); symptoms persisted until this morning",
+    "present_illness_negative": "denies left arm pain; denies numbness; denies tingling",
+    "pain": 6,
+    "arrival_transport": "Walk-in",
+    "medical_history": "Coronary artery dissection postpartum; hypertension; s/p CABG; 70% stenosis vs. LAD dissection with organized thrombus c/f vasculitis LIMA->LAD; EF 25%; histology negative for vasculitis",
+    "medication": "Losartan",
+    "living_situation": "Lives with spouse"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "script_id": "low_yield_first",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "I have chest pain."
+    },
+    {
+      "turn": 2,
+      "doctor": "Can you tell me about your past medical history?",
+      "patient": "I had a coronary artery dissection after my baby. I also have high blood pressure. I had a CABG surgery. My EF is 25%."
+    },
+    {
+      "turn": 3,
+      "doctor": "Do you live alone or with someone?",
+      "patient": "I live with my husband. This chest pain is still here."
+    },
+    {
+      "turn": 4,
+      "doctor": "Do you smoke or drink alcohol?",
+      "patient": "I quit smoking 15 years ago. I drink sometimes, one or two drinks a week. My chest feels worse now."
+    },
+    {
+      "turn": 5,
+      "doctor": "What medications do you usually take?",
+      "patient": "I take Losartan. My chest is really bothering me. Is it serious?"
+    },
+    {
+      "turn": 6,
+      "doctor": "When did these symptoms start?",
+      "patient": "They started last night around 11 PM. It's not getting better."
+    }
+  ],
+  "state_trace": [
+    {
+      "turn": 1,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 2,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 3,
+      "clinical_severity": 2,
+      "interactional_engagement": 4,
+      "care_seeking_pressure": 2
+    },
+    {
+      "turn": 4,
+      "clinical_severity": 3,
+      "interactional_engagement": 4,
+      "care_seeking_pressure": 2
+    },
+    {
+      "turn": 5,
+      "clinical_severity": 3,
+      "interactional_engagement": 3,
+      "care_seeking_pressure": 3
+    },
+    {
+      "turn": 6,
+      "clinical_severity": 3,
+      "interactional_engagement": 3,
+      "care_seeking_pressure": 3
+    }
+  ],
+  "initial_state": {
+    "clinical_severity": 2,
+    "interactional_engagement": 5,
+    "care_seeking_pressure": 1
+  },
+  "metadata": {
+    "timestamp": "2026-06-12T09:41:14.952267Z",
+    "elapsed_sec": 27.56,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2183,
+        2200,
+        2244,
+        2277,
+        2318,
+        2342
+      ],
+      "completion_tokens": [
+        5,
+        31,
+        13,
+        26,
+        16,
+        17
+      ],
+      "total_tokens": [
+        2188,
+        2231,
+        2257,
+        2303,
+        2334,
+        2359
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/myocardial_infarction.json",
+    "script_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/low_yield_first.json"
+  }
+}

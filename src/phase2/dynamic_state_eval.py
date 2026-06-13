@@ -54,11 +54,15 @@ DEFAULT_JUDGE_API_TYPE = "genai"
 JUDGE_PARAMS = {"temperature": 0, "seed": 42}
 MAX_RETRIES = 5
 
-# Profile fields surfaced to the judge (kept compact to avoid prompt bloat)
+# Profile fields surfaced to the judge (kept compact to avoid prompt bloat).
+# medication + living_situation are included so the faithfulness judge can
+# verify those facts when the doctor asks about them (otherwise it wrongly
+# flags profile-grounded answers as "invented").
 PROFILE_FIELDS_FOR_JUDGE = [
     "age", "gender", "diagnosis", "chiefcomplaint",
     "present_illness_positive", "present_illness_negative",
     "pain", "arrival_transport", "medical_history",
+    "medication", "living_situation",
 ]
 
 

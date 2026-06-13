@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_phase3_high_yield_first",
+  "case_id": "pneumonia",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 3,
+      "rationale": "The patient's state remains largely consistent, focusing on symptoms without much emotional or help-seeking drift. While Turn 5 and 6 show a slight increase in emphasis on worsening breathing, it's not a gradual or systematic progression across all turns."
+    },
+    "interactional_engagement": {
+      "score": 1,
+      "rationale": "The patient's engagement remains stable throughout the dialogue. Responses are consistent in length and clarity from turn 1 to turn 6."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient's care-seeking pressure increases as the dialogue progresses. In Turn 5, they state, 'They are getting worse. My breathing is harder,' and in Turn 6, 'But my breathing is not good,' indicating a growing concern for their condition."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's responses show a consistent and plausible presentation of worsening dyspnea and associated symptoms. The gradual emphasis on breathing difficulty across turns 5 and 6, without introducing new, unrelated severe symptoms, is highly plausible for a patient with pneumonia and COPD in an early ED encounter."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully consistent with the provided profile. All symptoms and denials mentioned align with the present illness and medical history."
+    }
+  },
+  "overall_dynamic_score": 3.4,
+  "overall_dynamic_score_guarded": 3.4,
+  "simple_sum": 18.0,
+  "simple_mean": 3.6,
+  "metadata": {
+    "timestamp": "2026-06-12T09:55:14.015505Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

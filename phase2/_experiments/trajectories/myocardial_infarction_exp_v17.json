@@ -13,7 +13,9 @@
     "present_illness_negative": "denies left arm pain; denies numbness; denies tingling",
     "pain": 6,
     "arrival_transport": "Walk-in",
-    "medical_history": "Coronary artery dissection postpartum; hypertension; s/p CABG; 70% stenosis vs. LAD dissection with organized thrombus c/f vasculitis LIMA->LAD; EF 25%; histology negative for vasculitis"
+    "medical_history": "Coronary artery dissection postpartum; hypertension; s/p CABG; 70% stenosis vs. LAD dissection with organized thrombus c/f vasculitis LIMA->LAD; EF 25%; histology negative for vasculitis",
+    "medication": "Losartan",
+    "living_situation": "Lives with spouse"
   },
   "persona": {
     "cefr_type": "B",
