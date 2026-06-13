@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "myocardial_infarction_phase3_low_yield_first_var_s7",
+  "case_id": "myocardial_infarction",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to expressing increasing worry and worsening pain in Turns 3, 4, 5, and 6. This shows a noticeable, progressive change in their emotional state and urgency."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement declines as she repeatedly expresses ongoing chest pain and worry (Turns 3, 4, 5, 6), indicating a growing distraction from the doctor's questions. Her answers become slightly shorter and more focused on her current discomfort."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient expresses increasing worry and concern about her chest pain across turns. In Turn 5, she states, \"My chest… it feels worse now. I'm getting worried,\" and in Turn 6, she reiterates, \"It's not getting better, and I'm a bit worried.\""
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing worry and emphasis on persistent/worsening chest pain (Turns 3, 4, 5, 6) are highly plausible for a patient experiencing a myocardial infarction in the ED. This gradual escalation of concern and symptom focus is consistent with the diagnosis and the natural progression of anxiety in this setting."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts mentioned are consistent and do not contradict information given in previous turns or the patient's background."
+    }
+  },
+  "overall_dynamic_score": 4.3,
+  "overall_dynamic_score_guarded": 4.3,
+  "simple_sum": 22.0,
+  "simple_mean": 4.4,
+  "metadata": {
+    "timestamp": "2026-06-13T07:03:20.050332Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

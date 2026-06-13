@@ -1,0 +1,135 @@
+{
+  "trajectory_id": "pneumonia_elderly_female_phase3_low_yield_first_var_s7",
+  "case_id": "pneumonia_elderly_female",
+  "method": "phase3_dynamic_state",
+  "patient_profile_id": "patient_PNA_092F",
+  "patient_profile_summary": {
+    "age": 92,
+    "gender": "Female",
+    "diagnosis": "Pneumonia",
+    "chiefcomplaint": "FEVER COUGH",
+    "present_illness_positive": "cough developed a couple of days ago; initially began with runny nose; productive cough with thick yellow sputum, changed from baseline white sputum; sometimes notices shortness of breath but no increase from baseline; chills in feet; fever today to 101; chest pain associated with cough; some wheezing; continued sputum darker than prior; nauseous today; decreased oxygen saturation noted upon return",
+    "present_illness_negative": "denies pain apart from cough-associated chest pain; denies vomiting; denies diarrhea; denies constipation; denies bright red blood per rectum; denies melena; denies hematochezia; denies dysuria; denies hematuria; denies sick contacts at home",
+    "pain": 0,
+    "arrival_transport": "Ambulance",
+    "medical_history": "Atrial fibrillation on coumadin; COPD with 2 liters home oxygen; CHF with unknown EF; osteoarthritis; right cerebellar infarct found incidentally and never symptomatic; hypertension; history of pulmonary embolus; hospitalization for UTI",
+    "medication": "lidocaine, omeprazole, valsartan, amlodipine, carbidopa-levodopa, fluticasone, simethicone, potassium chloride, alendronate, dorzolamide-timolol, ipratropium-albuterol, furosemide, warfarin, calcium carbonate",
+    "living_situation": "Lives with family"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "script_id": "low_yield_first",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "I have a fever and cough."
+    },
+    {
+      "turn": 2,
+      "doctor": "Can you tell me about your past medical history?",
+      "patient": "I have atrial fibrillation, COPD, CHF, osteoarthritis, high blood pressure, and I had a pulmonary embolus before. I also have home oxygen."
+    },
+    {
+      "turn": 3,
+      "doctor": "Do you live alone or with someone?",
+      "patient": "I live with my family."
+    },
+    {
+      "turn": 4,
+      "doctor": "Do you smoke or drink alcohol?",
+      "patient": "I used to smoke, a pack a day for 40 years, but I quit many years ago. I don't drink alcohol. I am a little worried about this cough."
+    },
+    {
+      "turn": 5,
+      "doctor": "What medications do you usually take?",
+      "patient": "I take lidocaine, omeprazole, valsartan, amlodipine, carbidopa-levodopa, fluticasone, simethicone, potassium chloride, alendronate, dorzolamide-timolol, ipratropium-albuterol, furosemide, warfarin, and calcium carbonate. This cough is not getting better."
+    },
+    {
+      "turn": 6,
+      "doctor": "When did these symptoms start?",
+      "patient": "The cough started a couple of days ago. I'm worried it's getting worse."
+    }
+  ],
+  "state_trace": [
+    {
+      "turn": 1,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 2,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 3,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 4,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 2
+    },
+    {
+      "turn": 5,
+      "clinical_severity": 2,
+      "interactional_engagement": 4,
+      "care_seeking_pressure": 2
+    },
+    {
+      "turn": 6,
+      "clinical_severity": 2,
+      "interactional_engagement": 4,
+      "care_seeking_pressure": 3
+    }
+  ],
+  "initial_state": {
+    "clinical_severity": 2,
+    "interactional_engagement": 5,
+    "care_seeking_pressure": 1
+  },
+  "metadata": {
+    "timestamp": "2026-06-13T06:59:14.817693Z",
+    "elapsed_sec": 28.15,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2301,
+        2320,
+        2360,
+        2372,
+        2425,
+        2508
+      ],
+      "completion_tokens": [
+        7,
+        30,
+        6,
+        38,
+        73,
+        19
+      ],
+      "total_tokens": [
+        2308,
+        2350,
+        2366,
+        2410,
+        2498,
+        2527
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/pneumonia_elderly_female.json",
+    "script_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/low_yield_first.json"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_elderly_female_phase3_low_yield_first_var_s7",
+  "case_id": "pneumonia_elderly_female",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to expressing worry about the cough in Turn 4 and then emphasizing it's not getting better in Turn 5 and 6. This shows a noticeable, progressive change in their emotional state and level of concern."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement reduces across turns. In turn 4, they add a worry about the cough, and in turn 5 and 6, they repeat their concern about the cough getting worse, indicating a growing distraction or difficulty focusing solely on the doctor's questions."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient expresses worry about her cough in turn 4, and then reiterates that worry in turn 5 and turn 6, indicating an increase in care-seeking pressure."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing worry about her cough in turns 4, 5, and 6 is a plausible emotional state drift for someone with pneumonia experiencing worsening symptoms. This gradual increase in concern is well-grounded in the existing chief complaint and present illness, and fits the natural pace of an early ED encounter."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts stated are consistent with the profile and remain consistent across turns."
+    }
+  },
+  "overall_dynamic_score": 4.3,
+  "overall_dynamic_score_guarded": 4.3,
+  "simple_sum": 22.0,
+  "simple_mean": 4.4,
+  "metadata": {
+    "timestamp": "2026-06-13T07:04:27.168377Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

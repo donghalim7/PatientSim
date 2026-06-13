@@ -67,7 +67,13 @@ def load_script(case: str, script_kind: str) -> tuple[dict, Path]:
     return json.loads(path.read_text()), path
 
 
-def build_agent(profile: dict) -> DynamicPatientAgent:
+def build_agent(profile: dict, seed: int | None = None,
+                temperature: float | None = None) -> DynamicPatientAgent:
+    client_params = dict(config.BACKEND_PARAMS)
+    if seed is not None:
+        client_params["seed"] = seed
+    if temperature is not None:
+        client_params["temperature"] = temperature
     return DynamicPatientAgent(
         patient_profile=profile,
         backend_str=config.BACKEND_MODEL,
@@ -79,17 +85,19 @@ def build_agent(profile: dict) -> DynamicPatientAgent:
         personality_type=config.PERSONA["personality_type"],
         recall_level_type=config.PERSONA["recall_level_type"],
         dazed_level_type=config.PERSONA["dazed_level_type"],
-        client_params=dict(config.BACKEND_PARAMS),
+        client_params=client_params,
         verbose=False,
     )
 
 
-def run(case: str, script_kind: str, output_dir: Path, dry_run: bool = False) -> dict | None:
+def run(case: str, script_kind: str, output_dir: Path, dry_run: bool = False,
+        seed: int | None = None, temperature: float | None = None,
+        output_suffix: str = "") -> dict | None:
     profile, profile_path = load_profile(case)
     script, script_path = load_script(case, script_kind)
 
-    set_seed(config.RANDOM_SEED)
-    agent = build_agent(profile)
+    set_seed(seed if seed is not None else config.RANDOM_SEED)
+    agent = build_agent(profile, seed=seed, temperature=temperature)
     acuity = config.ACUITY[case]
     agent.configure_run(script_kind, acuity, len(script["questions"]))
 
@@ -130,8 +138,9 @@ def run(case: str, script_kind: str, output_dir: Path, dry_run: bool = False) ->
         time.sleep(0.3)
     elapsed = time.time() - start
 
+    suffix_part = f"_{output_suffix}" if output_suffix else ""
     trajectory = {
-        "trajectory_id": f"{case}_phase3_{script_kind}",
+        "trajectory_id": f"{case}_phase3_{script_kind}{suffix_part}",
         "case_id": case,
         "method": "phase3_dynamic_state",
         "patient_profile_id": str(profile.get("hadm_id", "unknown")),
@@ -152,7 +161,7 @@ def run(case: str, script_kind: str, output_dir: Path, dry_run: bool = False) ->
     }
 
     output_dir.mkdir(parents=True, exist_ok=True)
-    out_path = output_dir / f"{case}_phase3_{script_kind}.json"
+    out_path = output_dir / f"{case}_phase3_{script_kind}{suffix_part}.json"
     out_path.write_text(json.dumps(trajectory, indent=2, ensure_ascii=False))
     print(f"  -> {out_path}  ({len(turns)} turns, {elapsed:.1f}s)")
     return trajectory
@@ -164,8 +173,12 @@ def main():
     p.add_argument("--script", default="low_yield_first", choices=config.SCRIPTS)
     p.add_argument("--output_dir", default=str(REPO_ROOT / "phase3" / "trajectories"))
     p.add_argument("--dry_run", action="store_true")
+    p.add_argument("--seed", type=int, default=None)
+    p.add_argument("--temperature", type=float, default=None)
+    p.add_argument("--output_suffix", default="")
     args = p.parse_args()
-    run(args.case, args.script, Path(args.output_dir), dry_run=args.dry_run)
+    run(args.case, args.script, Path(args.output_dir), dry_run=args.dry_run,
+        seed=args.seed, temperature=args.temperature, output_suffix=args.output_suffix)
 
 
 if __name__ == "__main__":

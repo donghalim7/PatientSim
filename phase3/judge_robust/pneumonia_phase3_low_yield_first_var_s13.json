@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_phase3_low_yield_first_var_s13",
+  "case_id": "pneumonia",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to expressing worry about their condition in Turn 4 and Turn 5, and then reiterating that worry in Turn 6. This shows a noticeable, progressive change in their emotional state and help-seeking behavior."
+    },
+    "interactional_engagement": {
+      "score": 3,
+      "rationale": "The patient's engagement shows mild signs of reduction. In turns 4, 5, and 6, the patient adds expressions of worry or concern about their breathing, which could indicate a slight shift in focus or increased distress affecting their conversational stability."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient expresses worry in Turn 4 and Turn 6, indicating an increase in care-seeking pressure as the dialogue progresses. The patient also mentions that their breathing is not getting better in Turn 5."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing expressions of worry about his shortness of breath in turns 4, 5, and 6 are highly plausible. This reflects a natural and gradual escalation of concern for a patient with worsening respiratory symptoms and a history of severe COPD."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully consistent with the provided profile. All clinical facts, including chief complaint, medical history, social history, medications, and symptom onset, are accurately reflected and remain consistent across turns."
+    }
+  },
+  "overall_dynamic_score": 4.1,
+  "overall_dynamic_score_guarded": 4.1,
+  "simple_sum": 21.0,
+  "simple_mean": 4.2,
+  "metadata": {
+    "timestamp": "2026-06-13T07:04:49.556909Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

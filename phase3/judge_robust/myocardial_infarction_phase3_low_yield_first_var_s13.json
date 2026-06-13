@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "myocardial_infarction_phase3_low_yield_first_var_s13",
+  "case_id": "myocardial_infarction",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to expressing worry and worsening symptoms in Turn 4 and Turn 5, and then reiterating the lack of improvement in Turn 6. This shows a noticeable, progressive change in their emotional and physical state."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement declines as she interjects increasing concern about her symptoms in turns 4, 5, and 6, indicating a shift in focus from answering questions to expressing distress. Her answer in turn 6 is also slightly shorter and more abrupt than earlier responses."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient's care-seeking pressure increases from Turn 4, where she states, 'My chest feels a bit worse now,' to Turn 5, where she expresses, 'The chest pressure is still there, and it's not getting better. I'm getting worried.' This shows a clear progression of anxiety and a desire for help."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing worry and worsening chest pain in turns 4 and 5 are highly plausible for a patient with a myocardial infarction in an ED setting, especially given her significant cardiac history. This reflects a realistic escalation of symptoms and anxiety during an acute cardiac event."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts, including onset time, medical history, medications, and social history, remain consistent across turns."
+    }
+  },
+  "overall_dynamic_score": 4.3,
+  "overall_dynamic_score_guarded": 4.3,
+  "simple_sum": 22.0,
+  "simple_mean": 4.4,
+  "metadata": {
+    "timestamp": "2026-06-13T07:02:35.241302Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_phase3_low_yield_first_var_s42",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state changes are noticeably progressive across turns. The patient starts by stating symptoms, then begins to express worry and worsening symptoms in later turns (e.g., Turn 3, Turn 4, Turn 5, Turn 6)."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement reduces across turns. In turn 3, they add \"This clumsiness is bothering me,\" and in turn 5, they ask, \"Is this serious?\" These interjections show a growing concern and a slight shift from purely answering questions to expressing their distress, indicating a reduction in stable, question-focused engagement."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient expresses increasing worry and a need for help. In Turn 5, they ask, 'Is this serious?' and in Turn 6, they state, 'I'm worried about this.'"
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing concern and worsening left-sided clumsiness, along with the new onset of slurred speech (Turn 5), are all highly plausible deteriorations for a cerebral infarction patient in the early stages of an ED encounter. These changes are gradual and consistent with the diagnosis."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All symptoms, medical history, medications, and social history details are consistent and do not contradict the profile or previous turns."
+    }
+  },
+  "overall_dynamic_score": 4.3,
+  "overall_dynamic_score_guarded": 4.3,
+  "simple_sum": 22.0,
+  "simple_mean": 4.4,
+  "metadata": {
+    "timestamp": "2026-06-13T07:00:38.216702Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

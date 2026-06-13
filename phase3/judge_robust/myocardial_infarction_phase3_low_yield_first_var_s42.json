@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "myocardial_infarction_phase3_low_yield_first_var_s42",
+  "case_id": "myocardial_infarction",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state noticeably progresses from simply stating symptoms in Turn 1 to expressing increased discomfort and seeking help in Turn 5 and Turn 6. The shift from factual answers to more urgent pleas for assistance demonstrates a dynamic change in their expressed state."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement clearly declines. In turn 4, they add a spontaneous comment about their chest feeling tight, and in turn 5, they express increased chest pressure and ask for help, indicating a shift in focus from answering questions to their worsening condition."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient's care-seeking pressure increases as the dialogue progresses. In turn 4, she states, 'My chest still feels tight,' and in turn 5, she adds, 'The chest pressure is worse now. Could someone help me?' and in turn 6, 'It's not getting better.'"
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing chest tightness and pressure in turns 4 and 5 are highly plausible for a myocardial infarction patient in the ED, reflecting a natural progression or fluctuation of symptoms during an acute event."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts mentioned are consistent and remain consistent across turns."
+    }
+  },
+  "overall_dynamic_score": 4.3,
+  "overall_dynamic_score_guarded": 4.3,
+  "simple_sum": 22.0,
+  "simple_mean": 4.4,
+  "metadata": {
+    "timestamp": "2026-06-13T07:02:57.584240Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

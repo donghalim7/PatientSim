@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_phase3_low_yield_first_var_s7",
+  "case_id": "pneumonia",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in turn 1 to expressing worry and seeking reassurance about their breathing in turns 4, 5, and 6. This shows a noticeable, progressive change in their emotional state and help-seeking behavior."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement clearly reduces across turns. In turn 4 and 5, the patient interjects with concerns about their breathing, indicating a shift in focus from answering questions directly to expressing their distress."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient expresses mild worry in Turn 4 (\"This breathing is not good\") and Turn 5 (\"Is my breathing okay?\"), and then explicitly states worry in Turn 6 (\"I am worried about it\"), showing a clear increase in care-seeking pressure."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing anxiety about his breathing in turns 4, 5, and 6 is highly plausible for a patient with COPD and pneumonia experiencing worsening dyspnea. This emotional state drift is gradual and well-grounded in his chief complaint and medical history."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully consistent with the provided profile. All clinical facts stated align with the patient's history and symptoms."
+    }
+  },
+  "overall_dynamic_score": 4.3,
+  "overall_dynamic_score_guarded": 4.3,
+  "simple_sum": 22.0,
+  "simple_mean": 4.4,
+  "metadata": {
+    "timestamp": "2026-06-13T07:05:33.834297Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

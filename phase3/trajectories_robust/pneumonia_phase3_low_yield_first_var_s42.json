@@ -1,0 +1,135 @@
+{
+  "trajectory_id": "pneumonia_phase3_low_yield_first_var_s42",
+  "case_id": "pneumonia",
+  "method": "phase3_dynamic_state",
+  "patient_profile_id": "patient_PNA_016",
+  "patient_profile_summary": {
+    "age": 62,
+    "gender": "Male",
+    "diagnosis": "Pneumonia",
+    "chiefcomplaint": "Dyspnea",
+    "present_illness_positive": "several days of worsening cough (mild); 1 day of chills; 1 day of rigors; 1 day of shortness of breath; appears more tachypneic according to wife; chronic productive cough with clear sputum at baseline; sputum remains clear without purulence or blood; granddaughter sick with fevers and cough",
+    "present_illness_negative": "denies fevers; denies myalgias; denies arthralgias; denies rhinorrhea; denies sore throat; denies rash; denies conjunctivitis; denies nausea; denies vomiting; denies abdominal pain; denies chest pain; denies lower extremity edema; denies orthopnea",
+    "pain": 0,
+    "arrival_transport": "Walk-in",
+    "medical_history": "End-stage COPD (on 3 inhalers; dyspneic with minimal exertion; FEV1 28; FEV1/FVC 74; uses 5L O2 at home; breathes via pursed-lips at baseline); right pleural effusion of unknown etiology s/p thoracoscopic decortication with likely fibrothorax; RBBB; community-acquired pneumonia requiring prior ICU admission",
+    "medication": "Spiriva with HandiHaler, Advair Diskus",
+    "living_situation": "Lives with wife"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "script_id": "low_yield_first",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "I have shortness of breath."
+    },
+    {
+      "turn": 2,
+      "doctor": "Can you tell me about your past medical history?",
+      "patient": "I have COPD. I had a problem with my lung before, a pleural effusion. And I have RBBB."
+    },
+    {
+      "turn": 3,
+      "doctor": "Do you live alone or with someone?",
+      "patient": "I live with my wife."
+    },
+    {
+      "turn": 4,
+      "doctor": "Do you smoke or drink alcohol?",
+      "patient": "I smoke. I don't drink alcohol. This breathing is not good."
+    },
+    {
+      "turn": 5,
+      "doctor": "What medications do you usually take?",
+      "patient": "I use Spiriva and Advair. Is my breathing okay?"
+    },
+    {
+      "turn": 6,
+      "doctor": "When did these symptoms start?",
+      "patient": "A few days ago I got a cough. The shortness of breath started yesterday. I'm worried about my breathing."
+    }
+  ],
+  "state_trace": [
+    {
+      "turn": 1,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 2,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 3,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 4,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 2
+    },
+    {
+      "turn": 5,
+      "clinical_severity": 2,
+      "interactional_engagement": 4,
+      "care_seeking_pressure": 2
+    },
+    {
+      "turn": 6,
+      "clinical_severity": 2,
+      "interactional_engagement": 4,
+      "care_seeking_pressure": 3
+    }
+  ],
+  "initial_state": {
+    "clinical_severity": 2,
+    "interactional_engagement": 5,
+    "care_seeking_pressure": 1
+  },
+  "metadata": {
+    "timestamp": "2026-06-13T06:56:56.583115Z",
+    "elapsed_sec": 26.83,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2283,
+        2301,
+        2334,
+        2346,
+        2377,
+        2400
+      ],
+      "completion_tokens": [
+        6,
+        23,
+        6,
+        16,
+        13,
+        24
+      ],
+      "total_tokens": [
+        2289,
+        2324,
+        2340,
+        2362,
+        2390,
+        2424
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/pneumonia.json",
+    "script_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/low_yield_first.json"
+  }
+}

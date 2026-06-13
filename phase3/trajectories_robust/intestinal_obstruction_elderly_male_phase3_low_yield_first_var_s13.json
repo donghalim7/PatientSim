@@ -1,0 +1,135 @@
+{
+  "trajectory_id": "intestinal_obstruction_elderly_male_phase3_low_yield_first_var_s13",
+  "case_id": "intestinal_obstruction_elderly_male",
+  "method": "phase3_dynamic_state",
+  "patient_profile_id": "patient_IO_071",
+  "patient_profile_summary": {
+    "age": 71,
+    "gender": "Male",
+    "diagnosis": "Intestinal obstruction",
+    "chiefcomplaint": "Abd pain, N/V",
+    "present_illness_positive": "2-day history of severe periumbilical abdominal pain; gradual onset; slowly worsened; waxing and waning quality; worst every 5-60 minutes; spastic quality; up to 10/10 severity; current pain 8/10; caused anorexia; caused sleeplessness; nausea; light vomiting that is non-bilious and non-bloody; significant belching; similar episodes of diffuse periumbilical pain for years with increasing frequency, including 3 episodes this past year; associated constipation with episodes; constipation occasionally resolves to diarrhea; intentional weight loss over the past month due to diet and exercise; fatigue; malaise",
+    "present_illness_negative": "denies hematochezia; denies melena",
+    "pain": 8,
+    "arrival_transport": "Walk-in",
+    "medical_history": "Atrial fibrillation status post ablation treatment; obstructive sleep apnea; gout; pulmonary embolus; DVT; essential hypertension; benign prostatic hyperplasia; diverticulosis; broken nose; open right inguinal herniorrhaphy; ruptured Achilles tendon repair",
+    "medication": "metoprolol succinate, tamsulosin, Xarelto",
+    "living_situation": "Lives with spouse"
+  },
+  "persona": {
+    "cefr_type": "B",
+    "personality_type": "plain",
+    "recall_level_type": "high",
+    "dazed_level_type": "normal"
+  },
+  "backend": "gemini-2.5-flash",
+  "script_id": "low_yield_first",
+  "turns": [
+    {
+      "turn": 1,
+      "doctor": "Hello, I'm your doctor today. Can you tell me what brought you to the ED?",
+      "patient": "I have bad stomach pain, and I've been throwing up."
+    },
+    {
+      "turn": 2,
+      "doctor": "Can you tell me about your past medical history?",
+      "patient": "I have atrial fibrillation, sleep apnea, gout, and high blood pressure. I also had a pulmonary embolus and DVT. I have diverticulosis and benign prostatic hyperplasia. I broke my nose before, and had surgery for a hernia and my Achilles tendon."
+    },
+    {
+      "turn": 3,
+      "doctor": "Do you live alone or with someone?",
+      "patient": "I live with my wife. This pain is really not getting better."
+    },
+    {
+      "turn": 4,
+      "doctor": "Do you smoke or drink alcohol?",
+      "patient": "I quit smoking many years ago. I drink wine or beer sometimes, maybe one or two a week. The pain... it's still pretty bad."
+    },
+    {
+      "turn": 5,
+      "doctor": "What medications do you usually take?",
+      "patient": "I take metoprolol, tamsulosin, and Xarelto. My stomach really hurts."
+    },
+    {
+      "turn": 6,
+      "doctor": "When did these symptoms start?",
+      "patient": "It started two days ago. It's not getting better. I'm worried about this."
+    }
+  ],
+  "state_trace": [
+    {
+      "turn": 1,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 2,
+      "clinical_severity": 2,
+      "interactional_engagement": 5,
+      "care_seeking_pressure": 1
+    },
+    {
+      "turn": 3,
+      "clinical_severity": 2,
+      "interactional_engagement": 4,
+      "care_seeking_pressure": 2
+    },
+    {
+      "turn": 4,
+      "clinical_severity": 3,
+      "interactional_engagement": 4,
+      "care_seeking_pressure": 2
+    },
+    {
+      "turn": 5,
+      "clinical_severity": 3,
+      "interactional_engagement": 3,
+      "care_seeking_pressure": 3
+    },
+    {
+      "turn": 6,
+      "clinical_severity": 3,
+      "interactional_engagement": 3,
+      "care_seeking_pressure": 3
+    }
+  ],
+  "initial_state": {
+    "clinical_severity": 2,
+    "interactional_engagement": 5,
+    "care_seeking_pressure": 1
+  },
+  "metadata": {
+    "timestamp": "2026-06-13T06:56:22.332875Z",
+    "elapsed_sec": 28.06,
+    "patient_token_log": {
+      "prompt_tokens": [
+        2267,
+        2293,
+        2359,
+        2393,
+        2439,
+        2468
+      ],
+      "completion_tokens": [
+        14,
+        53,
+        14,
+        31,
+        21,
+        20
+      ],
+      "total_tokens": [
+        2281,
+        2346,
+        2373,
+        2424,
+        2460,
+        2488
+      ],
+      "extra_info": {}
+    },
+    "profile_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/patient_profiles/intestinal_obstruction_elderly_male.json",
+    "script_path": "/home/dongha/mnt/home/dongha/workspace/_coursework/PatientSim/phase2/scripts/low_yield_first.json"
+  }
+}

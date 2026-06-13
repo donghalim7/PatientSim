@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_phase3_low_yield_first_var_s13",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to expressing increasing worry and worsening symptoms in Turns 3, 4, 5, and 6. This shows a noticeable, progressive change in their emotional and physical state throughout the dialogue."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement reduces across turns. They start adding new, unprompted symptoms and expressions of worry to their answers from Turn 3 onwards, indicating a growing difficulty in focusing solely on the doctor's questions."
+    },
+    "care_seeking_pressure": {
+      "score": 5,
+      "rationale": "The patient's care-seeking pressure increases naturally throughout the dialogue. They start by stating symptoms, then add 'This clumsiness is still here' (Turn 3), 'My left arm feels worse now, too' (Turn 4), 'My left leg feels more clumsy now. I am worried' (Turn 5), and finally 'My speech is also a little slurred, and I feel dizzy. I'm concerned about this' (Turn 6)."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's gradual worsening of clumsiness (Turns 3, 4, 5) and the later mention of slurred speech and dizziness (Turn 6) are highly plausible for a cerebral infarction in an early ED encounter. These changes reflect a natural progression or increasing awareness of symptoms consistent with the diagnosis."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All symptoms, medical history, medications, and social history details are consistent and accurately reflect the patient's information."
+    }
+  },
+  "overall_dynamic_score": 4.5,
+  "overall_dynamic_score_guarded": 4.5,
+  "simple_sum": 23.0,
+  "simple_mean": 4.6,
+  "metadata": {
+    "timestamp": "2026-06-13T07:00:14.268702Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

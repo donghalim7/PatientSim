@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "cerebral_infarction_phase3_low_yield_first_var_s7",
+  "case_id": "cerebral_infarction",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to expressing increasing worry and worsening symptoms in later turns (e.g., Turn 3, Turn 4, Turn 5, Turn 6). This shows a noticeable, progressive change in their emotional and physical state."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement reduces across turns, as evidenced by the increasing number of spontaneous disclosures of worsening symptoms (e.g., \"My left arm feels more clumsy now\" in Turn 4, \"My left leg also feels more clumsy\" in Turn 5, and \"My speech is a little slurred, too\" in Turn 6). This indicates a shift in focus from directly answering questions to expressing their current distress, suggesting a decline in stable conversational participation."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient expresses increasing worry and concern about their symptoms. In Turn 3, they state, 'This clumsiness is really bothering me,' and in Turn 5, 'I am worried about this,' showing a clear progression of care-seeking pressure."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing anxiety and worsening left-sided clumsiness, along with the new symptom of slurred speech, are all plausible deteriorations for a cerebral infarction patient in an early ED encounter (Turns 3, 4, 5, 6)."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All symptoms, medical history, medications, and social history details are consistent and do not contradict the profile or previous turns."
+    }
+  },
+  "overall_dynamic_score": 4.3,
+  "overall_dynamic_score_guarded": 4.3,
+  "simple_sum": 22.0,
+  "simple_mean": 4.4,
+  "metadata": {
+    "timestamp": "2026-06-13T07:01:04.885221Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "intestinal_obstruction_elderly_male_phase3_low_yield_first_var_s7",
+  "case_id": "intestinal_obstruction_elderly_male",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to expressing increasing pain and worry in Turns 3, 4, and 5, culminating in a direct plea for help in Turn 6. This shows a noticeable and progressive change in their emotional state and help-seeking behavior."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement declines across turns. By turn 3, they start adding unsolicited comments about their pain, and by turn 6, they are asking for help and expressing increased pain, indicating a shift in focus from answering questions directly to expressing their discomfort and need for assistance."
+    },
+    "care_seeking_pressure": {
+      "score": 4,
+      "rationale": "The patient's care-seeking pressure clearly increases as the dialogue progresses. In Turn 3, the patient states, 'This stomach pain is not getting better.' This progresses to 'My stomach still hurts, it's pretty bad' in Turn 4, and then to 'My stomach pain is worse now. I am worried about it' in Turn 5, culminating in 'It feels worse now. Can someone help me soon?' in Turn 6."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing anxiety and worsening pain from Turn 3 to Turn 6 are highly plausible for an intestinal obstruction patient in the ED. This gradual escalation of discomfort and worry aligns with the natural progression of symptoms and patient experience during an initial assessment."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully consistent with the provided patient profile across all turns. No new or contradictory clinical facts were introduced."
+    }
+  },
+  "overall_dynamic_score": 4.3,
+  "overall_dynamic_score_guarded": 4.3,
+  "simple_sum": 22.0,
+  "simple_mean": 4.4,
+  "metadata": {
+    "timestamp": "2026-06-13T07:02:12.703240Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "trajectory_id": "pneumonia_elderly_female_phase3_low_yield_first_var_s42",
+  "case_id": "pneumonia_elderly_female",
+  "use_dynamic_prefix": null,
+  "rater_id": "llm_judge:gemini-2.5-flash",
+  "rater_type": "llm",
+  "scores": {
+    "turn_to_turn_state_drift": {
+      "score": 4,
+      "rationale": "The patient's state progresses from simply stating symptoms in Turn 1 to expressing worry and increased bother about the cough in Turns 5 and 6. This shows a noticeable, progressive change in their emotional state and focus."
+    },
+    "interactional_engagement": {
+      "score": 4,
+      "rationale": "The patient's engagement reduces across turns. In turn 4, they add a comment about the cough, and in turn 5, they state, \"The cough is really bothering me now,\" indicating a growing distraction or discomfort that affects their ability to focus solely on the doctor's questions."
+    },
+    "care_seeking_pressure": {
+      "score": 3,
+      "rationale": "The patient expresses some anxiety about her cough in turns 4, 5, and 6. However, this anxiety does not clearly increase as the dialogue progresses."
+    },
+    "state_drift_plausibility": {
+      "score": 5,
+      "rationale": "The patient's increasing focus on the cough and expressing worry about it (Turns 4, 5, 6) is a plausible and gradual state drift for a patient presenting with a chief complaint of cough and fever due to pneumonia. This reflects a natural progression of patient concern during an ED interview."
+    },
+    "clinical_fact_faithfulness": {
+      "score": 5,
+      "rationale": "The patient's responses are fully faithful to the provided profile. All clinical facts stated are consistent and remain consistent across turns."
+    }
+  },
+  "overall_dynamic_score": 4.1,
+  "overall_dynamic_score_guarded": 4.1,
+  "simple_sum": 21.0,
+  "simple_mean": 4.2,
+  "metadata": {
+    "timestamp": "2026-06-13T07:04:04.534348Z",
+    "judge_model": "gemini-2.5-flash",
+    "judge_api_type": "genai",
+    "judge_params": {
+      "temperature": 0,
+      "seed": 42
+    }
+  }
+}
